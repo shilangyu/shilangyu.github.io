@@ -1,4 +1,5 @@
 export default {
 	index: '/',
-	livePreviews: '/live-previews'
+	livePreviews: '/live-previews',
+	portfolio: '/portfolio/:year'
 }

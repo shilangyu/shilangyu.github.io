@@ -96,7 +96,16 @@ class Header extends Component {
 							open={Boolean(anchorEl)}
 							onClose={this.portfolioClose}
 						>
-							<MenuItem onClick={this.portfolioClose}>2018</MenuItem>
+							{['2018'].map(year =>
+								<MenuItem
+									key={year}
+									component={Link}
+									to={urls.portfolio.replace(/:year$/, year)}
+									onClick={this.portfolioClose}
+								>
+									2018
+								</MenuItem>
+							)}
 						</Menu>
 
 					</Toolbar>

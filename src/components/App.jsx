@@ -6,8 +6,9 @@ import { Router, Route, Switch } from 'react-router-dom'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from './../styles/theme'
 
-import Index from './pages/Index.jsx'
-import LivePreviews from './pages/LivePreviews.jsx'
+import Index from './index'
+import LivePreviews from './livePreviews'
+import Portfolio from './portfolio'
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path={urls.index} component={Index} />
             <Route exact path={urls.livePreviews} component={LivePreviews} />
+            <Route exact path={urls.portfolio} component={Portfolio} />
           </Switch>
         </Router>
       </MuiThemeProvider>
