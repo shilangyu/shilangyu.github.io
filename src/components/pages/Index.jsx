@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Header from '../dumb/Header.jsx'
 
 
 class Index extends Component {
   render() {
     return (
-      <Header >
-      </Header>
+      <Fragment>
+        <Header active={0}/>
+        cunt
+      </Fragment>
     )
   }
 }

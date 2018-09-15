@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -43,8 +44,10 @@ class Header extends Component {
 	}
 
 	render() {
-		const { classes } = this.props
+		const { classes, active } = this.props
 		const { anchorEl } = this.state
+
+		let currentActive = 0
 
 		return (
 			<div className={classes.root}>
@@ -56,14 +59,17 @@ class Header extends Component {
 						<Typography variant="title" color="inherit" className={classes.grow}>
 							Marcin Wojnarowski
           </Typography>
-						<Button color="inherit">about me</Button>
-						<Button color="inherit">live previews</Button>
+						<Button component={Link} to={'/'} color="inherit" variant={currentActive++ === active ? 'outlined' : null} >
+							about me
+						</Button>
+						<Button component={Link} to={'/live-previews'} color="inherit" variant={currentActive++ === active ? 'outlined' : null} >live previews</Button>
 
 						<Button
 							aria-owns={anchorEl ? 'portfolio-years' : null}
 							aria-haspopup="true"
 							onClick={this.portfolioClick}
 							color="inherit"
+							variant={currentActive++ === active ? 'outlined' : null}
 						>
 							portfolio
 							<ArrowDropDown className={classes.rightIcon} />
