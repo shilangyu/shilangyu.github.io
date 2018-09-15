@@ -6,6 +6,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from './../styles/theme'
 
 import Index from './pages/Index.jsx'
+import LivePreviews from './pages/LivePreviews.jsx'
 
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
         <Router history={hashHistory}>
           <Switch>
             <Route exact path="/" component={Index} />
-            <Route exact path="/s" component={() => <div>monika lal</div>} />
+            <Route exact path="/live-previews" component={LivePreviews} />
           </Switch>
         </Router>
       </MuiThemeProvider>
