@@ -12,6 +12,8 @@ import { ArrowDropDown } from '@material-ui/icons'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 
+import urls from '../../constants/urls'
+
 
 const styles = theme => ({
 	root: {
@@ -56,13 +58,27 @@ class Header extends Component {
 						<IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
 							<MenuIcon />
 						</IconButton>
+
 						<Typography variant="title" color="inherit" className={classes.grow}>
 							Marcin Wojnarowski
-          </Typography>
-						<Button component={Link} to={'/'} color="inherit" variant={currentActive++ === active ? 'outlined' : null} >
+          	</Typography>
+
+						<Button
+							component={Link}
+							to={urls.index}
+							color="inherit"
+							variant={currentActive++ === active ? 'outlined' : null}
+						>
 							about me
 						</Button>
-						<Button component={Link} to={'/live-previews'} color="inherit" variant={currentActive++ === active ? 'outlined' : null} >live previews</Button>
+						<Button
+							component={Link}
+							to={urls.livePreviews}
+							color="inherit"
+							variant={currentActive++ === active ? 'outlined' : null}
+						>
+							live previews
+						</Button>
 
 						<Button
 							aria-owns={anchorEl ? 'portfolio-years' : null}

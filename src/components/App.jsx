@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import hashHistory from '../history'
+import urls from '../constants/urls'
 import { Router, Route, Switch } from 'react-router-dom'
 
 import { MuiThemeProvider } from '@material-ui/core/styles'
@@ -15,8 +16,8 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Router history={hashHistory}>
           <Switch>
-            <Route exact path="/" component={Index} />
-            <Route exact path="/live-previews" component={LivePreviews} />
+            <Route exact path={urls.index} component={Index} />
+            <Route exact path={urls.livePreviews} component={LivePreviews} />
           </Switch>
         </Router>
       </MuiThemeProvider>
