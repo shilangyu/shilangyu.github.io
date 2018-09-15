@@ -4,9 +4,13 @@
   "private": true,
   "homepage": "https://clitcancer.github.io/",
   "dependencies": {
+    "@material-ui/core": "^3.0.3",
+    "@material-ui/icons": "^3.0.1",
     "gh-pages": "^1.2.0",
+    "history": "^4.7.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },
   "scripts": {
