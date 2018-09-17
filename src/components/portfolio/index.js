@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import Header from '../dumb/Header.jsx'
 
-import Year2018 from './2018.jsx'
+import Year2018 from './2018'
 
 
 class Porfolio extends Component {
