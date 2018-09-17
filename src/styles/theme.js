@@ -10,7 +10,8 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto Mono'
+    fontFamily: 'Roboto Mono',
+    fontWeightRegular: 300,
   }
 })
 
