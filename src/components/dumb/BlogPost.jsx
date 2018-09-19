@@ -1,11 +1,18 @@
-	import React, { Component, Fragment } from 'react'
-	import { withStyles } from '@material-ui/core/styles'
+import React, { Component, Fragment } from 'react'
+import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-
-import Container from './Container.jsx'
+import Divider from '@material-ui/core/Divider'
+import Grid from '@material-ui/core/Grid'
 
 const styles = theme => ({
+	divider: {
+		'background-color': '#e0e0e0',
+		margin: '30px 0'
+	},
+	subtitle: {
+		margin: '0 0 10px 0'
+	}
 })
 
 class BlogPost extends Component {
@@ -50,26 +57,36 @@ class BlogPost extends Component {
 					{title}
 				</Typography>
 
-				{pagination.map(ref => <Button key={ref.id} onClick={() => this.paginationOnClick(ref.id)}>{ref.name}</Button>
-				)}
 
-				{posts.map((post, i) =>
-					<Fragment key={i}>
-						<Typography
-							color="textPrimary"
-							variant="display1"
-							id={pagination[i].id}
-						>
-							{pagination[i].name}
-						</Typography>
+				<Grid justify="center" direction="row" alignItems="center" spacing={16} container>
+					{pagination.map(ref =>
+						<Grid item key={ref.id}>
+							<Button onClick={() => this.paginationOnClick(ref.id)}>{ref.name}</Button>
+						</Grid>
+					)}
+				</Grid>
 
-						<Typography>
-							{post}
-						</Typography>
+				{
+					posts.map((post, i) =>
+						<Fragment key={i}>
+							<Typography
+								color="textPrimary"
+								variant="headline"
+								id={pagination[i].id}
+								className={classes.subtitle}
+							>
+								{pagination[i].name}
+							</Typography>
 
-						<div className="divider"></div>
-					</Fragment>
-				)}
+							<Typography>
+								{post}
+							</Typography>
+
+							{posts.length - 1 !== i && <Divider className={classes.divider} />}
+
+						</Fragment>
+					)
+				}
 			</Fragment>
 		)
 	}
