@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import { withStyles } from "@material-ui/core/styles"
+import React, { Component } from 'react'
+import { withStyles } from '@material-ui/core/styles'
 
 import Container from '../../dumb/Container.jsx'
 import BlogPost from '../../dumb/BlogPost.jsx'
@@ -19,7 +19,7 @@ class _2018 extends Component {
 		return (
 			<Container>
 				
-				<BlogPost fromData={posts[0]}/>
+				<BlogPost fromData={posts[2]}/>
 
 			</Container>
 		)
