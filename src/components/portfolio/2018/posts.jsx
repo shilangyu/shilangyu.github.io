@@ -52,5 +52,18 @@ export default [
 				content: 'A simple AI I made that learns by playing, if a move he makes is bad he remembers it and never does it again.'
 			}
 		]
+	},
+	{
+		title: 'this.page',
+		posts: [
+			{
+				title: 'Description',
+				content: 'This page was built on Node.js, giving me a lot of flexibility when handling http requests. Typed in URL is sent to the server. The server then strips down the URL and looks up in a database informations about it. After receiving data it is sent to a html renderer EJS that creates the HTML page. Once done it\'s sent to the user.'
+			},
+			{
+				title: 'Why bother?',
+				content: 'The page is written in a clear and easy to read way, it helps in futher development. To some tiny extent the page was build following the MVC (model-view-controller) model.'
+			}
+		]
 	}
 ]

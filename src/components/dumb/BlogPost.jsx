@@ -41,7 +41,7 @@ class BlogPost extends Component {
 		const { title, pagination, posts } = this.state
 
 		return (
-			<Container>
+			<Fragment>
 				<Typography
 					align="center"
 					color="textPrimary"
@@ -70,8 +70,7 @@ class BlogPost extends Component {
 						<div className="divider"></div>
 					</Fragment>
 				)}
-
-			</Container>
+			</Fragment>
 		)
 	}
 }
