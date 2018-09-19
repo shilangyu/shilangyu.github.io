@@ -19,21 +19,9 @@ class BlogPost extends Component {
 	constructor(props) {
 		super(props)
 
-		if ('fromData' in props) {
-			const { fromData: data } = props
-
-			var title = data.title
-			var pagination = data.posts.map(e => e.title)
-			var posts = data.posts.map(e => e.content)
-		} else {
-			var { title, pagination, posts } = props
-		}
-
 		const uID = () => '_' + Math.random().toString(36).substr(2, 9)
 
-		pagination = pagination.map(name => ({ name, id: uID() }))
-
-		this.state = { title, pagination, posts }
+		this.state = { pagiId: new Array(props.pagination.length).fill().map(uID) }
 	}
 
 	paginationOnClick = id => {
@@ -44,8 +32,8 @@ class BlogPost extends Component {
 	}
 
 	render() {
-		const { classes } = this.props
-		const { title, pagination, posts } = this.state
+		const { classes, title, pagination, posts } = this.props
+		const { pagiId } = this.state
 
 		return (
 			<Fragment>
@@ -59,9 +47,9 @@ class BlogPost extends Component {
 
 
 				<Grid justify="center" direction="row" alignItems="center" spacing={16} container>
-					{pagination.map(ref =>
-						<Grid item key={ref.id}>
-							<Button onClick={() => this.paginationOnClick(ref.id)}>{ref.name}</Button>
+					{pagination.map((name, i) =>
+						<Grid item key={i}>
+							<Button onClick={() => this.paginationOnClick(pagiId[i])}>{name}</Button>
 						</Grid>
 					)}
 				</Grid>
@@ -72,10 +60,10 @@ class BlogPost extends Component {
 							<Typography
 								color="textPrimary"
 								variant="headline"
-								id={pagination[i].id}
+								id={pagiId[i]}
 								className={classes.subtitle}
 							>
-								{pagination[i].name}
+								{pagination[i]}
 							</Typography>
 
 							<Typography>

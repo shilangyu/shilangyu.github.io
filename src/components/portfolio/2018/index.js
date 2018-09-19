@@ -18,8 +18,12 @@ class _2018 extends Component {
 
 		return (
 			<Container>
-				
-				<BlogPost fromData={posts[2]}/>
+
+				{posts.map(post => <BlogPost
+					key={post.title}
+					title={post.title}
+					pagination={post.posts.map(e => e.title)}
+					posts={post.posts.map(e => e.content)} />)}
 
 			</Container>
 		)
