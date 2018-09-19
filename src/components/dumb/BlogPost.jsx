@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react"
 import { withStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
+import Button from "@material-ui/core/Button"
 
 import Container from './Container.jsx'
 
@@ -21,9 +22,9 @@ class BlogPost extends Component {
 			var { title, pagination, posts } = props
 		}
 
-		const uID =  () => '_' + Math.random().toString(36).substr(2, 9)
+		const uID = () => '_' + Math.random().toString(36).substr(2, 9)
 
-		pagination = pagination.map(name => ({name, id: uID()}))
+		pagination = pagination.map(name => ({ name, id: uID() }))
 
 		this.state = { title, pagination, posts }
 	}
@@ -49,24 +50,26 @@ class BlogPost extends Component {
 					{title}
 				</Typography>
 
-				<ul>
-					{pagination.map(ref =>
-						<li key={ref.id} className="waves-effect">
-							<a onClick={() => this.paginationOnClick(ref.id)} href="javascript:void(0);">{ref.name}</a>
-						</li>)}
-				</ul>
+				{pagination.map(ref => <Button key={ref.id} onClick={() => this.paginationOnClick(ref.id)}>{ref.name}</Button>
+				)}
 
-				<div className="section">
-					{posts.map((post, i) =>
-						<Fragment key={i}>
-							<h5 id={pagination[i].id}>{pagination[i].name}</h5>
-							<p>
-								{post}
-							</p>
-							<div className="divider"></div>
-						</Fragment>
-					)}
-				</div>
+				{posts.map((post, i) =>
+					<Fragment key={i}>
+						<Typography
+							color="textPrimary"
+							variant="display1"
+							id={pagination[i].id}
+						>
+							{pagination[i].name}
+						</Typography>
+
+						<Typography>
+							{post}
+						</Typography>
+
+						<div className="divider"></div>
+					</Fragment>
+				)}
 
 			</Container>
 		)
