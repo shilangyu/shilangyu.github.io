@@ -8,6 +8,10 @@ const theme = createMuiTheme({
     secondary: {
       main: '#80deea',
     },
+    text: {
+      primary: '#000000',
+      secondary: '#ffffff',
+    }
   },
   typography: {
     fontFamily: 'Roboto Mono',
