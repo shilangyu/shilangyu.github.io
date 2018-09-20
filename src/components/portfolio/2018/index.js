@@ -1,31 +1,55 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 
 import Container from '../../dumb/Container.jsx'
 import BlogPost from '../../dumb/BlogPost.jsx'
 import posts from './posts.jsx'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
+import Paper from '@material-ui/core/Paper'
 
 const styles = theme => ({
 	paper: {
-		margin: theme.spacing.unit,
-		padding: theme.spacing.unit * 1
+		flexGrow: 1,
+		backgroundColor: theme.palette.primary.main,
 	}
 })
 
 class _2018 extends Component {
+	state = {
+		tab: 0
+	}
+
+	tabChange = (event, value) => this.setState({ tab: value })
+
 	render() {
 		const { classes } = this.props
+		const post = posts[this.state.tab]
 
 		return (
-			<Container>
+			<Fragment>
 
-				{posts.map(post => <BlogPost
-					key={post.title}
-					title={post.title}
-					pagination={post.posts.map(e => e.title)}
-					posts={post.posts.map(e => e.content)} />)}
+				<Paper className={classes.paper} square>
+					<Tabs
+						value={this.state.tab}
+						onChange={this.tabChange}
+						indicatorColor="secondary"
+						centered
+						fullWidth
+					>
+						{posts.map(({ title }) => <Tab key={title} label={title} />)}
+					</Tabs>
+				</Paper>
 
-			</Container>
+				<Container>
+					{<BlogPost
+						key={post.title}
+						title={post.title}
+						pagination={post.posts.map(e => e.title)}
+						posts={post.posts.map(e => e.content)} />}
+				</Container>
+
+			</Fragment>
 		)
 	}
 }
