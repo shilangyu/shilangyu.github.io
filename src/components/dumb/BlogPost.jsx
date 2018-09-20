@@ -12,6 +12,9 @@ const styles = theme => ({
 	},
 	subtitle: {
 		margin: '0 0 10px 0'
+	},
+	pagination: {
+		margin: '0 0 20px 0'
 	}
 })
 
@@ -24,12 +27,11 @@ class BlogPost extends Component {
 		this.state = { pagiId: new Array(props.pagination.length).fill().map(uID) }
 	}
 
-	paginationOnClick = id => {
-		document.querySelector(`#${id}`).scrollIntoView({
-			behavior: 'smooth',
-			block: 'start'
-		})
-	}
+	paginationOnClick = id => () => document.querySelector(`#${id}`).scrollIntoView({
+		behavior: 'smooth',
+		block: 'start'
+	})
+
 
 	render() {
 		const { classes, title, pagination, posts } = this.props
@@ -46,10 +48,10 @@ class BlogPost extends Component {
 				</Typography>
 
 
-				<Grid justify="center" direction="row" alignItems="center" spacing={16} container>
+				<Grid className={classes.pagination} justify="center" direction="row" alignItems="center" spacing={16} container>
 					{pagination.map((name, i) =>
 						<Grid item key={i}>
-							<Button onClick={() => this.paginationOnClick(pagiId[i])}>{name}</Button>
+							<Button onClick={this.paginationOnClick(pagiId[i])}>{name}</Button>
 						</Grid>
 					)}
 				</Grid>
