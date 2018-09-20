@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/core/styles'
@@ -11,6 +11,14 @@ import MenuIcon from '@material-ui/icons/Menu'
 import ArrowDropDown from '@material-ui/icons/ArrowDropDown'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
+import Hidden from '@material-ui/core/Hidden'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
+import ExpandLess from '@material-ui/icons/ExpandLess'
+import ExpandMore from '@material-ui/icons/ExpandMore'
+import Collapse from '@material-ui/core/Collapse'
 
 import urls from '../../constants/urls'
 
@@ -29,21 +37,29 @@ const styles = theme => ({
 	rightIcon: {
 		marginLeft: theme.spacing.unit,
 	},
+	drawer: {
+		width: 'auto'
+	},
+	nested: {
+		paddingLeft: theme.spacing.unit * 4,
+	}
 })
 
 
 class Header extends Component {
 	state = {
 		anchorEl: null,
+		drawerOpen: false,
+		open: false
 	}
 
-	portfolioClick = event => {
-		this.setState({ anchorEl: event.currentTarget })
-	}
+	portfolioClick = event => this.setState({ anchorEl: event.currentTarget })
 
-	portfolioClose = () => {
-		this.setState({ anchorEl: null })
-	}
+	portfolioClose = () => this.setState({ anchorEl: null })
+
+	toggleDrawer = () => this.setState({ drawerOpen: !this.state.drawerOpen })
+
+	toggleSubList = () => this.setState(state => ({ open: !this.state.open }))
 
 	render() {
 		const { classes, active } = this.props
@@ -51,62 +67,113 @@ class Header extends Component {
 
 		let currentActive = 0
 
+		const links = [
+			{ text: 'about me', to: urls.index },
+			{ text: 'live previews', to: urls.livePreviews },
+			{
+				text: 'portfolio', subs: [
+					{ text: '2018', to: urls.portfolio.replace(/:year$/, 2018) }
+				]
+			}
+		]
+
 		return (
 			<div className={classes.root}>
 				<AppBar position="sticky">
 					<Toolbar>
-						<IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-							<MenuIcon />
-						</IconButton>
+
+						<Hidden smUp>
+
+							<IconButton onClick={this.toggleDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
+								<MenuIcon />
+							</IconButton>
+
+							<SwipeableDrawer
+								open={this.state.drawerOpen}
+								onClose={this.toggleDrawer}
+								onOpen={this.toggleDrawer}
+							>
+								<div
+									tabIndex={0}
+									role="button"
+									onKeyDown={this.toggleDrawer}
+								>
+									<div className={classes.drawer}>
+										<List>
+											{links.map(link => link.subs ?
+												<Fragment key={link.text}>
+													<ListItem button onClick={this.toggleSubList}>
+														<ListItemText primary={link.text} />
+														{this.state.open ? <ExpandLess /> : <ExpandMore />}
+													</ListItem>
+													<Collapse in={this.state.open} timeout="auto" unmountOnExit>
+														<List component="div" disablePadding>
+															{link.subs.map(sub =>
+																<ListItem button key={sub.text} component={Link} to={sub.to} className={classes.nested}>
+																	<ListItemText primary={sub.text} />
+																</ListItem>
+															)}
+														</List>
+													</Collapse>
+												</Fragment>
+												:
+												<ListItem key={link.text} component={Link} to={link.to} button>
+													<ListItemText primary={link.text} />
+												</ListItem>
+											)}
+										</List>
+									</div>
+								</div>
+							</SwipeableDrawer>
+
+						</Hidden>
 
 						<Typography variant="title" color="inherit" className={classes.grow}>
 							Marcin Wojnarowski
           	</Typography>
 
-						<Button
-							component={Link}
-							to={urls.index}
-							color="inherit"
-							variant={currentActive++ === active ? 'outlined' : null}
-						>
-							about me
-						</Button>
-						<Button
-							component={Link}
-							to={urls.livePreviews}
-							color="inherit"
-							variant={currentActive++ === active ? 'outlined' : null}
-						>
-							live previews
-						</Button>
-
-						<Button
-							aria-owns={anchorEl ? 'portfolio-years' : null}
-							aria-haspopup="true"
-							onClick={this.portfolioClick}
-							color="inherit"
-							variant={currentActive++ === active ? 'outlined' : null}
-						>
-							portfolio
-							<ArrowDropDown className={classes.rightIcon} />
-						</Button>
-						<Menu
-							id="portfolio-years"
-							anchorEl={anchorEl}
-							open={Boolean(anchorEl)}
-							onClose={this.portfolioClose}
-						>
-							{['2018'].map(year =>
-								<MenuItem
-									key={year}
+						<Hidden xsDown>
+							{links.map(link => link.subs ?
+								<Fragment key={link.text}>
+									<Button
+										aria-owns={anchorEl ? 'portfolio-years' : null}
+										aria-haspopup="true"
+										onClick={this.portfolioClick}
+										color="inherit"
+										variant={currentActive++ === active ? 'outlined' : null}
+									>
+										{link.text}
+										<ArrowDropDown className={classes.rightIcon} />
+									</Button>
+									<Menu
+										id="portfolio-years"
+										anchorEl={anchorEl}
+										open={Boolean(anchorEl)}
+										onClose={this.portfolioClose}
+									>
+										{link.subs.map(sub =>
+											<MenuItem
+												key={sub.text}
+												component={Link}
+												to={sub.to}
+												onClick={this.portfolioClose}
+											>
+												{sub.text}
+											</MenuItem>
+										)}
+									</Menu>
+								</Fragment>
+								: <Button
+									key={link.text}
 									component={Link}
-									to={urls.portfolio.replace(/:year$/, year)}
-									onClick={this.portfolioClose}
+									to={link.to}
+									color="inherit"
+									variant={currentActive++ === active ? 'outlined' : null}
 								>
-									2018
-								</MenuItem>
+									{link.text}
+								</Button>
 							)}
-						</Menu>
+						</Hidden>
 
 					</Toolbar>
 				</AppBar>
