@@ -68,7 +68,7 @@ class BlogPost extends Component {
 								{pagination[i]}
 							</Typography>
 
-							<Typography>
+							<Typography align="justify">
 								{post}
 							</Typography>
 
