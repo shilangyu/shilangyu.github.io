@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 
+import { uID } from './../../constants/generators'
+
 const styles = theme => ({
 	divider: {
 		'background-color': '#e0e0e0',
@@ -22,9 +24,7 @@ class BlogPost extends Component {
 	constructor(props) {
 		super(props)
 
-		const uID = () => '_' + Math.random().toString(36).substr(2, 9)
-
-		this.state = { pagiId: new Array(props.pagination.length).fill().map(uID) }
+		this.state = { pagiId: new Array(props.pagination.length).fill().map(e => uID.next().value) }
 	}
 
 	paginationOnClick = id => () => document.querySelector(`#${id}`).scrollIntoView({
