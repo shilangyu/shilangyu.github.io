@@ -20,7 +20,9 @@ import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import Collapse from '@material-ui/core/Collapse'
 
-import urls from '../../constants/urls'
+import urls from '../constants/urls'
+import { uID } from '../constants/generators'
+
 
 
 const styles = theme => ({
@@ -50,8 +52,20 @@ class Header extends Component {
 	state = {
 		anchorEl: null,
 		drawerOpen: false,
-		open: false
+		open: false,
+		on: true,
+		active: null,
+		links: [
+			{ text: 'about me', to: urls.index, uid: uID.next().value },
+			{ text: 'live previews', to: urls.livePreviews, uid: uID.next().value },
+			{
+				text: 'portfolio', subs: [
+					{ text: '2018', to: urls.portfolio.replace(/:year$/, 2018) }
+				], uid: uID.next().value
+			}
+		]
 	}
+
 
 	portfolioClick = event => this.setState({ anchorEl: event.currentTarget })
 
@@ -61,21 +75,11 @@ class Header extends Component {
 
 	toggleSubList = () => this.setState(state => ({ open: !this.state.open }))
 
+	setActive = id => this.setState({ active: id })
+
 	render() {
-		const { classes, active } = this.props
-		const { anchorEl } = this.state
-
-		let currentActive = 0
-
-		const links = [
-			{ text: 'about me', to: urls.index },
-			{ text: 'live previews', to: urls.livePreviews },
-			{
-				text: 'portfolio', subs: [
-					{ text: '2018', to: urls.portfolio.replace(/:year$/, 2018) }
-				]
-			}
-		]
+		const { classes } = this.props
+		const { anchorEl, links, active } = this.state
 
 		return (
 			<div className={classes.root}>
@@ -102,14 +106,14 @@ class Header extends Component {
 										<List>
 											{links.map(link => link.subs ?
 												<Fragment key={link.text}>
-													<ListItem button onClick={this.toggleSubList}>
+													<ListItem button onClick={e => (this.setActive(link.uid), this.toggleSubList(e))} selected={link.uid === active}>
 														<ListItemText primary={link.text} />
 														{this.state.open ? <ExpandLess /> : <ExpandMore />}
 													</ListItem>
 													<Collapse in={this.state.open} timeout="auto" unmountOnExit>
 														<List component="div" disablePadding>
 															{link.subs.map(sub =>
-																<ListItem button key={sub.text} component={Link} to={sub.to} className={classes.nested}>
+																<ListItem button key={sub.text} component={Link} to={sub.to} className={classes.nested} onClick={this.toggleDrawer}>
 																	<ListItemText primary={sub.text} />
 																</ListItem>
 															)}
@@ -117,7 +121,7 @@ class Header extends Component {
 													</Collapse>
 												</Fragment>
 												:
-												<ListItem key={link.text} component={Link} to={link.to} button>
+												<ListItem onClick={() => (this.toggleDrawer(), this.setActive(link.uid))} key={link.text} component={Link} to={link.to} button selected={link.uid === active}>
 													<ListItemText primary={link.text} />
 												</ListItem>
 											)}
@@ -138,9 +142,9 @@ class Header extends Component {
 									<Button
 										aria-owns={anchorEl ? 'portfolio-years' : null}
 										aria-haspopup="true"
-										onClick={this.portfolioClick}
+										onClick={e => (this.setActive(link.uid), this.portfolioClick(e))}
 										color="inherit"
-										variant={currentActive++ === active ? 'outlined' : null}
+										variant={active === link.uid ? 'outlined' : null}
 									>
 										{link.text}
 										<ArrowDropDown className={classes.rightIcon} />
@@ -167,8 +171,9 @@ class Header extends Component {
 									key={link.text}
 									component={Link}
 									to={link.to}
+									onClick={() => this.setActive(link.uid)}
 									color="inherit"
-									variant={currentActive++ === active ? 'outlined' : null}
+									variant={active === link.uid ? 'outlined' : null}
 								>
 									{link.text}
 								</Button>
