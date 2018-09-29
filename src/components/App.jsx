@@ -10,6 +10,7 @@ import Index from './index'
 import LivePreviews from './livePreviews'
 import Portfolio from './portfolio'
 import Header from './Header'
+import Footer from './Footer'
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
               <Route exact path={urls.livePreviews} component={LivePreviews} />
               <Route exact path={urls.portfolio} component={Portfolio} />
             </Switch>
+            <Footer />
           </Fragment>
         </Router>
       </MuiThemeProvider>
