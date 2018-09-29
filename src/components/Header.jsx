@@ -50,11 +50,10 @@ const styles = theme => ({
 
 class Header extends Component {
 	state = {
-		anchorEl: null,
-		drawerOpen: false,
-		open: false,
-		on: true,
 		active: null,
+		openSelect: {anchor: null, uid: null},
+		openSubList: null,
+		drawerOpen: false,
 		links: [
 			{ text: 'about me', to: urls.index, uid: uID.next().value },
 			{ text: 'live previews', to: urls.livePreviews, uid: uID.next().value },
@@ -66,20 +65,18 @@ class Header extends Component {
 		]
 	}
 
+	openSubList = id => this.setState(prevState => ({ openSubList: prevState.openSubList === id ? false : id }))
 
-	portfolioClick = event => this.setState({ anchorEl: event.currentTarget })
-
-	portfolioClose = () => this.setState({ anchorEl: null })
+	openSelect = (e, id) => this.setState({ openSelect: { anchor: e.currentTarget, uid: id } })
+	closeSelect = () => this.setState({ openSelect: {anchor: null, uid: null} })
 
 	toggleDrawer = () => this.setState({ drawerOpen: !this.state.drawerOpen })
-
-	toggleSubList = () => this.setState(state => ({ open: !this.state.open }))
 
 	setActive = id => this.setState({ active: id })
 
 	render() {
 		const { classes } = this.props
-		const { anchorEl, links, active } = this.state
+		const { openSelect, links, active, openSubList } = this.state
 
 		return (
 			<div className={classes.root}>
@@ -106,11 +103,11 @@ class Header extends Component {
 										<List>
 											{links.map(link => link.subs ?
 												<Fragment key={link.text}>
-													<ListItem button onClick={e => (this.setActive(link.uid), this.toggleSubList(e))} selected={link.uid === active}>
+													<ListItem button onClick={e => (this.setActive(link.uid), this.openSubList(link.uid))} selected={link.uid === active}>
 														<ListItemText primary={link.text} />
-														{this.state.open ? <ExpandLess /> : <ExpandMore />}
+														{openSubList === link.uid ? <ExpandLess /> : <ExpandMore />}
 													</ListItem>
-													<Collapse in={this.state.open} timeout="auto" unmountOnExit>
+													<Collapse in={openSubList === link.uid} timeout="auto" unmountOnExit>
 														<List component="div" disablePadding>
 															{link.subs.map(sub =>
 																<ListItem button key={sub.text} component={Link} to={sub.to} className={classes.nested} onClick={this.toggleDrawer}>
@@ -140,9 +137,9 @@ class Header extends Component {
 							{links.map(link => link.subs ?
 								<Fragment key={link.text}>
 									<Button
-										aria-owns={anchorEl ? 'portfolio-years' : null}
+										aria-owns={openSelect ? link.uid : null}
 										aria-haspopup="true"
-										onClick={e => (this.setActive(link.uid), this.portfolioClick(e))}
+										onClick={e => (this.setActive(link.uid), this.openSelect(e, link.uid))}
 										color="inherit"
 										variant={active === link.uid ? 'outlined' : null}
 									>
@@ -150,17 +147,17 @@ class Header extends Component {
 										<ArrowDropDown className={classes.rightIcon} />
 									</Button>
 									<Menu
-										id="portfolio-years"
-										anchorEl={anchorEl}
-										open={Boolean(anchorEl)}
-										onClose={this.portfolioClose}
+										id={link.uid}
+										anchorEl={openSelect.anchor}
+										open={openSelect.uid === link.uid}
+										onClose={this.closeSelect}
 									>
 										{link.subs.map(sub =>
 											<MenuItem
 												key={sub.text}
 												component={Link}
 												to={sub.to}
-												onClick={this.portfolioClose}
+												onClick={this.closeSelect}
 											>
 												{sub.text}
 											</MenuItem>
