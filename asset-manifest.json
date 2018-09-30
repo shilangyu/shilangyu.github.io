@@ -1,11 +1,4 @@
 {
-  "main.js": "static/js/main.53f69e29.js",
-  "main.js.map": "static/js/main.53f69e29.js.map",
-  "static\\media\\GA-graph.png": "static/media/GA-graph.5b4b38ae.png",
-  "static\\media\\NE-graph.png": "static/media/NE-graph.63c0ca8e.png",
-  "static\\media\\NNcar-laser.png": "static/media/NNcar-laser.9a15265f.png",
-  "static\\media\\page-graph.png": "static/media/page-graph.7e5057e4.png",
-  "static\\media\\snek-leaderboards.png": "static/media/snek-leaderboards.dea9183b.png",
-  "static\\media\\snek-menu.png": "static/media/snek-menu.e9f0f439.png",
-  "static\\media\\snek-multiplayer.png": "static/media/snek-multiplayer.b78b1d41.png"
+  "main.js": "static/js/main.5348f7bb.js",
+  "main.js.map": "static/js/main.5348f7bb.js.map"
 }
