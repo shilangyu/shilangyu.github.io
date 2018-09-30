@@ -72,31 +72,31 @@ class Footer extends Component {
 							<FooterLink
 								href={urls.external.github}
 								text="GitHub"
-								src={'/github-logo.png'}
+								src={'/assets/pics/github-logo.png'}
 								class={classes.avatar}
 							/>
 							<FooterLink
 								href={urls.external.p5}
 								text="p5.js"
-								src={'/p5js-logo.png'}
+								src={'/assets/pics/p5js-logo.png'}
 								class={classes.avatar}
 							/>
 							<FooterLink
 								href={urls.external.drawio}
 								text="draw.io"
-								src={'/drawio-logo.png'}
+								src={'/assets/pics/drawio-logo.png'}
 								class={classes.avatar}
 							/>
 							<FooterLink
 								href={urls.external.materialui}
 								text="materialui"
-								src={'/materialui-logo.svg'}
+								src={'/assets/pics/materialui-logo.svg'}
 								class={classes.avatar}
 							/>
 							<FooterLink
 								href={urls.external.react}
 								text="react"
-								src={'/react-logo.png'}
+								src={'/assets/pics/react-logo.png'}
 								class={classes.avatar}
 							/>
 						</div>
