@@ -1,8 +1,8 @@
 {
-  "name": "clitcancer.github.io",
+  "name": "shilangyu.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://clitcancer.github.io/",
+  "homepage": "https://shilangyu.github.io/",
   "dependencies": {
     "@material-ui/core": "^3.0.3",
     "@material-ui/icons": "^3.0.1",
