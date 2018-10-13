@@ -1,16 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import hashHistory from '../history'
-import urls from '../constants/urls'
-import { Router, Route, Switch } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from './../styles/theme'
 
-import Index from './index'
-import LivePreviews from './livePreviews'
-import Portfolio from './portfolio'
 import Header from './Header'
 import Footer from './Footer'
+import Main from './Main'
 
 
 class App extends Component {
@@ -20,13 +17,7 @@ class App extends Component {
         <Router history={hashHistory}>
           <Fragment>
             <Header />
-            <main>
-              <Switch>
-                <Route exact path={urls.index} component={Index} />
-                <Route exact path={urls.livePreviews} component={LivePreviews} />
-                <Route exact path={urls.portfolio} component={Portfolio} />
-              </Switch>
-            </main>
+            <Main />
             <Footer />
           </Fragment>
         </Router>
