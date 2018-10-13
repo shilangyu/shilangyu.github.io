@@ -103,14 +103,14 @@ class Header extends Component {
 										<List>
 											{links.map(link => link.subs ?
 												<Fragment key={link.text}>
-													<ListItem button onClick={e => (this.setActive(link.uid), this.openSubList(link.uid))} selected={link.uid === active}>
+													<ListItem button onClick={e => this.openSubList(link.uid)} selected={link.uid === active}>
 														<ListItemText primary={link.text} />
 														{openSubList === link.uid ? <ExpandLess /> : <ExpandMore />}
 													</ListItem>
 													<Collapse in={openSubList === link.uid} timeout="auto" unmountOnExit>
 														<List component="div" disablePadding>
 															{link.subs.map(sub =>
-																<ListItem button key={sub.text} component={Link} to={sub.to} className={classes.nested} onClick={this.toggleDrawer}>
+																<ListItem button key={sub.text} component={Link} to={sub.to} className={classes.nested} onClick={e => (this.setActive(link.uid), this.toggleDrawer())}>
 																	<ListItemText primary={sub.text} />
 																</ListItem>
 															)}
@@ -139,7 +139,7 @@ class Header extends Component {
 									<Button
 										aria-owns={openSelect ? link.uid : null}
 										aria-haspopup="true"
-										onClick={e => (this.setActive(link.uid), this.openSelect(e, link.uid))}
+										onClick={e => this.openSelect(e, link.uid)}
 										color="inherit"
 										variant={active === link.uid ? 'outlined' : null}
 									>
@@ -157,7 +157,7 @@ class Header extends Component {
 												key={sub.text}
 												component={Link}
 												to={sub.to}
-												onClick={this.closeSelect}
+												onClick={e => (this.setActive(link.uid), this.closeSelect())}
 											>
 												{sub.text}
 											</MenuItem>
