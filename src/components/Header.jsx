@@ -79,7 +79,7 @@ class Header extends Component {
 		const { openSelect, links, active, openSubList } = this.state
 
 		return (
-			<div className={classes.root}>
+			<nav className={classes.root}>
 				<AppBar position="sticky">
 					<Toolbar>
 
@@ -179,7 +179,7 @@ class Header extends Component {
 
 					</Toolbar>
 				</AppBar>
-			</div>
+			</nav>
 		)
 	}
 }

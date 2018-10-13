@@ -49,7 +49,7 @@ class Footer extends Component {
 		const { classes } = this.props
 
 		return (
-			<div className={classes.root}>
+			<footer className={classes.root}>
 
 				<Grid className={classes.main} justify="space-around" direction="row" container>
 					<Grid item>
@@ -117,7 +117,7 @@ class Footer extends Component {
 					</Grid>
 				</Grid>
 
-			</div>
+			</footer>
 		)
 	}
 }

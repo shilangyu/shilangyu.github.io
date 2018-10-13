@@ -20,11 +20,13 @@ class App extends Component {
         <Router history={hashHistory}>
           <Fragment>
             <Header />
-            <Switch>
-              <Route exact path={urls.index} component={Index} />
-              <Route exact path={urls.livePreviews} component={LivePreviews} />
-              <Route exact path={urls.portfolio} component={Portfolio} />
-            </Switch>
+            <main>
+              <Switch>
+                <Route exact path={urls.index} component={Index} />
+                <Route exact path={urls.livePreviews} component={LivePreviews} />
+                <Route exact path={urls.portfolio} component={Portfolio} />
+              </Switch>
+            </main>
             <Footer />
           </Fragment>
         </Router>
