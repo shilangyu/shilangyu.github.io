@@ -1,17 +1,24 @@
 import React, { Component } from 'react'
 import urls from '../constants/urls'
 import { Route, Switch } from 'react-router-dom'
-
+import { withStyles } from '@material-ui/core/styles'
 
 import Index from './index'
 import LivePreviews from './livePreviews'
 import Portfolio from './portfolio'
 
+const styles = theme => ({
+	root: {
+	}
+})
 
-class App extends Component {
+
+class Main extends Component {
   render() {
+		const { classes } = this.props
+
     return (
-			<main>
+			<main className={classes.root}>
 				<Switch>
 					<Route exact path={urls.index} component={Index} />
 					<Route exact path={urls.livePreviews} component={LivePreviews} />
@@ -22,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withStyles(styles)(Main)
