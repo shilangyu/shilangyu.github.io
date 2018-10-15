@@ -21,7 +21,11 @@ const styles = theme => ({
   },
   media: {
     objectFit: 'cover',
+    height: 300
   },
+  upperCard: {
+    // maxHeight: 500
+  }
 })
 
 class LivePreviews extends Component {
@@ -37,11 +41,11 @@ class LivePreviews extends Component {
     const { previews } = this.state
 
     return (
-      <Grid container spacing={24} className={classes.root}>
+      <Grid container spacing={24} alignItems="flex-start" className={classes.root}>
         {previews.map(preview => 
-          <Grid key={preview.href} xs={6} item>
+          <Grid key={preview.href}  xs item>
             <Card className={classes.card}>
-              <CardActionArea onClick={() => window.open(preview.href)}>
+              <CardActionArea onClick={() => window.open(preview.href)} className={classes.upperCard}>
                 <CardMedia
                   component="img"
                   className={classes.media}
