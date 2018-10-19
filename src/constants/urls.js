@@ -11,7 +11,7 @@ export default {
 		livePreviews: {
 			'10print': '/10PRINT',
 			jumpingBalls: '/jumping-balls',
-			tictactoe: '/tictactoe',
+			tictactoe: '/TicTacToe',
 		}
 	}
 }
