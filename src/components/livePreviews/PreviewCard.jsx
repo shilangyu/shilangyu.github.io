@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 
 import urls from '../../constants/urls'
+import { clean as cleanStyles } from '../../styles/misc'
 
 const styles = theme => ({
   card: {
@@ -30,22 +31,24 @@ class PreviewCard extends Component {
 
     return (
       <Card className={classes.card}>
-        <CardActionArea onClick={() => window.open(url)} className={classes.upperCard}>
-          <CardMedia
-            component="img"
-            className={classes.media}
-            image={picSrc}
-            title={name}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
-              {name}
-            </Typography>
-            <Typography component="p">
-              {desc}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        <a target="_blank" rel="noopener noreferrer" href={url} style={cleanStyles}>
+          <CardActionArea className={classes.upperCard}>
+            <CardMedia
+              component="img"
+              className={classes.media}
+              image={picSrc}
+              title={name}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="headline" component="h2">
+                {name}
+              </Typography>
+              <Typography component="p">
+                {desc}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </a>
         <CardActions>
           <Button size="small" color="primary" onClick={() => window.open(urls.external.github + url)}>
             Repository
