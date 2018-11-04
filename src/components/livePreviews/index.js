@@ -17,8 +17,7 @@ class LivePreviews extends Component {
   state = {
     previews: [
       { name: '10PRINT', desc: '10PRINT patterns generated based on your preferences', picSrc: '/assets/pics/live-previews/10PRINT.png', url: urls.external.livePreviews['10print']},
-      { name: 'tictactoe', desc: 'Playing against an AI that gets better the more it plays', picSrc: '/assets/pics/live-previews/tictactoe.png', url: urls.external.livePreviews.tictactoe},
-      { name: 'jumping balls NE', desc: 'Jumping balls that learn over time how to jump over the obstacles', picSrc: '/assets/pics/live-previews/jumping-balls.png', url: urls.external.livePreviews.jumpingBalls}
+      { name: 'tictactoe', desc: 'Playing against an AI that gets better the more it plays', picSrc: '/assets/pics/live-previews/tictactoe.png', url: urls.external.livePreviews.tictactoe}
     ]
   }
   render() {
