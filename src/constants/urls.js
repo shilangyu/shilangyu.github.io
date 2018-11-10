@@ -12,6 +12,7 @@ export default {
 			'10print': '/10PRINT',
 			jumpingBalls: '/jumping-balls',
 			tictactoe: '/TicTacToe',
+			geneticjs: '/Genetic.js'
 		}
 	}
 }
