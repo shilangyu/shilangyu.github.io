@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
 
-import Year2018 from './2018'
+import YearSection from './YearSection.jsx'
+
+import posts2018 from './posts/2018.jsx'
+import posts2019 from './posts/2019.jsx'
 
 
 class Porfolio extends Component {
 	render() {
 		const { match: { params: { year } } } = this.props
-		let Year
-
-		switch (year) {
-			case '2018':
-				Year = Year2018
-				break
-			default:
-				Year = () => <div>no such year</div>
+		const sections = {
+			'2018': posts2018,
+			'2019': posts2019
 		}
+		const posts = sections[year] || (() => <div>no such year</div>)
 
 		return (
-			<Year />
+			<YearSection>{posts}</YearSection>
 		)
 	}
 }

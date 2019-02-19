@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 
-import Container from '../../dumb/Container.jsx'
-import BlogPost from '../../dumb/BlogPost.jsx'
-import posts from './posts.jsx'
+import Container from '../dumb/Container.jsx'
+import BlogPost from '../dumb/BlogPost.jsx'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Paper from '@material-ui/core/Paper'
@@ -15,7 +14,7 @@ const styles = theme => ({
 	}
 })
 
-class _2018 extends Component {
+class YearSection extends Component {
 	state = {
 		tab: 0
 	}
@@ -23,7 +22,7 @@ class _2018 extends Component {
 	tabChange = (event, value) => this.setState({ tab: value })
 
 	render() {
-		const { classes } = this.props
+		const { classes, children: posts } = this.props
 		const post = posts[this.state.tab]
 
 		return (
@@ -54,4 +53,4 @@ class _2018 extends Component {
 	}
 }
 
-export default withStyles(styles)(_2018)
+export default withStyles(styles)(YearSection)
