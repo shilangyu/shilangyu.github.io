@@ -38,8 +38,8 @@ export default [
 		posts: [
 			{
 				title: 'Description',
-				content: `It was a personal development project: learning more about how Artificial intelligence works. My goal was to fully understand and write code from the ground up without using existing libraries. Below you can find some projects I worked on using Machine Learning algorithms. <br />
-				Disclaimer: graphs are only to explain the very basic idea.`
+				content: <Fragment>It was a personal development project: learning more about how Artificial intelligence works. My goal was to fully understand and write code from the ground up without using existing libraries. Below you can find some projects I worked on using Machine Learning algorithms. <br />
+				Disclaimer: graphs are only to explain the very basic idea.</Fragment>
 			},
 			{
 				title: 'Genetic Algorithm',
