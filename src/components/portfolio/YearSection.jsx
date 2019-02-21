@@ -41,11 +41,11 @@ class YearSection extends Component {
 				</Paper>
 
 				<Container>
-					{<BlogPost
+					<BlogPost
 						key={post.title}
 						title={post.title}
 						pagination={post.posts.map(e => e.title)}
-						posts={post.posts.map(e => e.content)} />}
+						posts={post.posts.map(e => e.content)} />
 				</Container>
 
 			</Fragment>

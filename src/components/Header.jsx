@@ -59,7 +59,8 @@ class Header extends Component {
 			{ text: 'live previews', to: urls.livePreviews, uid: uID.next().value },
 			{
 				text: 'portfolio', subs: [
-					{ text: '2018', to: urls.portfolio.replace(/:year$/, 2018) }
+					{ text: '2018', to: urls.portfolio.replace(/:year$/, 2018) },
+					{ text: '2019', to: urls.portfolio.replace(/:year$/, 2019) }
 				], uid: uID.next().value
 			}
 		]

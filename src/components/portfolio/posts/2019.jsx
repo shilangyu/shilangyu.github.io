@@ -1,78 +1,95 @@
 import React, { Fragment } from 'react'
 import CardMedia from '@material-ui/core/CardMedia'
+import Link from '@material-ui/core/Link'
 
 const I = props => <CardMedia component="img" src={props.src} />
 
 export default [
 	{
-		title: 'snek.io',
+		title: 'praktyki w IBM',
 		posts: [
 			{
-				title: 'Description',
-				content: `It was a project from the first semester of C# courses. The goal was to recreate the classic game 'Snake' in Windows Forms. The adanced level of this project was adding multiplayer features (using sockets).`
+				title: 'Opis',
+				content: `Na końcu trzeciej klasy liceum szkoła pomogła nam z dostaniem praktyk w IBM warszawa. Był to staż studencki trwający 3 miesiące (od lipca do września).`
 			},
 			{
-				title: 'Menu',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2018/snek-menu.png'} /> In the menu you can choose your speed, color of your snake, color of the food, background color, and your nickname that will appear on the leaderboards. On the left you can see a live-preview of your settings.</Fragment>
+				title: 'Webdev',
+				content: `Zostaliśmy przyjęci jako web deweloperzy, gdyż znaliśmy języki i narzędzia które są potrzebne do tworzenia stron internetowych. Zadaniem było stworzenie PoC micro-frontendów.`
 			},
 			{
-				title: 'Game',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2018/snek-game.png'} />Just like in the original game there is normal food and special food, where normal food gives you points equal to your speed and special giving ×10 the speed. In addition, the special food disappears after some time (scaled to your speed). After consuming any food your snake grows larger. The goal is to survive as long as you can without running into your tail. After losing, the score, snake length, and chosen speed is saved to the leaderboards.</Fragment>
+				title: 'React+redux',
+				content: `Technologia w której pisaliśmy to React z użyciem reduxa. Wtedy właśnie zakochałem sie w React-cie i przepisałem wiele moich projektów (jak na przykład tą stronę) na tą technologie.`
 			},
 			{
-				title: 'Leaderboards',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2018/snek-leaderboards.png'} />Here you can see all records on your network. It displays some basic information of the game. (Leaderboards database is hosted by MySQL on my PC, so for now it doesnt work on other networks)</Fragment>
+				title: 'Microfrontends',
+				content: `Po zakończeniu pisania podstron do naszego PoC mój partner został dodany do innego projektu a ja zostałem by nauczyć sie jak złączyć nasze podstrony w sposób który spełnia architekturę micro-services. Nauczyłem się wtedy bardzo wiele o różnych sposobach rozwiązywania tego problemu. Zostałem poproszony o zrobienie prezentacji o owych sposobach które uważam za najlepsze by potem wspólnie grupą podjąć decyzje który wybieramy. Zdecydowaliśmy sie na technologie która jest podtrzymywana przez Zalando który jest przodownikiem i promotorem micro-frontendów.`
 			},
 			{
-				title: 'Multiplayer',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2018/snek-multiplayer.png'} />Each player can either host or join a game, by entering a hosting number and your nickname. After that a lobby window pops up where you can see all players' nicknames in this room.</Fragment>
+				title: 'Życie w korporacji',
+				content: `Dzięki praktykom nauczyłem się wiele o życiu w korporacji. Prowadzenie projektów w bardzo systematyczny sposób (SCRUM&AGILE), częste spotkania, wypady poza pracowe i dużo pracy grupowej.`
 			}
 		]
 	},
 	{
-		title: 'machine learning',
+		title: 'digit recognition',
 		posts: [
 			{
-				title: 'Description',
-				content: `It was a personal development project: learning more about how Artificial intelligence works. My goal was to fully understand and write code from the ground up without using existing libraries. Below you can find some projects I worked on using Machine Learning algorithms. <br />
-				Disclaimer: graphs are only to explain the very basic idea.`
+				title: 'Opis',
+				content: `Był to mój personalny projekt, który dotyczył stworzenia algorytmu nauczy się rozpoznawać ręcznie pisane cyfry. Podzadaniem, które sobie stworzyłem to napisanie każdej części pogramu w innym języku programowania.`
 			},
 			{
-				title: 'Genetic Algorithm',
+				title: 'Dane',
 				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2018/GA-graph.png'} />This algorithm focuses on perfecting something, just like in nature, we evolve and the fittest survives. Its comparable to how humans inherit features through genetics. In this example many 10PRINT designs are randomly created then after you chose your favorite 2, new ones are generated based on the previous bests.</Fragment>
+					<I src={'/assets/pics/portfolio/2019/DR-dataset.png'} />Dane, na których mój algorytm się uczył, były wzięte ze sławnej bazy 'mnist'; baza tysiący ręcznię narysowanych cyfr. Dane te były zamieniane w pliki tekstowe, gdzie każdy piksel został zapisany jako pozycja i jasność.<I src={'/assets/pics/portfolio/2019/DR-mnist.png'} /></Fragment>
 			},
 			{
-				title: 'Neural Network',
+				title: 'Serwer',
 				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2018/NNcar-laser.png'} />This algorithm is the `brain`. Based on inputs it gives an output after processing the information. In this example I build in C# a program that first takes an image of a track to be created. Then from a given point cars are started and their goal is to go as far as possible. As shown on the picture, a car recieves distance inputs. It scans how far a wall is at all 8 directions and decides where to move next.</Fragment>
+					<I src={'/assets/pics/portfolio/2019/DR-server.png'} />Serwer był napisany w <Link href="https://golang.org/">Golang</Link>. Służył on do przetwarzenia danych o treningowych i testowych cyfrach wcześniej przygotowanych. Jak skończył był gotowy na przyjmowanie żądań które prosiły o owe dane. Potrafił on też komunikować się z algorytmem by 'zgadywać' narysowane cyfry.</Fragment>
 			},
 			{
-				title: 'Neuroevolution',
+				title: 'Trener',
 				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2018/NE-graph.png'} />This algorithm merges the two previous ones. Now the `brain` gets better over time, the arrows here will represent the IQ level of a network. In this example I created a simulation of some balls trying to learn how to jump over the obstacles. Each of the 100 balls get the input of how far and how high is the obstacle, and how fast is it moving. Each of them have a unique set of arrows that help them decide whether they should jump or not. After all 100 balls are dead (hit a wall), a new, better generation of 100 new balls is made based & mutated off the best balls in the previous generation.</Fragment>
+					<I src={'/assets/pics/portfolio/2019/DR-trainer.png'} />Trener był napisany w <Link href="https://www.python.org/">Python</Link>. Odpowiadał on za uczenie algorytmu. Najpierw zbierał dane treningowe i testowe. Potem trenował algorytm, a na końcu testował by ocenić jego skuteczność.</Fragment>
 			},
 			{
-				title: 'TicTacToe',
-				content: `A simple AI I made that learns by playing, if a move he makes is bad he remembers it and never does it again.`
+				title: 'Zgadywacz',
+				content: `Zgadywacz był napisany w c++. Korzystał on z nauczonego algorytmu by zgadywać jaka cyfra została narysowana.`
+			},
+			{
+				title: 'Interakcja',
+				content: <Fragment>
+					<I src={'/assets/pics/portfolio/2019/DR-interaction.png'} />Interakcja była napisana w JavaScript. Tutaj można przetestować nasz wytrenowany algorytm. Rysuje sie cyfre w wyznaczonym polu, po czym wysyła sie zapytanie do serwera jaka cyfra została narysowana. Zgadnięcie algorytmu jest wyświetlane pod narysowaną liczbą.</Fragment>
+			},
+			{
+				title: 'Wizualizacja',
+				content: <Fragment>
+					<I src={'/assets/pics/portfolio/2019/DR-visualisation.png'} />Wizualizacja danych była napisana w <Link href="https://processing.org/">Processing</Link> (Java). Ona służyła pokazywania jak algorytm sie uczył z czasem.</Fragment>
 			}
 		]
 	},
 	{
-		title: 'this.page',
+		title: 'Kółko ML',
 		posts: [
 			{
-				title: 'Description',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2018/page-graph.png'} />This page was built on Node.js, giving me a lot of flexibility when handling http requests. Typed in URL is sent to the server. The server then strips down the URL and looks up in a database informations about it. After receiving data it is sent to a html renderer EJS that creates the HTML page. Once done it's sent to the user.</Fragment>
+				title: 'Opis',
+				content: `W poniedziałki od 16:00 do 19:00 prowadze kółko/zajęcia z AI. Omawiam z uczniami różne podstawowe techniki 'machine learning' i pomagam im je zaprogramować.`
 			},
 			{
-				title: 'Why bother?',
-				content: `The page is written in a clear and easy to read way, it helps in futher development. To some tiny extent the page was build following the MVC (model-view-controller) model.`
+				title: 'Zrozumienie',
+				content: <Fragment>
+					<I src={'/assets/pics/portfolio/2019/lessons-GA.png'} />Główną ideą jest skupienie się na zrozumieniu czemu jakiś algorytm działa a nie wyłącznie na sposobie jego zakodowania.
+				</Fragment>
+			},
+			{
+				title: 'Wyrównanie poziomu',
+				content: `Uczniowie są z różnich roczników więc staram sie nie używać zaawansowanych terminologii matematycznych by wszyscy mieli równe szanse zrozumienia. Dzięki temu widzę jak czasami osoba młodsza rozumie równie dobrze matematyke algorytmu jak i starsza.`
+			},
+			{
+				title: 'Projekty',
+				content: <Fragment>
+					<I src={'/assets/pics/portfolio/2019/lessons-perceptron.jpg'} />Wiekszość czasu spędziliśmy na teorię i zrozumienie. Ale zrobiliśmy też małe projekty. Z użyciem genetycznego algorytmu napisaliśmy znajdywacz a, b i c funkcji kwadratowej. Symulacje funkcji OR napisaliśmy dzięki jedno-warstwowej sieci: perceptron. Następnym planem jest napisanie snake-AI z neuro-ewolucją.
+				</Fragment>
 			}
 		]
 	}
