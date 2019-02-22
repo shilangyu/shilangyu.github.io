@@ -121,7 +121,10 @@ class Header extends Component {
 																		component={Link}
 																		to={sub.to}
 																		className={classes.nested}
-																		onClick={e => (this.setActive(link.uid), this.toggleDrawer())}
+																		onClick={e => {
+																			this.setActive(link.uid)
+																			this.toggleDrawer()
+																		}}
 																	>
 																		<ListItemText primary={sub.text} />
 																	</ListItem>
@@ -131,7 +134,10 @@ class Header extends Component {
 													</Fragment>
 												) : (
 													<ListItem
-														onClick={() => (this.toggleDrawer(), this.setActive(link.uid))}
+														onClick={() => {
+															this.toggleDrawer()
+															this.setActive(link.uid)
+														}}
 														key={link.text}
 														component={Link}
 														to={link.to}
@@ -177,7 +183,10 @@ class Header extends Component {
 													key={sub.text}
 													component={Link}
 													to={sub.to}
-													onClick={e => (this.setActive(link.uid), this.closeSelect())}
+													onClick={e => {
+														this.setActive(link.uid)
+														this.closeSelect()
+													}}
 												>
 													{sub.text}
 												</MenuItem>
