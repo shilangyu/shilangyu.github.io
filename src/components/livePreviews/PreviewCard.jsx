@@ -35,7 +35,7 @@ class PreviewCard extends Component {
 					<CardActionArea className={classes.upperCard}>
 						<CardMedia component="img" className={classes.media} image={picSrc} title={name} />
 						<CardContent>
-							<Typography gutterBottom variant="headline" component="h2">
+							<Typography gutterBottom variant="h5" component="h2">
 								{name}
 							</Typography>
 							<Typography component="p">{desc}</Typography>

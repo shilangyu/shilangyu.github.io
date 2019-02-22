@@ -39,7 +39,7 @@ class BlogPost extends Component {
 
 		return (
 			<Fragment>
-				<Typography align="center" color="textPrimary" variant="display3">
+				<Typography align="center" color="textPrimary" variant="h2">
 					{title}
 				</Typography>
 
@@ -62,7 +62,7 @@ class BlogPost extends Component {
 					<Fragment key={i}>
 						<Typography
 							color="textPrimary"
-							variant="headline"
+							variant="h5"
 							id={pagiId[i]}
 							className={classes.subtitle}
 						>

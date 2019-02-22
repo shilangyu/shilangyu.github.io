@@ -52,7 +52,7 @@ class Footer extends Component {
 			<footer className={classes.root}>
 				<Grid className={classes.main} justify="space-around" direction="row" container>
 					<Grid item>
-						<Typography variant="title">info</Typography>
+						<Typography variant="h6">info</Typography>
 						<Typography>
 							designed using Materialui <br />
 							html5 canvas drawing by p5.js <br />
@@ -62,7 +62,7 @@ class Footer extends Component {
 					</Grid>
 
 					<Grid item>
-						<Typography variant="title">links</Typography>
+						<Typography variant="h6">links</Typography>
 						<div className={classes.row}>
 							<FooterLink
 								href={urls.external.github}
