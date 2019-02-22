@@ -85,7 +85,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.3.1
       prop-types: 15.7.2
-      react-is: 16.8.2
+      react-is: 16.8.3
     dev: false
     engines:
       node: '>=6.0.0'
@@ -107,17 +107,17 @@ packages:
       integrity: sha512-Nha5b+jmBI271jdTMwrHiNXM+DvThjHOfyZtMX9kj/c/LUj2xiLHsG/1L3tJ8DjAoQN48cHwUwtqBotjyXaSdQ==
   /@types/react-transition-group/2.0.16:
     dependencies:
-      '@types/react': 16.8.3
+      '@types/react': 16.8.4
     dev: false
     resolution:
       integrity: sha512-FUJEx2BGJPU1qVQoWd9v7wpOwnCPTWhcE4iTaU5prry9SvwiI11lCXOci8Nz9cM/Fuf650l7Skg6nlVeCYjPFA==
-  /@types/react/16.8.3:
+  /@types/react/16.8.4:
     dependencies:
       '@types/prop-types': 15.5.9
       csstype: 2.6.2
     dev: false
     resolution:
-      integrity: sha512-PjPocAxL9SNLjYMP4dfOShW/rj9FDBJGu3JFRt0zEYf77xfihB6fq8zfDpMrV6s82KnAi7F1OEe5OsQX25Ybdw==
+      integrity: sha512-Mpz1NNMJvrjf0GcDqiK8+YeOydXfD8Mgag3UtqQ5lXYTsMnOiHcKmO48LiSWMb1rSHB9MV/jlgyNzeAVxWMZRQ==
   /abab/1.0.4:
     dev: false
     resolution:
@@ -3763,7 +3763,7 @@ packages:
       integrity: sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
   /hoist-non-react-statics/3.3.0:
     dependencies:
-      react-is: 16.8.2
+      react-is: 16.8.3
     dev: false
     resolution:
       integrity: sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
@@ -6410,7 +6410,7 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react-is: 16.8.2
+      react-is: 16.8.3
     dev: false
     resolution:
       integrity: sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -6600,10 +6600,10 @@ packages:
       react: ^16.3.0
     resolution:
       integrity: sha512-+hCNqfy7o9wvO6UgjqFmBzARJS7qrNoda0VqzvOuioEpoEXKutiKuv92dSz6kP7rYLmyHPyYNLesi5t/aH1gfw==
-  /react-is/16.8.2:
+  /react-is/16.8.3:
     dev: false
     resolution:
-      integrity: sha512-D+NxhSR2HUCjYky1q1DwpNUD44cDpUXzSmmFyC3ug1bClcU/iDNy0YNn1iwme28fn+NFhpA13IndOd42CrFb+Q==
+      integrity: sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
   /react-lifecycles-compat/3.0.4:
     dev: false
     resolution:
@@ -8590,7 +8590,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@material-ui/core': ^3.0.3
+  '@material-ui/core': ^3.9.2
   '@material-ui/icons': ^3.0.1
   gh-pages: ^1.2.0
   history: ^4.7.2
