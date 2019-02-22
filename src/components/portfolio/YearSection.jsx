@@ -33,7 +33,7 @@ class YearSection extends Component {
 						onChange={this.tabChange}
 						indicatorColor="secondary"
 						centered
-						fullWidth
+						variant="fullWidth"
 					>
 						{posts.map(({ title }) => (
 							<Tab key={title} label={title} />
