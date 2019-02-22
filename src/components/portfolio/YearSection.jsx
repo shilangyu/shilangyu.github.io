@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper'
 const styles = theme => ({
 	paper: {
 		flexGrow: 1,
-		backgroundColor: theme.palette.primary.main,
+		backgroundColor: theme.palette.primary.main
 	}
 })
 
@@ -27,7 +27,6 @@ class YearSection extends Component {
 
 		return (
 			<Fragment>
-
 				<Paper className={classes.paper} square>
 					<Tabs
 						value={this.state.tab}
@@ -36,7 +35,9 @@ class YearSection extends Component {
 						centered
 						fullWidth
 					>
-						{posts.map(({ title }) => <Tab key={title} label={title} />)}
+						{posts.map(({ title }) => (
+							<Tab key={title} label={title} />
+						))}
 					</Tabs>
 				</Paper>
 
@@ -45,9 +46,9 @@ class YearSection extends Component {
 						key={post.title}
 						title={post.title}
 						pagination={post.posts.map(e => e.title)}
-						posts={post.posts.map(e => e.content)} />
+						posts={post.posts.map(e => e.content)}
+					/>
 				</Container>
-
 			</Fragment>
 		)
 	}

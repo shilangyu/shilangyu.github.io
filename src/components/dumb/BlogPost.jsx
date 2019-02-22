@@ -27,11 +27,11 @@ class BlogPost extends Component {
 		this.state = { pagiId: new Array(props.pagination.length).fill().map(e => uID.next().value) }
 	}
 
-	paginationOnClick = id => () => document.querySelector(`#${id}`).scrollIntoView({
-		behavior: 'smooth',
-		block: 'start'
-	})
-
+	paginationOnClick = id => () =>
+		document.querySelector(`#${id}`).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		})
 
 	render() {
 		const { classes, title, pagination, posts } = this.props
@@ -39,44 +39,41 @@ class BlogPost extends Component {
 
 		return (
 			<Fragment>
-				<Typography
-					align="center"
-					color="textPrimary"
-					variant="display3"
-				>
+				<Typography align="center" color="textPrimary" variant="display3">
 					{title}
 				</Typography>
 
-
-				<Grid className={classes.pagination} justify="center" direction="row" alignItems="center" spacing={16} container>
-					{pagination.map((name, i) =>
+				<Grid
+					className={classes.pagination}
+					justify="center"
+					direction="row"
+					alignItems="center"
+					spacing={16}
+					container
+				>
+					{pagination.map((name, i) => (
 						<Grid item key={i}>
 							<Button onClick={this.paginationOnClick(pagiId[i])}>{name}</Button>
 						</Grid>
-					)}
+					))}
 				</Grid>
 
-				{
-					posts.map((post, i) =>
-						<Fragment key={i}>
-							<Typography
-								color="textPrimary"
-								variant="headline"
-								id={pagiId[i]}
-								className={classes.subtitle}
-							>
-								{pagination[i]}
-							</Typography>
+				{posts.map((post, i) => (
+					<Fragment key={i}>
+						<Typography
+							color="textPrimary"
+							variant="headline"
+							id={pagiId[i]}
+							className={classes.subtitle}
+						>
+							{pagination[i]}
+						</Typography>
 
-							<Typography align="justify">
-								{post}
-							</Typography>
+						<Typography align="justify">{post}</Typography>
 
-							{posts.length - 1 !== i && <Divider className={classes.divider} />}
-
-						</Fragment>
-					)
-				}
+						{posts.length - 1 !== i && <Divider className={classes.divider} />}
+					</Fragment>
+				))}
 			</Fragment>
 		)
 	}

@@ -1,3 +1,3 @@
 export const clean = {
-	all: 'unset' 
+	all: 'unset'
 }

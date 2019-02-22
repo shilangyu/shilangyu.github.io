@@ -9,21 +9,20 @@ import Header from './Header'
 import Footer from './Footer'
 import Main from './Main'
 
-
 class App extends Component {
-  render() {
-    return (
-      <MuiThemeProvider theme={theme}>
-        <Router history={hashHistory}>
-          <Fragment>
-            <Header />
-            <Main />
-            <Footer />
-          </Fragment>
-        </Router>
-      </MuiThemeProvider>
-    )
-  }
+	render() {
+		return (
+			<MuiThemeProvider theme={theme}>
+				<Router history={hashHistory}>
+					<Fragment>
+						<Header />
+						<Main />
+						<Footer />
+					</Fragment>
+				</Router>
+			</MuiThemeProvider>
+		)
+	}
 }
 
 export default App

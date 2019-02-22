@@ -9,7 +9,6 @@ import Zoom from '@material-ui/core/Zoom'
 
 import urls from '../constants/urls'
 
-
 const styles = theme => ({
 	root: {
 		marginTop: theme.spacing.unit * 3
@@ -25,24 +24,25 @@ const styles = theme => ({
 		paddingBottom: theme.spacing.unit
 	},
 	avatar: {
-    margin: 10,
+		margin: 10
 	},
 	row: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
+		display: 'flex',
+		justifyContent: 'center'
+	}
 })
 
-const FooterLink = props => 
+const FooterLink = props => (
 	<Tooltip TransitionComponent={Zoom} title={props.text}>
 		<Avatar
-			style={{cursor: 'pointer'}}
+			style={{ cursor: 'pointer' }}
 			onClick={() => window.open(props.href)}
 			alt={props.text}
 			src={props.src}
 			className={props.class}
 		/>
 	</Tooltip>
+)
 
 class Footer extends Component {
 	render() {
@@ -50,12 +50,9 @@ class Footer extends Component {
 
 		return (
 			<footer className={classes.root}>
-
 				<Grid className={classes.main} justify="space-around" direction="row" container>
 					<Grid item>
-						<Typography variant="title">
-							info
-						</Typography>
+						<Typography variant="title">info</Typography>
 						<Typography>
 							designed using Materialui <br />
 							html5 canvas drawing by p5.js <br />
@@ -63,11 +60,9 @@ class Footer extends Component {
 							all graphs made thanks to draw.io <br />
 						</Typography>
 					</Grid>
-					
+
 					<Grid item>
-						<Typography variant="title">
-							links
-						</Typography>
+						<Typography variant="title">links</Typography>
 						<div className={classes.row}>
 							<FooterLink
 								href={urls.external.github}
@@ -105,18 +100,13 @@ class Footer extends Component {
 
 				<Grid className={classes.lower} justify="space-around" direction="row" container>
 					<Grid item>
-						<Typography>
-							&reg; 42069 you'r mom &trade;
-						</Typography>
+						<Typography>&reg; 42069 you'r mom &trade;</Typography>
 					</Grid>
 
 					<Grid item>
-						<Typography>
-							More links
-						</Typography>
+						<Typography>More links</Typography>
 					</Grid>
 				</Grid>
-
 			</footer>
 		)
 	}

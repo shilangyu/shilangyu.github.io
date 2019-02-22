@@ -8,16 +8,14 @@ import LivePreviews from './livePreviews'
 import Portfolio from './portfolio'
 
 const styles = theme => ({
-	root: {
-	}
+	root: {}
 })
 
-
 class Main extends Component {
-  render() {
+	render() {
 		const { classes } = this.props
 
-    return (
+		return (
 			<main className={classes.root}>
 				<Switch>
 					<Route exact path={urls.index} component={Index} />
@@ -25,8 +23,8 @@ class Main extends Component {
 					<Route exact path={urls.portfolio} component={Portfolio} />
 				</Switch>
 			</main>
-    )
-  }
+		)
+	}
 }
 
 export default withStyles(styles)(Main)

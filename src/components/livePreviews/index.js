@@ -8,33 +8,48 @@ import urls from '../../constants/urls'
 import PreviewCard from './PreviewCard'
 
 const styles = theme => ({
-  root: {
-    paddingTop: theme.spacing.unit * 3
-  },
+	root: {
+		paddingTop: theme.spacing.unit * 3
+	}
 })
 
 class LivePreviews extends Component {
-  state = {
-    previews: [
-      { name: '10PRINT', desc: '10PRINT patterns generated based on your preferences', picSrc: '/assets/pics/live-previews/10PRINT.png', url: urls.external.livePreviews['10print']},
-      { name: 'tictactoe', desc: 'Playing against an AI that gets better the more it plays', picSrc: '/assets/pics/live-previews/tictactoe.png', url: urls.external.livePreviews.tictactoe},
-      { name: 'Genetic.js', desc: 'Showcases of my Genetic.js library for genetic algorithms', picSrc: '/assets/pics/live-previews/geneticjs.svg', url: urls.external.livePreviews.geneticjs}
-    ]
-  }
-  render() {
-    const { classes } = this.props
-    const { previews } = this.state
+	state = {
+		previews: [
+			{
+				name: '10PRINT',
+				desc: '10PRINT patterns generated based on your preferences',
+				picSrc: '/assets/pics/live-previews/10PRINT.png',
+				url: urls.external.livePreviews['10print']
+			},
+			{
+				name: 'tictactoe',
+				desc: 'Playing against an AI that gets better the more it plays',
+				picSrc: '/assets/pics/live-previews/tictactoe.png',
+				url: urls.external.livePreviews.tictactoe
+			},
+			{
+				name: 'Genetic.js',
+				desc: 'Showcases of my Genetic.js library for genetic algorithms',
+				picSrc: '/assets/pics/live-previews/geneticjs.svg',
+				url: urls.external.livePreviews.geneticjs
+			}
+		]
+	}
+	render() {
+		const { classes } = this.props
+		const { previews } = this.state
 
-    return (
-      <Grid container spacing={24} alignItems="flex-start" className={classes.root}>
-        {previews.map(preview => 
-          <Grid key={preview.url} xs item>
-            <PreviewCard {...preview} />
-          </Grid>
-        )}
-      </Grid>
-    )
-  }
+		return (
+			<Grid container spacing={24} alignItems="flex-start" className={classes.root}>
+				{previews.map(preview => (
+					<Grid key={preview.url} xs item>
+						<PreviewCard {...preview} />
+					</Grid>
+				))}
+			</Grid>
+		)
+	}
 }
 
 export default withStyles(styles)(LivePreviews)

@@ -39,18 +39,38 @@ export default [
 			},
 			{
 				title: 'Dane',
-				content: <Fragment>
-				<I src={'/assets/pics/portfolio/2019/DR-mnist.png'} />	Dane, na których mój algorytm się uczył, były wzięte ze sławnej bazy 'mnist'; baza tysiący ręcznię narysowanych cyfr. Dane te były zamieniane w pliki tekstowe, gdzie każdy piksel został zapisany jako pozycja i jasność.<I src={'/assets/pics/portfolio/2019/DR-dataset.png'} /></Fragment>
+				content: (
+					<Fragment>
+						<I src={'/assets/pics/portfolio/2019/DR-mnist.png'} /> Dane, na których mój algorytm się
+						uczył, były wzięte ze sławnej bazy 'mnist'; baza tysiący ręcznię narysowanych cyfr. Dane
+						te były zamieniane w pliki tekstowe, gdzie każdy piksel został zapisany jako pozycja i
+						jasność.
+						<I src={'/assets/pics/portfolio/2019/DR-dataset.png'} />
+					</Fragment>
+				)
 			},
 			{
 				title: 'Serwer',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2019/DR-server.png'} />Serwer był napisany w <Link href="https://golang.org/">Golang</Link>. Służył on do przetwarzenia danych o treningowych i testowych cyfrach wcześniej przygotowanych. Jak skończył był gotowy na przyjmowanie żądań które prosiły o owe dane. Potrafił on też komunikować się z algorytmem by 'zgadywać' narysowane cyfry.</Fragment>
+				content: (
+					<Fragment>
+						<I src={'/assets/pics/portfolio/2019/DR-server.png'} />
+						Serwer był napisany w <Link href="https://golang.org/">Golang</Link>. Służył on do
+						przetwarzenia danych o treningowych i testowych cyfrach wcześniej przygotowanych. Jak
+						skończył był gotowy na przyjmowanie żądań które prosiły o owe dane. Potrafił on też
+						komunikować się z algorytmem by 'zgadywać' narysowane cyfry.
+					</Fragment>
+				)
 			},
 			{
 				title: 'Trener',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2019/DR-trainer.png'} />Trener był napisany w <Link href="https://www.python.org/">Python</Link>. Odpowiadał on za uczenie algorytmu. Najpierw zbierał dane treningowe i testowe. Potem trenował algorytm, a na końcu testował by ocenić jego skuteczność.</Fragment>
+				content: (
+					<Fragment>
+						<I src={'/assets/pics/portfolio/2019/DR-trainer.png'} />
+						Trener był napisany w <Link href="https://www.python.org/">Python</Link>. Odpowiadał on
+						za uczenie algorytmu. Najpierw zbierał dane treningowe i testowe. Potem trenował
+						algorytm, a na końcu testował by ocenić jego skuteczność.
+					</Fragment>
+				)
 			},
 			{
 				title: 'Zgadywacz',
@@ -58,13 +78,26 @@ export default [
 			},
 			{
 				title: 'Interakcja',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2019/DR-interaction.png'} />Interakcja była napisana w JavaScript. Tutaj można przetestować nasz wytrenowany algorytm. Rysuje sie cyfre w wyznaczonym polu, po czym wysyła sie zapytanie do serwera jaka cyfra została narysowana. Zgadnięcie algorytmu jest wyświetlane pod narysowaną liczbą.</Fragment>
+				content: (
+					<Fragment>
+						<I src={'/assets/pics/portfolio/2019/DR-interaction.png'} />
+						Interakcja była napisana w JavaScript. Tutaj można przetestować nasz wytrenowany
+						algorytm. Rysuje sie cyfre w wyznaczonym polu, po czym wysyła sie zapytanie do serwera
+						jaka cyfra została narysowana. Zgadnięcie algorytmu jest wyświetlane pod narysowaną
+						liczbą.
+					</Fragment>
+				)
 			},
 			{
 				title: 'Wizualizacja',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2019/DR-visualisation.png'} />Wizualizacja danych była napisana w <Link href="https://processing.org/">Processing</Link> (Java). Ona służyła pokazywania jak algorytm sie uczył z czasem.</Fragment>
+				content: (
+					<Fragment>
+						<I src={'/assets/pics/portfolio/2019/DR-visualisation.png'} />
+						Wizualizacja danych była napisana w{' '}
+						<Link href="https://processing.org/">Processing</Link> (Java). Ona służyła pokazywania
+						jak algorytm sie uczył z czasem.
+					</Fragment>
+				)
 			}
 		]
 	},
@@ -77,9 +110,13 @@ export default [
 			},
 			{
 				title: 'Zrozumienie',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2019/lessons-GA.png'} />Główną ideą jest skupienie się na zrozumieniu czemu jakiś algorytm działa a nie wyłącznie na sposobie jego zakodowania.
-				</Fragment>
+				content: (
+					<Fragment>
+						<I src={'/assets/pics/portfolio/2019/lessons-GA.png'} />
+						Główną ideą jest skupienie się na zrozumieniu czemu jakiś algorytm działa a nie
+						wyłącznie na sposobie jego zakodowania.
+					</Fragment>
+				)
 			},
 			{
 				title: 'Wyrównanie poziomu',
@@ -87,9 +124,15 @@ export default [
 			},
 			{
 				title: 'Projekty',
-				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2019/lessons-perceptron.jpg'} />Wiekszość czasu spędziliśmy na teorię i zrozumienie. Ale zrobiliśmy też małe projekty. Z użyciem genetycznego algorytmu napisaliśmy znajdywacz a, b i c funkcji kwadratowej. Symulacje funkcji OR napisaliśmy dzięki jedno-warstwowej sieci: perceptron. Następnym planem jest napisanie snake-AI z neuro-ewolucją.
-				</Fragment>
+				content: (
+					<Fragment>
+						<I src={'/assets/pics/portfolio/2019/lessons-perceptron.jpg'} />
+						Wiekszość czasu spędziliśmy na teorię i zrozumienie. Ale zrobiliśmy też małe projekty. Z
+						użyciem genetycznego algorytmu napisaliśmy znajdywacz a, b i c funkcji kwadratowej.
+						Symulacje funkcji OR napisaliśmy dzięki jedno-warstwowej sieci: perceptron. Następnym
+						planem jest napisanie snake-AI z neuro-ewolucją.
+					</Fragment>
+				)
 			}
 		]
 	}

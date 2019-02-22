@@ -13,50 +13,47 @@ import urls from '../../constants/urls'
 import { clean as cleanStyles } from '../../styles/misc'
 
 const styles = theme => ({
-  card: {
-    width: 500,
-  },
-  media: {
-    objectFit: 'cover',
-    height: 300
-  },
-  upperCard: {
-    // maxHeight: 500
-  }
+	card: {
+		width: 500
+	},
+	media: {
+		objectFit: 'cover',
+		height: 300
+	},
+	upperCard: {
+		// maxHeight: 500
+	}
 })
 
 class PreviewCard extends Component {
-  render() {
-    const { classes, url, name, picSrc, desc } = this.props
+	render() {
+		const { classes, url, name, picSrc, desc } = this.props
 
-    return (
-      <Card className={classes.card}>
-        <a target="_blank" rel="noopener noreferrer" href={url} style={cleanStyles}>
-          <CardActionArea className={classes.upperCard}>
-            <CardMedia
-              component="img"
-              className={classes.media}
-              image={picSrc}
-              title={name}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="headline" component="h2">
-                {name}
-              </Typography>
-              <Typography component="p">
-                {desc}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </a>
-        <CardActions>
-          <Button size="small" color="primary" onClick={() => window.open(urls.external.github + url)}>
-            Repository
-          </Button>
-        </CardActions>
-      </Card>
-    )
-  }
+		return (
+			<Card className={classes.card}>
+				<a target="_blank" rel="noopener noreferrer" href={url} style={cleanStyles}>
+					<CardActionArea className={classes.upperCard}>
+						<CardMedia component="img" className={classes.media} image={picSrc} title={name} />
+						<CardContent>
+							<Typography gutterBottom variant="headline" component="h2">
+								{name}
+							</Typography>
+							<Typography component="p">{desc}</Typography>
+						</CardContent>
+					</CardActionArea>
+				</a>
+				<CardActions>
+					<Button
+						size="small"
+						color="primary"
+						onClick={() => window.open(urls.external.github + url)}
+					>
+						Repository
+					</Button>
+				</CardActions>
+			</Card>
+		)
+	}
 }
 
 export default withStyles(styles)(PreviewCard)
