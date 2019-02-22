@@ -40,7 +40,7 @@ export default [
 			{
 				title: 'Dane',
 				content: <Fragment>
-					<I src={'/assets/pics/portfolio/2019/DR-dataset.png'} />Dane, na których mój algorytm się uczył, były wzięte ze sławnej bazy 'mnist'; baza tysiący ręcznię narysowanych cyfr. Dane te były zamieniane w pliki tekstowe, gdzie każdy piksel został zapisany jako pozycja i jasność.<I src={'/assets/pics/portfolio/2019/DR-mnist.png'} /></Fragment>
+				<I src={'/assets/pics/portfolio/2019/DR-mnist.png'} />	Dane, na których mój algorytm się uczył, były wzięte ze sławnej bazy 'mnist'; baza tysiący ręcznię narysowanych cyfr. Dane te były zamieniane w pliki tekstowe, gdzie każdy piksel został zapisany jako pozycja i jasność.<I src={'/assets/pics/portfolio/2019/DR-dataset.png'} /></Fragment>
 			},
 			{
 				title: 'Serwer',
