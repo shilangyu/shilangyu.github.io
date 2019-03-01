@@ -6,27 +6,27 @@ const I = props => <CardMedia component="img" src={props.src} />
 
 export default [
 	{
-		title: 'praktyki w IBM',
+		title: 'internship at IBM',
 		posts: [
 			{
-				title: 'Opis',
-				content: `Na końcu trzeciej klasy liceum szkoła pomogła nam z dostaniem praktyk w IBM warszawa. Był to staż studencki trwający 3 miesiące (od lipca do września).`
+				title: 'Description',
+				content: `At the end of my Junior high school year I got an internship at IBM Warsaw. This internship was 3 months long, starting from July through September.`
 			},
 			{
 				title: 'Webdev',
-				content: `Zostaliśmy przyjęci jako web deweloperzy, gdyż znaliśmy języki i narzędzia które są potrzebne do tworzenia stron internetowych. Zadaniem było stworzenie PoC micro-frontendów.`
+				content: `After successfully passing the interview I was recruited as a Javascript web developer because I knew the tools and frameworks needed. My team's task was to created a PoC of micro-frontends.`
 			},
 			{
 				title: 'React+redux',
-				content: `Technologia w której pisaliśmy to React z użyciem reduxa. Wtedy właśnie zakochałem sie w React-cie i przepisałem wiele moich projektów (jak na przykład tą stronę) na tą technologie.`
+				content: `The framework I mostly worked with was React with Redux as state management. That's where I fell in love in React and have rewritten many of my webapps to React, including this page (previously in EJS). I like React because of its ease to get something working quick and because of its huge community.`
 			},
 			{
-				title: 'Microfrontends',
-				content: `Po zakończeniu pisania podstron do naszego PoC mój partner został dodany do innego projektu a ja zostałem by nauczyć sie jak złączyć nasze podstrony w sposób który spełnia architekturę micro-services. Nauczyłem się wtedy bardzo wiele o różnych sposobach rozwiązywania tego problemu. Zostałem poproszony o zrobienie prezentacji o owych sposobach które uważam za najlepsze by potem wspólnie grupą podjąć decyzje który wybieramy. Zdecydowaliśmy sie na technologie która jest podtrzymywana przez Zalando który jest przodownikiem i promotorem micro-frontendów.`
+				title: 'Micro-frontends',
+				content: `After finishing the micro-frontends (small parts of a webpage written separately: navbar, footer, content, etc.) came the time to create this 'glue' that would combine them together in one finished webpage. I was given the task of investigating all possibilities of creating that 'glue'. The main goal was to follow the micro-services architecture and that's exactly what I did. Each micro-frontend was supposed to be fully independent. I spent all my time researching different methods because there was no uniform solution. After I finished collecting a few good methods I was asked to have a presentation about all of them with respect to their pros and cons. After the presentation we decided on a solution that we thought would fit our project the best.`
 			},
 			{
-				title: 'Życie w korporacji',
-				content: `Dzięki praktykom nauczyłem się wiele o życiu w korporacji. Prowadzenie projektów w bardzo systematyczny sposób (SCRUM&AGILE), częste spotkania, wypady poza pracowe i dużo pracy grupowej.`
+				title: 'Corporate life',
+				content: `Thanks to the internship I have learned what it means to work for a big corporation: often meetings and a lot of teamwork. I also gained experience in the SCRUM and AGILE workflow which was a pleasure to work in.`
 			}
 		]
 	},
