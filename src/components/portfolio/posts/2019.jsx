@@ -104,35 +104,38 @@ export default [
 		]
 	},
 	{
-		title: 'Kółko ML',
+		title: 'ML club',
 		posts: [
 			{
-				title: 'Opis',
-				content: `W poniedziałki od 16:00 do 19:00 prowadze kółko/zajęcia z AI. Omawiam z uczniami różne podstawowe techniki 'machine learning' i pomagam im je zaprogramować.`
+				title: 'Description',
+				content: `On Mondays from 16:00 through 19:00 I conduct a ML club where I teach fellow students Machine Learning algorithms.`
 			},
 			{
-				title: 'Zrozumienie',
+				title: 'Understanding',
 				content: (
 					<Fragment>
 						<I src={'/assets/pics/portfolio/2019/lessons-GA.png'} />
-						Główną ideą jest skupienie się na zrozumieniu czemu jakiś algorytm działa a nie
-						wyłącznie na sposobie jego zakodowania.
+						The main focus is deep understanding of the algorithms. I try to explain the mathematics
+						behind an algorithm before getting into the implementation. That way I'm sure my
+						students will be later able to write the code themselves.
 					</Fragment>
 				)
 			},
 			{
-				title: 'Wyrównanie poziomu',
-				content: `Uczniowie są z różnich roczników więc staram sie nie używać zaawansowanych terminologii matematycznych by wszyscy mieli równe szanse zrozumienia. Dzięki temu widzę jak czasami osoba młodsza rozumie równie dobrze matematyke algorytmu jak i starsza.`
+				title: 'Leveling',
+				content: `My students are at different stages of education. Which is why I do my best to use simple language and concepts when explaining the mathematical part. I'm very happy to see  the results where much younger students understand at the same level as older ones.`
 			},
 			{
-				title: 'Projekty',
+				title: 'Projects',
 				content: (
 					<Fragment>
 						<I src={'/assets/pics/portfolio/2019/lessons-perceptron.jpg'} />
-						Wiekszość czasu spędziliśmy na teorię i zrozumienie. Ale zrobiliśmy też małe projekty. Z
-						użyciem genetycznego algorytmu napisaliśmy znajdywacz a, b i c funkcji kwadratowej.
-						Symulacje funkcji OR napisaliśmy dzięki jedno-warstwowej sieci: perceptron. Następnym
-						planem jest napisanie snake-AI z neuro-ewolucją.
+						Most of our time is spent focusing on the theory and understanding. However we have done
+						a few small projects using our gathered knowledge. With the use of the genetic algorithm
+						the students have written a parameters finder of a quadriatic function: given 2 roots it
+						will find a, b, and c (ax^2 + bx + c). Using a simple neural network we've simulated the
+						OR and later XOR function. Next thing planned is writting a snake AI using
+						neuro-evolution.
 					</Fragment>
 				)
 			}
