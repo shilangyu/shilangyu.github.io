@@ -34,68 +34,70 @@ export default [
 		title: 'digit recognition',
 		posts: [
 			{
-				title: 'Opis',
-				content: `Był to mój personalny projekt, który dotyczył stworzenia algorytmu nauczy się rozpoznawać ręcznie pisane cyfry. Podzadaniem, które sobie stworzyłem to napisanie każdej części pogramu w innym języku programowania.`
+				title: 'Description',
+				content: `It was my biggest personal project involving machine learning. The goal was to create the hello world of machine learning: mnist digits recognition. However to make it a little bit more interesting I decided to write each part in a different programming language.`
 			},
 			{
-				title: 'Dane',
+				title: 'Data',
 				content: (
 					<Fragment>
-						<I src={'/assets/pics/portfolio/2019/DR-mnist.png'} /> Dane, na których mój algorytm się
-						uczył, były wzięte ze sławnej bazy 'mnist'; baza tysiący ręcznię narysowanych cyfr. Dane
-						te były zamieniane w pliki tekstowe, gdzie każdy piksel został zapisany jako pozycja i
-						jasność.
+						<I src={'/assets/pics/portfolio/2019/DR-mnist.png'} /> Data, on which my fully connected
+						neural network was training was taken from the famous 'mnist' database. It contains tens
+						of thousands of hand-drawn digits. Firstly I had to get the data in a computer-readable
+						format: numbers. Each line in the .csv file contains the label (what digit was drawn)
+						followed by the brightness level of each pixel.
 						<I src={'/assets/pics/portfolio/2019/DR-dataset.png'} />
 					</Fragment>
 				)
 			},
 			{
-				title: 'Serwer',
+				title: 'Server',
 				content: (
 					<Fragment>
 						<I src={'/assets/pics/portfolio/2019/DR-server.png'} />
-						Serwer był napisany w <Link href="https://golang.org/">Golang</Link>. Służył on do
-						przetwarzenia danych o treningowych i testowych cyfrach wcześniej przygotowanych. Jak
-						skończył był gotowy na przyjmowanie żądań które prosiły o owe dane. Potrafił on też
-						komunikować się z algorytmem by 'zgadywać' narysowane cyfry.
+						Server was written in <Link href="https://golang.org/">Golang</Link>. Its function is to
+						initially load and process the before prepared digit data. Afterwards it will respond to
+						such requests as train or test data, taking guesses, or serving the interaction page. It
+						serves as a communicator between different parts of the project.
 					</Fragment>
 				)
 			},
 			{
-				title: 'Trener',
+				title: 'Trainer',
 				content: (
 					<Fragment>
 						<I src={'/assets/pics/portfolio/2019/DR-trainer.png'} />
-						Trener był napisany w <Link href="https://www.python.org/">Python</Link>. Odpowiadał on
-						za uczenie algorytmu. Najpierw zbierał dane treningowe i testowe. Potem trenował
-						algorytm, a na końcu testował by ocenić jego skuteczność.
+						Trainer was written in <Link href="https://www.python.org/">Python</Link>. First it
+						loads the configuration of the neural network from a yaml file. Then, it trains the
+						neural network, tests it, and saves the weights in a json file. During the training
+						session it will save statistics such as current accuracy, loss, activation function, or
+						learning rate.
 					</Fragment>
 				)
 			},
 			{
-				title: 'Zgadywacz',
-				content: `Zgadywacz był napisany w c++. Korzystał on z nauczonego algorytmu by zgadywać jaka cyfra została narysowana.`
+				title: 'Guesser',
+				content: `The guesser was written in c++. It utilizes the previously trained network to perfom guesses sent by the Interaction.`
 			},
 			{
-				title: 'Interakcja',
+				title: 'Iteraction',
 				content: (
 					<Fragment>
 						<I src={'/assets/pics/portfolio/2019/DR-interaction.png'} />
-						Interakcja była napisana w JavaScript. Tutaj można przetestować nasz wytrenowany
-						algorytm. Rysuje sie cyfre w wyznaczonym polu, po czym wysyła sie zapytanie do serwera
-						jaka cyfra została narysowana. Zgadnięcie algorytmu jest wyświetlane pod narysowaną
-						liczbą.
+						The interaction was written in JavaScript. It was the place to finally test our trained
+						neural network. In the black canvas you can draw a digit and send it to our server. The
+						server then will query the Guesser and return the guess to the javascript frontend. You
+						can see the guess under the canvas.
 					</Fragment>
 				)
 			},
 			{
-				title: 'Wizualizacja',
+				title: 'Visualisation',
 				content: (
 					<Fragment>
 						<I src={'/assets/pics/portfolio/2019/DR-visualisation.png'} />
-						Wizualizacja danych była napisana w{' '}
-						<Link href="https://processing.org/">Processing</Link> (Java). Ona służyła pokazywania
-						jak algorytm sie uczył z czasem.
+						Visualisation was written in <Link href="https://processing.org/">Processing</Link>
+						(Java). It shows the gathered data during training sessions as a nice chart.
 					</Fragment>
 				)
 			}
