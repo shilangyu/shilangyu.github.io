@@ -9,7 +9,6 @@ export default {
 		drawio: 'https://www.draw.io/',
 		react: 'http://reactjs.org',
 		livePreviews: {
-			'10print': '/10PRINT',
 			jumpingBalls: '/jumping-balls',
 			tictactoe: '/TicTacToe',
 			geneticjs: '/Genetic.js'
