@@ -2,9 +2,11 @@ dependencies:
   '@material-ui/core': 3.9.2
   '@material-ui/icons': 3.0.2
   '@types/history': 4.7.2
+  '@types/material-ui': 0.21.6
   '@types/node': 11.12.0
   '@types/react': 16.8.8
   '@types/react-dom': 16.8.3
+  '@types/react-router-dom': 4.3.1
   gh-pages: 1.2.0
   history: 4.9.0
   react: 16.8.5
@@ -1647,6 +1649,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bBbHvjhm42UKki+wZpR89j73ykSXg99/bhuKuYYePtpma3ZAnmeGnl0WxXiZhPGsIfzKwCUkpPC0jlrVMBfRxA==
+  /@types/material-ui/0.21.6:
+    dependencies:
+      '@types/react': 16.8.10
+      '@types/react-addons-linked-state-mixin': 0.14.20
+    dev: false
+    resolution:
+      integrity: sha512-zq0FVny7dwE94CvY0Z7ejKcGD5IYjqHPZNkC2Wb4r8z/K+YuqRWKcIG7YP5flow46vVeOkojBPHDnic7wSv4yw==
   /@types/node/11.12.0:
     dev: false
     resolution:
@@ -1659,18 +1668,46 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
+  /@types/react-addons-linked-state-mixin/0.14.20:
+    dependencies:
+      '@types/react': 16.8.10
+    dev: false
+    resolution:
+      integrity: sha512-17M8ymjR/vvyaQnLNuLSQipxtUrxaIq19phbWKKz1drIXeVQx+AnqMVVVIClno/gPheJWcLVCbf+yXXbbRalIg==
   /@types/react-dom/16.8.3:
     dependencies:
       '@types/react': 16.8.8
     dev: false
     resolution:
       integrity: sha512-HF5hD5YR3z9Mn6kXcW1VKe4AQ04ZlZj1EdLBae61hzQ3eEWWxMgNLUbIxeZp40BnSxqY1eAYLsH9QopQcxzScA==
+  /@types/react-router-dom/4.3.1:
+    dependencies:
+      '@types/history': 4.7.2
+      '@types/react': 16.8.8
+      '@types/react-router': 4.4.5
+    dev: false
+    resolution:
+      integrity: sha512-GbztJAScOmQ/7RsQfO4cd55RuH1W4g6V1gDW3j4riLlt+8yxYLqqsiMzmyuXBLzdFmDtX/uU2Bpcm0cmudv44A==
+  /@types/react-router/4.4.5:
+    dependencies:
+      '@types/history': 4.7.2
+      '@types/react': 16.8.8
+    dev: false
+    resolution:
+      integrity: sha512-12+VOu1+xiC8RPc9yrgHCyLI79VswjtuqeS2gPrMcywH6tkc8rGIUhs4LaL3AJPqo5d+RPnfRpNKiJ7MK2Qhcg==
   /@types/react-transition-group/2.0.16:
     dependencies:
       '@types/react': 16.8.8
     dev: false
     resolution:
       integrity: sha512-FUJEx2BGJPU1qVQoWd9v7wpOwnCPTWhcE4iTaU5prry9SvwiI11lCXOci8Nz9cM/Fuf650l7Skg6nlVeCYjPFA==
+  /@types/react/16.8.10:
+    dependencies:
+      '@types/prop-types': 15.7.0
+      csstype: 2.6.3
+    dev: false
+    resolution:
+      integrity: sha512-7bUQeZKP4XZH/aB4i7k1i5yuwymDu/hnLMhD9NjVZvQQH7ZUgRN3d6iu8YXzx4sN/tNr0bj8jgguk8hhObzGvA==
   /@types/react/16.8.8:
     dependencies:
       '@types/prop-types': 15.7.0
@@ -11707,9 +11744,11 @@ specifiers:
   '@material-ui/core': ^3.9.2
   '@material-ui/icons': ^3.0.1
   '@types/history': ^4.7.2
+  '@types/material-ui': ^0.21.6
   '@types/node': ^11.12.0
   '@types/react': ^16.8.8
   '@types/react-dom': ^16.8.3
+  '@types/react-router-dom': ^4.3.1
   gh-pages: ^1.2.0
   history: ^4.7.2
   react: ^16.5.0
