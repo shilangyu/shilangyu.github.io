@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-import YearSection from './YearSection.jsx'
+import YearSection from './YearSection'
 
-import posts2018 from './posts/2018.jsx'
-import posts2019 from './posts/2019.jsx'
+import posts2018 from './posts/2018'
+import posts2019 from './posts/2019'
 
 class Porfolio extends Component {
 	render() {

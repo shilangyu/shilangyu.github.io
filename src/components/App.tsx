@@ -3,7 +3,7 @@ import hashHistory from '../history'
 import { Router } from 'react-router-dom'
 
 import { MuiThemeProvider } from '@material-ui/core/styles'
-import theme from './../styles/theme'
+import theme from '../styles/theme'
 
 import Header from './Header'
 import Footer from './Footer'

@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import urls from '../constants/urls'
 import { Route, Switch } from 'react-router-dom'
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core/styles'
 
-import Index from './index'
+import Index from './index/index'
 import LivePreviews from './livePreviews'
 import Portfolio from './portfolio'
 
-const styles = theme => ({
-	root: {}
-})
+const styles = (theme: Theme) =>
+	createStyles({
+		root: {}
+	})
 
-class Main extends Component {
+class Main extends Component<WithStyles<typeof styles>> {
 	render() {
 		const { classes } = this.props
 

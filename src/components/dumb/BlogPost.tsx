@@ -1,34 +1,45 @@
 import React, { Component, Fragment } from 'react'
-import { withStyles } from '@material-ui/core/styles'
+import { WithStyles, withStyles } from '@material-ui/core/styles'
+import { Theme } from '@material-ui/core/styles/createMuiTheme'
+import createStyles from '@material-ui/core/styles/createStyles'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 
-import { uID } from './../../constants/generators'
+import { uID } from '../../constants/generators'
 
-const styles = theme => ({
-	divider: {
-		'background-color': '#e0e0e0',
-		margin: '30px 0'
-	},
-	subtitle: {
-		margin: '0 0 10px 0'
-	},
-	pagination: {
-		margin: '0 0 20px 0'
+const styles = (theme: Theme) =>
+	createStyles({
+		divider: {
+			'background-color': '#e0e0e0',
+			margin: '30px 0'
+		},
+		subtitle: {
+			margin: '0 0 10px 0'
+		},
+		pagination: {
+			margin: '0 0 20px 0'
+		}
+	})
+
+type Props = {
+	title: string
+	pagination: string[]
+	posts: (string | JSX.Element)[]
+}
+
+type State = {
+	pagiId: string[]
+}
+
+class BlogPost extends Component<Props & WithStyles<typeof styles>, State> {
+	state = {
+		pagiId: new Array(this.props.pagination.length).fill(null).map(e => uID.next().value)
 	}
-})
 
-class BlogPost extends Component {
-	constructor(props) {
-		super(props)
-
-		this.state = { pagiId: new Array(props.pagination.length).fill().map(e => uID.next().value) }
-	}
-
-	paginationOnClick = id => () =>
-		document.querySelector(`#${id}`).scrollIntoView({
+	paginationOnClick = (id: string) => () =>
+		document.querySelector(`#${id}`)!.scrollIntoView({
 			behavior: 'smooth',
 			block: 'start'
 		})

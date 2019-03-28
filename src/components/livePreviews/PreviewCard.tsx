@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import { withStyles } from '@material-ui/core/styles'
+import { Theme } from '@material-ui/core/styles/createMuiTheme'
+import createStyles from '@material-ui/core/styles/createStyles'
+import { WithStyles, withStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
@@ -12,20 +14,28 @@ import Typography from '@material-ui/core/Typography'
 import urls from '../../constants/urls'
 import { clean as cleanStyles } from '../../styles/misc'
 
-const styles = theme => ({
-	card: {
-		width: 500
-	},
-	media: {
-		objectFit: 'cover',
-		height: 300
-	},
-	upperCard: {
-		// maxHeight: 500
-	}
-})
+const styles = (theme: Theme) =>
+	createStyles({
+		card: {
+			width: 500
+		},
+		media: {
+			objectFit: 'cover',
+			height: 300
+		},
+		upperCard: {
+			// maxHeight: 500
+		}
+	})
 
-class PreviewCard extends Component {
+type Props = {
+	url: string
+	name: string
+	picSrc: string
+	desc: string
+}
+
+class PreviewCard extends Component<Props & WithStyles<typeof styles>> {
 	render() {
 		const { classes, url, name, picSrc, desc } = this.props
 

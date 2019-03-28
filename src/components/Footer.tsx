@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles'
+import { Theme } from '@material-ui/core/styles/createMuiTheme'
 import Typography from '@material-ui/core/Typography'
 import Tooltip from '@material-ui/core/Tooltip'
 import Grid from '@material-ui/core/Grid'
@@ -9,30 +10,38 @@ import Zoom from '@material-ui/core/Zoom'
 
 import urls from '../constants/urls'
 
-const styles = theme => ({
-	root: {
-		marginTop: theme.spacing.unit * 3
-	},
-	main: {
-		backgroundColor: theme.palette.primary.main,
-		paddingTop: theme.spacing.unit * 3,
-		paddingBottom: theme.spacing.unit * 3
-	},
-	lower: {
-		backgroundColor: theme.palette.primary.dark,
-		paddingTop: theme.spacing.unit,
-		paddingBottom: theme.spacing.unit
-	},
-	avatar: {
-		margin: 10
-	},
-	row: {
-		display: 'flex',
-		justifyContent: 'center'
-	}
-})
+const styles = (theme: Theme) =>
+	createStyles({
+		root: {
+			marginTop: theme.spacing.unit * 3
+		},
+		main: {
+			backgroundColor: theme.palette.primary.main,
+			paddingTop: theme.spacing.unit * 3,
+			paddingBottom: theme.spacing.unit * 3
+		},
+		lower: {
+			backgroundColor: theme.palette.primary.dark,
+			paddingTop: theme.spacing.unit,
+			paddingBottom: theme.spacing.unit
+		},
+		avatar: {
+			margin: 10
+		},
+		row: {
+			display: 'flex',
+			justifyContent: 'center'
+		}
+	})
 
-const FooterLink = props => (
+type FooterLinkProps = {
+	text: string
+	href: string
+	src: string
+	class: string
+}
+
+const FooterLink: React.SFC<FooterLinkProps> = props => (
 	<Tooltip TransitionComponent={Zoom} title={props.text}>
 		<Avatar
 			style={{ cursor: 'pointer' }}
@@ -44,7 +53,7 @@ const FooterLink = props => (
 	</Tooltip>
 )
 
-class Footer extends Component {
+class Footer extends Component<WithStyles<typeof styles>> {
 	render() {
 		const { classes } = this.props
 

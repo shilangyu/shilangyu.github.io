@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, LinkProps } from 'react-router-dom'
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme, WithStyles, createStyles } from '@material-ui/core/styles'
+import { ButtonBaseProps } from '@material-ui/core/ButtonBase'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -23,29 +24,59 @@ import Collapse from '@material-ui/core/Collapse'
 import urls from '../constants/urls'
 import { uID } from '../constants/generators'
 
-const styles = theme => ({
-	root: {
-		flexGrow: 1
-	},
-	grow: {
-		flexGrow: 1
-	},
-	menuButton: {
-		marginLeft: -12,
-		marginRight: 20
-	},
-	rightIcon: {
-		marginLeft: theme.spacing.unit
-	},
-	drawer: {
-		width: 'auto'
-	},
-	nested: {
-		paddingLeft: theme.spacing.unit * 4
-	}
-})
+const WALink: (to: string) => React.SFC<ButtonBaseProps> = to => props => (
+	<Link to={to} {...props as LinkProps} />
+)
 
-class Header extends Component {
+const styles = (theme: Theme) =>
+	createStyles({
+		root: {
+			flexGrow: 1
+		},
+		grow: {
+			flexGrow: 1
+		},
+		menuButton: {
+			marginLeft: -12,
+			marginRight: 20
+		},
+		rightIcon: {
+			marginLeft: theme.spacing.unit
+		},
+		drawer: {
+			width: 'auto'
+		},
+		nested: {
+			paddingLeft: theme.spacing.unit * 4
+		}
+	})
+
+type OpenSelect = {
+	anchor: null | EventTarget
+	uid: null | string
+}
+
+type Subs = {
+	text: string
+	to: string
+}
+
+type HLink = {
+	text: string
+	uid: string
+	to?: string
+	subs?: Subs[]
+}
+
+type State = {
+	active: null | string
+	openSelect: OpenSelect
+	openSubList: null | string
+	drawerOpen: boolean
+	links: HLink[]
+}
+
+class Header extends Component<WithStyles<typeof styles>, State> {
 	state = {
 		active: null,
 		openSelect: { anchor: null, uid: null },
@@ -57,23 +88,24 @@ class Header extends Component {
 			{
 				text: 'portfolio',
 				subs: [
-					{ text: '2018', to: urls.portfolio.replace(/:year$/, 2018) },
-					{ text: '2019', to: urls.portfolio.replace(/:year$/, 2019) }
+					{ text: '2018', to: urls.portfolio.replace(/:year$/, '2018') },
+					{ text: '2019', to: urls.portfolio.replace(/:year$/, '2019') }
 				],
 				uid: uID.next().value
 			}
 		]
 	}
 
-	openSubList = id =>
-		this.setState(prevState => ({ openSubList: prevState.openSubList === id ? false : id }))
+	openSubList = (id: string) =>
+		this.setState(prevState => ({ openSubList: prevState.openSubList === id ? null : id }))
 
-	openSelect = (e, id) => this.setState({ openSelect: { anchor: e.currentTarget, uid: id } })
+	openSelect = (e: CustomEvent, id: string) =>
+		this.setState({ openSelect: { anchor: e.currentTarget, uid: id } })
 	closeSelect = () => this.setState({ openSelect: { anchor: null, uid: null } })
 
 	toggleDrawer = () => this.setState({ drawerOpen: !this.state.drawerOpen })
 
-	setActive = id => this.setState({ active: id })
+	setActive = (id: string) => this.setState({ active: id })
 
 	render() {
 		const { classes } = this.props
@@ -113,13 +145,12 @@ class Header extends Component {
 															{openSubList === link.uid ? <ExpandLess /> : <ExpandMore />}
 														</ListItem>
 														<Collapse in={openSubList === link.uid} timeout="auto" unmountOnExit>
-															<List component="div" disablePadding>
+															<List component={'div' as 'ul'} disablePadding>
 																{link.subs.map(sub => (
 																	<ListItem
 																		button
 																		key={sub.text}
-																		component={Link}
-																		to={sub.to}
+																		component={WALink(sub.to)}
 																		className={classes.nested}
 																		onClick={e => {
 																			this.setActive(link.uid)
@@ -139,8 +170,7 @@ class Header extends Component {
 															this.setActive(link.uid)
 														}}
 														key={link.text}
-														component={Link}
-														to={link.to}
+														component={WALink(link.to)}
 														button
 														selected={link.uid === active}
 													>
@@ -163,11 +193,11 @@ class Header extends Component {
 								link.subs ? (
 									<Fragment key={link.text}>
 										<Button
-											aria-owns={openSelect ? link.uid : null}
+											aria-owns={openSelect ? link.uid : undefined}
 											aria-haspopup="true"
-											onClick={e => this.openSelect(e, link.uid)}
+											onClick={e => this.openSelect((e as unknown) as CustomEvent, link.uid)}
 											color="inherit"
-											variant={active === link.uid ? 'outlined' : null}
+											variant={active === link.uid ? 'outlined' : undefined}
 										>
 											{link.text}
 											<ArrowDropDown className={classes.rightIcon} />
@@ -181,8 +211,7 @@ class Header extends Component {
 											{link.subs.map(sub => (
 												<MenuItem
 													key={sub.text}
-													component={Link}
-													to={sub.to}
+													component={WALink(sub.to)}
 													onClick={e => {
 														this.setActive(link.uid)
 														this.closeSelect()
@@ -196,11 +225,10 @@ class Header extends Component {
 								) : (
 									<Button
 										key={link.text}
-										component={Link}
-										to={link.to}
+										component={WALink(link.to) as any}
 										onClick={() => this.setActive(link.uid)}
 										color="inherit"
-										variant={active === link.uid ? 'outlined' : null}
+										variant={active === link.uid ? 'outlined' : undefined}
 									>
 										{link.text}
 									</Button>
