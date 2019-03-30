@@ -25,7 +25,7 @@ type Post = {
 	content: string | JSX.Element
 }
 
-type Blog = {
+export type Blog = {
 	title: string
 	posts: Post[]
 }

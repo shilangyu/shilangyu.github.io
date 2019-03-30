@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 
 import Grid from '@material-ui/core/Grid'
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme, WithStyles, createStyles } from '@material-ui/core/styles'
 
 import urls from '../../constants/urls'
 
 import PreviewCard from './PreviewCard'
 
-const styles = theme => ({
-	root: {
-		paddingTop: theme.spacing.unit * 3
-	}
-})
+const styles = (theme: Theme) =>
+	createStyles({
+		root: {
+			paddingTop: theme.spacing.unit * 3
+		}
+	})
 
-class LivePreviews extends Component {
+class LivePreviews extends Component<WithStyles<typeof styles>> {
 	state = {
 		previews: [
 			{

@@ -1,18 +1,24 @@
 import React, { Component } from 'react'
 
-import YearSection from './YearSection'
+import YearSection, { Blog } from './YearSection'
+import { match } from 'react-router'
 
 import posts2018 from './posts/2018'
 import posts2019 from './posts/2019'
 
-class Porfolio extends Component {
+type Props = {
+	match: match<{ year: string }>
+}
+
+class Porfolio extends Component<Props> {
 	render() {
 		const {
 			match: {
 				params: { year }
 			}
 		} = this.props
-		const sections = {
+
+		const sections: { [key: string]: Blog[] } = {
 			'2018': posts2018,
 			'2019': posts2019
 		}
