@@ -3,6 +3,7 @@ import hashHistory from '../history'
 import { Router } from 'react-router-dom'
 
 import { MuiThemeProvider } from '@material-ui/core/styles'
+import { CssBaseline } from '@material-ui/core'
 import theme from '../styles/theme'
 
 import Header from './Header'
@@ -13,6 +14,7 @@ class App extends Component {
 	render() {
 		return (
 			<MuiThemeProvider theme={theme}>
+				<CssBaseline />
 				<Router history={hashHistory}>
 					<Fragment>
 						<Header />
