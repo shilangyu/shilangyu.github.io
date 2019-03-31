@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
-import Grid from '@material-ui/core/Grid'
-import { withStyles, Theme, WithStyles, createStyles } from '@material-ui/core/styles'
-
-import urls from '../../constants/urls'
+import { withStyles, Theme, WithStyles, createStyles, Grid } from '@material-ui/core'
 
 import PreviewCard from './PreviewCard'
+
+import urls from '../../constants/urls'
 
 const styles = (theme: Theme) =>
 	createStyles({

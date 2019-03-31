@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
-import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles'
-import { Theme } from '@material-ui/core/styles/createMuiTheme'
-import Typography from '@material-ui/core/Typography'
-import Tooltip from '@material-ui/core/Tooltip'
-import Grid from '@material-ui/core/Grid'
-import Avatar from '@material-ui/core/Avatar'
-import Zoom from '@material-ui/core/Zoom'
+import {
+	Theme,
+	withStyles,
+	WithStyles,
+	createStyles,
+	Typography,
+	Tooltip,
+	Grid,
+	Avatar,
+	Zoom
+} from '@material-ui/core'
 
 import urls from '../constants/urls'
 

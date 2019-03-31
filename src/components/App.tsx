@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from 'react'
-import hashHistory from '../history'
 import { Router } from 'react-router-dom'
 
-import { MuiThemeProvider } from '@material-ui/core/styles'
-import { CssBaseline } from '@material-ui/core'
-import theme from '../styles/theme'
+import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
 
 import Header from './Header'
 import Footer from './Footer'
 import Main from './Main'
+
+import hashHistory from '../history'
+import theme from '../styles/theme'
 
 class App extends Component {
 	render() {

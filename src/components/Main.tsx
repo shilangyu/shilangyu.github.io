@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import urls from '../constants/urls'
 import { Route, Switch } from 'react-router-dom'
-import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core/styles'
+
+import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core'
 
 import Index from './index/index'
 import LivePreviews from './livePreviews'
 import Portfolio from './portfolio'
+
+import urls from '../constants/urls'
 
 const styles = (theme: Theme) =>
 	createStyles({

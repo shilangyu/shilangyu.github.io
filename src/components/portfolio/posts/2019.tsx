@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import CardMedia from '@material-ui/core/CardMedia'
-import Link from '@material-ui/core/Link'
+
+import { Link, CardMedia } from '@material-ui/core'
 
 const I: React.SFC<{ src: string }> = props => <CardMedia component="img" src={props.src} />
 

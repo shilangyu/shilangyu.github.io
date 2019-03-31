@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
-import YearSection, { Blog } from './YearSection'
 import { match } from 'react-router'
+
+import YearSection, { Blog } from './YearSection'
 
 import posts2018 from './posts/2018'
 import posts2019 from './posts/2019'

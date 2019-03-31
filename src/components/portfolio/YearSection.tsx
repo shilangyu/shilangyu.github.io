@@ -1,12 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import { withStyles, createStyles, WithStyles } from '@material-ui/core/styles'
-import { Theme } from '@material-ui/core/styles/createMuiTheme'
+
+import { withStyles, createStyles, WithStyles, Theme, Tabs, Tab, Paper } from '@material-ui/core'
 
 import { Container } from '../dumb/Container'
 import BlogPost from '../dumb/BlogPost'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import Paper from '@material-ui/core/Paper'
 
 const styles = (theme: Theme) =>
 	createStyles({

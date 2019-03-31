@@ -1,25 +1,27 @@
 import React, { Component, Fragment } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 
-import { withStyles, Theme, WithStyles, createStyles } from '@material-ui/core/styles'
+import {
+	withStyles,
+	WithStyles,
+	Theme,
+	createStyles,
+	AppBar,
+	Toolbar,
+	Typography,
+	Button,
+	IconButton,
+	Menu,
+	MenuItem,
+	Hidden,
+	List,
+	ListItem,
+	ListItemText,
+	SwipeableDrawer,
+	Collapse
+} from '@material-ui/core'
+import { Menu as MenuIcon, ArrowDropDown, ExpandLess, ExpandMore } from '@material-ui/icons'
 import { ButtonBaseProps } from '@material-ui/core/ButtonBase'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import ArrowDropDown from '@material-ui/icons/ArrowDropDown'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-import Hidden from '@material-ui/core/Hidden'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
-import ExpandLess from '@material-ui/icons/ExpandLess'
-import ExpandMore from '@material-ui/icons/ExpandMore'
-import Collapse from '@material-ui/core/Collapse'
 
 import urls from '../constants/urls'
 import { uID } from '../constants/generators'

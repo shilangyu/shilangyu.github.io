@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from 'react'
-import { WithStyles, withStyles } from '@material-ui/core/styles'
-import { Theme } from '@material-ui/core/styles/createMuiTheme'
-import createStyles from '@material-ui/core/styles/createStyles'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import Divider from '@material-ui/core/Divider'
-import Grid from '@material-ui/core/Grid'
+
+import {
+	WithStyles,
+	withStyles,
+	Theme,
+	createStyles,
+	Typography,
+	Button,
+	Divider,
+	Grid
+} from '@material-ui/core'
 
 import { uID } from '../../constants/generators'
 
