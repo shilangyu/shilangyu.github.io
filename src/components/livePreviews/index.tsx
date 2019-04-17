@@ -23,8 +23,8 @@ class LivePreviews extends Component<WithStyles<typeof styles>> {
 				url: urls.external.livePreviews.tictactoe
 			},
 			{
-				name: 'Genetic.js',
-				desc: 'Showcases of my Genetic.js library for genetic algorithms',
+				name: 'genetic.ts',
+				desc: 'Showcases of my genetic.ts library for genetic algorithms',
 				picSrc: '/assets/pics/live-previews/geneticjs.svg',
 				url: urls.external.livePreviews.geneticjs
 			}
