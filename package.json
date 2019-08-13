@@ -21,7 +21,7 @@
 		"eject": "react-scripts eject",
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -b master -d build",
-		"analyze": "node analyze.js"
+		"analyze": "npm run build && source-map-explorer 'build/static/js/*.js'"
 	},
 	"devDependencies": {
 		"@types/node": "^12.7.1",
@@ -29,8 +29,8 @@
 		"@types/react-dom": "^16.8.5",
 		"@types/react-router-dom": "^4.3.4",
 		"gh-pages": "^2.1.1",
-		"typescript": "^3.5.3",
-		"webpack-bundle-analyzer": "^2.0.0"
+		"source-map-explorer": "^2.0.1",
+		"typescript": "^3.5.3"
 	},
 	"browserslist": [
 		">0.2%",
