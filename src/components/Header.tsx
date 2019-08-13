@@ -1,30 +1,28 @@
-import React, { Component, Fragment } from 'react'
-import { Link, LinkProps } from 'react-router-dom'
-
 import {
-	withStyles,
-	WithStyles,
-	Theme,
-	createStyles,
 	AppBar,
-	Toolbar,
-	Typography,
 	Button,
-	IconButton,
-	Menu,
-	MenuItem,
+	Collapse,
+	createStyles,
 	Hidden,
+	IconButton,
 	List,
 	ListItem,
 	ListItemText,
+	Menu,
+	MenuItem,
 	SwipeableDrawer,
-	Collapse
+	Theme,
+	Toolbar,
+	Typography,
+	withStyles,
+	WithStyles
 } from '@material-ui/core'
-import { Menu as MenuIcon, ArrowDropDown, ExpandLess, ExpandMore } from '@material-ui/icons'
 import { ButtonBaseProps } from '@material-ui/core/ButtonBase'
-
-import urls from '../constants/urls'
+import { ArrowDropDown, ExpandLess, ExpandMore, Menu as MenuIcon } from '@material-ui/icons'
+import React, { Component, Fragment } from 'react'
+import { Link, LinkProps } from 'react-router-dom'
 import { uID } from '../constants/generators'
+import urls from '../constants/urls'
 
 const WALink: (to: string) => React.SFC<ButtonBaseProps> = to => props => (
 	<Link to={to} {...props as LinkProps} />
@@ -43,13 +41,13 @@ const styles = (theme: Theme) =>
 			marginRight: 20
 		},
 		rightIcon: {
-			marginLeft: theme.spacing.unit
+			marginLeft: theme.spacing()
 		},
 		drawer: {
 			width: 'auto'
 		},
 		nested: {
-			paddingLeft: theme.spacing.unit * 4
+			paddingLeft: theme.spacing() * 4
 		}
 	})
 
@@ -154,7 +152,7 @@ class Header extends Component<WithStyles<typeof styles>, State> {
 																		key={sub.text}
 																		component={WALink(sub.to)}
 																		className={classes.nested}
-																		onClick={e => {
+																		onClick={() => {
 																			this.setActive(link.uid)
 																			this.toggleDrawer()
 																		}}
@@ -214,7 +212,7 @@ class Header extends Component<WithStyles<typeof styles>, State> {
 												<MenuItem
 													key={sub.text}
 													component={WALink(sub.to)}
-													onClick={e => {
+													onClick={() => {
 														this.setActive(link.uid)
 														this.closeSelect()
 													}}

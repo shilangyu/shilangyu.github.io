@@ -1,33 +1,31 @@
-import React, { Component } from 'react'
-
 import {
+	Avatar,
+	createStyles,
+	Grid,
 	Theme,
+	Tooltip,
+	Typography,
 	withStyles,
 	WithStyles,
-	createStyles,
-	Typography,
-	Tooltip,
-	Grid,
-	Avatar,
 	Zoom
 } from '@material-ui/core'
-
+import React, { Component } from 'react'
 import urls from '../constants/urls'
 
 const styles = (theme: Theme) =>
 	createStyles({
 		root: {
-			marginTop: theme.spacing.unit * 3
+			marginTop: theme.spacing() * 3
 		},
 		main: {
 			backgroundColor: theme.palette.primary.main,
-			paddingTop: theme.spacing.unit * 3,
-			paddingBottom: theme.spacing.unit * 3
+			paddingTop: theme.spacing() * 3,
+			paddingBottom: theme.spacing() * 3
 		},
 		lower: {
 			backgroundColor: theme.palette.primary.dark,
-			paddingTop: theme.spacing.unit,
-			paddingBottom: theme.spacing.unit
+			paddingTop: theme.spacing(),
+			paddingBottom: theme.spacing()
 		},
 		avatar: {
 			margin: 10

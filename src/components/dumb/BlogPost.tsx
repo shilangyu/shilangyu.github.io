@@ -1,16 +1,14 @@
-import React, { Component, Fragment } from 'react'
-
 import {
-	WithStyles,
-	withStyles,
-	Theme,
-	createStyles,
-	Typography,
 	Button,
+	createStyles,
 	Divider,
-	Grid
+	Grid,
+	Theme,
+	Typography,
+	WithStyles,
+	withStyles
 } from '@material-ui/core'
-
+import React, { Component, Fragment } from 'react'
 import { uID } from '../../constants/generators'
 
 const styles = (theme: Theme) =>
@@ -63,7 +61,7 @@ class BlogPost extends Component<Props & WithStyles<typeof styles>, State> {
 					justify="center"
 					direction="row"
 					alignItems="center"
-					spacing={16}
+					spacing={10}
 					container
 				>
 					{pagination.map((name, i) => (

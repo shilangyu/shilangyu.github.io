@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-
-import { match } from 'react-router'
-
-import YearSection, { Blog } from './YearSection'
-
+import { match } from 'react-router-dom'
 import posts2018 from './posts/2018'
 import posts2019 from './posts/2019'
+import YearSection, { Blog } from './YearSection'
 
 type Props = {
 	match: match<{ year: string }>
