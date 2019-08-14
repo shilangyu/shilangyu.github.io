@@ -2,8 +2,6 @@ dependencies:
   '@material-ui/core': 4.3.2_react-dom@16.9.0+react@16.9.0
   '@material-ui/icons': 4.2.1_fc015f997675f8a006ddd42d56df5d9a
   '@material-ui/styles': 4.3.0_react-dom@16.9.0+react@16.9.0
-  '@types/history': 4.7.2
-  history: 4.9.0
   react: 16.9.0
   react-dom: 16.9.0_react@16.9.0
   react-router-dom: 5.0.1_react@16.9.0
@@ -1416,6 +1414,7 @@ packages:
     resolution:
       integrity: sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
   /@types/history/4.7.2:
+    dev: true
     resolution:
       integrity: sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
   /@types/istanbul-lib-coverage/2.0.1:
@@ -11538,7 +11537,6 @@ specifiers:
   '@material-ui/core': ^4.3.2
   '@material-ui/icons': ^4.2.1
   '@material-ui/styles': ^4.3.0
-  '@types/history': ^4.7.2
   '@types/node': ^12.7.1
   '@types/react': ^16.9.1
   '@types/react-dom': ^16.8.5
@@ -11546,7 +11544,6 @@ specifiers:
   '@types/react-router-dom': ^4.3.4
   '@types/styled-components': ^4.1.18
   gh-pages: ^2.1.1
-  history: ^4.7.2
   react: ^16.9.0
   react-dom: ^16.9.0
   react-router-dom: ^5.0.1

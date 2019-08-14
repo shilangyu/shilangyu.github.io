@@ -1,12 +1,11 @@
 import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
 import { StylesProvider } from '@material-ui/styles'
 import React from 'react'
-import { Router } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Main from './components/Main'
-import hashHistory from './history'
 import theme from './styles/theme'
 
 const App: React.FC = () => (
@@ -14,13 +13,13 @@ const App: React.FC = () => (
 		<ThemeProvider theme={theme}>
 			<MuiThemeProvider theme={theme}>
 				<CssBaseline />
-				<Router history={hashHistory}>
+				<HashRouter>
 					<>
 						<Header />
 						<Main />
 						<Footer />
 					</>
-				</Router>
+				</HashRouter>
 			</MuiThemeProvider>
 		</ThemeProvider>
 	</StylesProvider>
