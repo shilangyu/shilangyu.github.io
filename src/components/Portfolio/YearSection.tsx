@@ -26,8 +26,8 @@ class YearSection extends Component<Props, State> {
 	tabChange = (e: React.ChangeEvent<{}>, value: number) => this.setState({ tab: value })
 
 	render() {
-		const { children: posts } = this.props
-		const post = posts[this.state.tab]
+		const { children: blogs } = this.props
+		const currentBlog = blogs[this.state.tab]
 
 		return (
 			<>
@@ -39,19 +39,14 @@ class YearSection extends Component<Props, State> {
 						centered
 						variant="fullWidth"
 					>
-						{posts.map(({ title }) => (
+						{blogs.map(({ title }) => (
 							<Tab key={title} label={title} />
 						))}
 					</Tabs>
 				</TabBackground>
 
 				<Container>
-					<BlogPost
-						key={post.title}
-						title={post.title}
-						pagination={post.posts.map(e => e.title)}
-						posts={post.posts.map(e => e.content)}
-					/>
+					<BlogPost title={currentBlog.title} posts={currentBlog.posts} />
 				</Container>
 			</>
 		)
