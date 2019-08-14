@@ -1,8 +1,8 @@
-import { Paper, Tab, Tabs } from '@material-ui/core'
-import React, { Component, Fragment } from 'react'
-import styled from 'styled-components'
-import BlogPost from '../dumb/BlogPost'
-import Container from '../dumb/Container'
+import { Paper, Tab, Tabs } from '@material-ui/core';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import BlogPost from '../dumb/BlogPost';
+import Container from '../dumb/Container';
 
 const TabBackground = styled(Paper)`
 	flex-grow: 1;
@@ -39,7 +39,7 @@ class YearSection extends Component<Props, State> {
 		const post = posts[this.state.tab]
 
 		return (
-			<Fragment>
+			<>
 				<TabBackground square>
 					<Tabs
 						value={this.state.tab}
@@ -62,7 +62,7 @@ class YearSection extends Component<Props, State> {
 						posts={post.posts.map(e => e.content)}
 					/>
 				</Container>
-			</Fragment>
+			</>
 		)
 	}
 }

@@ -1,5 +1,5 @@
 import { Button, Divider, Grid, Typography } from '@material-ui/core'
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import { uID } from '../../constants/generators'
 
@@ -42,7 +42,7 @@ class BlogPost extends Component<Props, State> {
 		const { pagiId } = this.state
 
 		return (
-			<Fragment>
+			<>
 				<Typography align="center" color="textPrimary" variant="h2">
 					{title}
 				</Typography>
@@ -56,7 +56,7 @@ class BlogPost extends Component<Props, State> {
 				</Pagination>
 
 				{posts.map((post, i) => (
-					<Fragment key={i}>
+					<React.Fragment key={i}>
 						<Subtitle color="textPrimary" variant="h5" id={pagiId[i]}>
 							{pagination[i]}
 						</Subtitle>
@@ -64,9 +64,9 @@ class BlogPost extends Component<Props, State> {
 						<Typography align="justify">{post}</Typography>
 
 						{posts.length - 1 !== i && <BlogDivider />}
-					</Fragment>
+					</React.Fragment>
 				))}
-			</Fragment>
+			</>
 		)
 	}
 }

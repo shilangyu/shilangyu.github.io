@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core'
 import { ButtonBaseProps } from '@material-ui/core/ButtonBase'
 import { ArrowDropDown, ExpandLess, ExpandMore, Menu as MenuIcon } from '@material-ui/icons'
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 import styled from 'styled-components'
 import { uID } from '../constants/generators'
@@ -123,7 +123,7 @@ class Header extends Component<{}, State> {
 									<List>
 										{links.map(link =>
 											link.subs ? (
-												<Fragment key={link.text}>
+												<React.Fragment key={link.text}>
 													<ListItem
 														button
 														onClick={e => this.openSubList(link.uid)}
@@ -149,7 +149,7 @@ class Header extends Component<{}, State> {
 															))}
 														</List>
 													</Collapse>
-												</Fragment>
+												</React.Fragment>
 											) : (
 												<ListItem
 													onClick={() => {
@@ -177,7 +177,7 @@ class Header extends Component<{}, State> {
 						<Hidden xsDown>
 							{links.map(link =>
 								link.subs ? (
-									<Fragment key={link.text}>
+									<React.Fragment key={link.text}>
 										<Button
 											aria-owns={openSelect ? link.uid : undefined}
 											aria-haspopup="true"
@@ -207,7 +207,7 @@ class Header extends Component<{}, State> {
 												</MenuItem>
 											))}
 										</Menu>
-									</Fragment>
+									</React.Fragment>
 								) : (
 									<Button
 										key={link.text}

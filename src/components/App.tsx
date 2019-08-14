@@ -1,6 +1,6 @@
 import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
 import { StylesProvider } from '@material-ui/styles'
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import hashHistory from '../history'
@@ -15,11 +15,11 @@ const App: React.FC = () => (
 			<MuiThemeProvider theme={theme}>
 				<CssBaseline />
 				<Router history={hashHistory}>
-					<Fragment>
+					<>
 						<Header />
 						<Main />
 						<Footer />
-					</Fragment>
+					</>
 				</Router>
 			</MuiThemeProvider>
 		</ThemeProvider>
