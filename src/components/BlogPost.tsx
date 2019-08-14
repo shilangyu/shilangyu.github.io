@@ -1,7 +1,7 @@
 import { Button, Divider, Grid, Typography } from '@material-ui/core'
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { uID } from '../../constants/generators'
+import { uID } from '../constants/generators'
 
 const BlogDivider = styled(Divider)`
 	background-color: #e0e0e0;
