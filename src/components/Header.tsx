@@ -2,7 +2,6 @@ import {
 	AppBar,
 	Button,
 	Collapse,
-	createStyles,
 	Hidden,
 	IconButton,
 	List,
@@ -11,16 +10,14 @@ import {
 	Menu,
 	MenuItem,
 	SwipeableDrawer,
-	Theme,
 	Toolbar,
-	Typography,
-	withStyles,
-	WithStyles
+	Typography
 } from '@material-ui/core'
 import { ButtonBaseProps } from '@material-ui/core/ButtonBase'
 import { ArrowDropDown, ExpandLess, ExpandMore, Menu as MenuIcon } from '@material-ui/icons'
 import React, { Component, Fragment } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
+import styled from 'styled-components'
 import { uID } from '../constants/generators'
 import urls from '../constants/urls'
 
@@ -28,28 +25,26 @@ const WALink: (to: string) => React.SFC<ButtonBaseProps> = to => props => (
 	<Link to={to} {...props as LinkProps} />
 )
 
-const styles = (theme: Theme) =>
-	createStyles({
-		root: {
-			flexGrow: 1
-		},
-		grow: {
-			flexGrow: 1
-		},
-		menuButton: {
-			marginLeft: -12,
-			marginRight: 20
-		},
-		rightIcon: {
-			marginLeft: theme.spacing()
-		},
-		drawer: {
-			width: 'auto'
-		},
-		nested: {
-			paddingLeft: theme.spacing() * 4
-		}
-	})
+const Nav = styled.nav`
+	flex-grow: 1;
+`
+
+const MenuButton = styled(IconButton)`
+	margin-left: -12;
+	margin-right: 20;
+`
+
+const Item = styled(ListItem)`
+	padding-left: ${p => p.theme.spacing() * 4};
+` as typeof ListItem
+
+const DropDownIcon = styled(ArrowDropDown)`
+	margin-left: ${p => p.theme.spacing() * 4};
+`
+
+const Title = styled(Typography)`
+	flex-grow: 1;
+`
 
 type OpenSelect = {
 	anchor: null | EventTarget
@@ -76,7 +71,7 @@ type State = {
 	links: HLink[]
 }
 
-class Header extends Component<WithStyles<typeof styles>, State> {
+class Header extends Component<{}, State> {
 	state = {
 		active: null,
 		openSelect: { anchor: null, uid: null },
@@ -108,22 +103,16 @@ class Header extends Component<WithStyles<typeof styles>, State> {
 	setActive = (id: string) => this.setState({ active: id })
 
 	render() {
-		const { classes } = this.props
 		const { openSelect, links, active, openSubList } = this.state
 
 		return (
-			<nav className={classes.root}>
+			<Nav>
 				<AppBar position="sticky">
 					<Toolbar>
 						<Hidden smUp>
-							<IconButton
-								onClick={this.toggleDrawer}
-								className={classes.menuButton}
-								color="inherit"
-								aria-label="Menu"
-							>
+							<MenuButton onClick={this.toggleDrawer} color="inherit" aria-label="Menu">
 								<MenuIcon />
-							</IconButton>
+							</MenuButton>
 
 							<SwipeableDrawer
 								open={this.state.drawerOpen}
@@ -131,62 +120,59 @@ class Header extends Component<WithStyles<typeof styles>, State> {
 								onOpen={this.toggleDrawer}
 							>
 								<div tabIndex={0} role="button" onKeyDown={this.toggleDrawer}>
-									<div className={classes.drawer}>
-										<List>
-											{links.map(link =>
-												link.subs ? (
-													<Fragment key={link.text}>
-														<ListItem
-															button
-															onClick={e => this.openSubList(link.uid)}
-															selected={link.uid === active}
-														>
-															<ListItemText primary={link.text} />
-															{openSubList === link.uid ? <ExpandLess /> : <ExpandMore />}
-														</ListItem>
-														<Collapse in={openSubList === link.uid} timeout="auto" unmountOnExit>
-															<List component={'div' as 'ul'} disablePadding>
-																{link.subs.map(sub => (
-																	<ListItem
-																		button
-																		key={sub.text}
-																		component={WALink(sub.to)}
-																		className={classes.nested}
-																		onClick={() => {
-																			this.setActive(link.uid)
-																			this.toggleDrawer()
-																		}}
-																	>
-																		<ListItemText primary={sub.text} />
-																	</ListItem>
-																))}
-															</List>
-														</Collapse>
-													</Fragment>
-												) : (
+									<List>
+										{links.map(link =>
+											link.subs ? (
+												<Fragment key={link.text}>
 													<ListItem
-														onClick={() => {
-															this.toggleDrawer()
-															this.setActive(link.uid)
-														}}
-														key={link.text}
-														component={WALink(link.to)}
 														button
+														onClick={e => this.openSubList(link.uid)}
 														selected={link.uid === active}
 													>
 														<ListItemText primary={link.text} />
+														{openSubList === link.uid ? <ExpandLess /> : <ExpandMore />}
 													</ListItem>
-												)
-											)}
-										</List>
-									</div>
+													<Collapse in={openSubList === link.uid} timeout="auto" unmountOnExit>
+														<List component={'div' as 'ul'} disablePadding>
+															{link.subs.map(sub => (
+																<Item
+																	button
+																	key={sub.text}
+																	component={WALink(sub.to)}
+																	onClick={() => {
+																		this.setActive(link.uid)
+																		this.toggleDrawer()
+																	}}
+																>
+																	<ListItemText primary={sub.text} />
+																</Item>
+															))}
+														</List>
+													</Collapse>
+												</Fragment>
+											) : (
+												<ListItem
+													onClick={() => {
+														this.toggleDrawer()
+														this.setActive(link.uid)
+													}}
+													key={link.text}
+													component={WALink(link.to)}
+													button
+													selected={link.uid === active}
+												>
+													<ListItemText primary={link.text} />
+												</ListItem>
+											)
+										)}
+									</List>
 								</div>
 							</SwipeableDrawer>
 						</Hidden>
 
-						<Typography variant="h6" color="inherit" className={classes.grow}>
+						<Title variant="h6" color="inherit">
 							Marcin Wojnarowski
-						</Typography>
+						</Title>
 
 						<Hidden xsDown>
 							{links.map(link =>
@@ -200,7 +186,7 @@ class Header extends Component<WithStyles<typeof styles>, State> {
 											variant={active === link.uid ? 'outlined' : undefined}
 										>
 											{link.text}
-											<ArrowDropDown className={classes.rightIcon} />
+											<DropDownIcon />
 										</Button>
 										<Menu
 											id={link.uid}
@@ -237,9 +223,9 @@ class Header extends Component<WithStyles<typeof styles>, State> {
 						</Hidden>
 					</Toolbar>
 				</AppBar>
-			</nav>
+			</Nav>
 		)
 	}
 }
 
-export default withStyles(styles)(Header)
+export default Header

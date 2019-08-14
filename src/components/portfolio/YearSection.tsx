@@ -1,17 +1,13 @@
+import { Paper, Tab, Tabs } from '@material-ui/core'
 import React, { Component, Fragment } from 'react'
-
-import { withStyles, createStyles, WithStyles, Theme, Tabs, Tab, Paper } from '@material-ui/core'
-
-import { Container } from '../dumb/Container'
+import styled from 'styled-components'
 import BlogPost from '../dumb/BlogPost'
+import { Container } from '../dumb/Container'
 
-const styles = (theme: Theme) =>
-	createStyles({
-		paper: {
-			flexGrow: 1,
-			backgroundColor: theme.palette.primary.main
-		}
-	})
+const TabBackground = styled(Paper)`
+	flex-grow: 1;
+	background-color: ${p => p.theme.palette.primary.main};
+`
 
 type State = {
 	tab: number
@@ -31,7 +27,7 @@ type Props = {
 	children: Blog[]
 }
 
-class YearSection extends Component<WithStyles<typeof styles> & Props, State> {
+class YearSection extends Component<Props, State> {
 	state = {
 		tab: 0
 	}
@@ -39,12 +35,12 @@ class YearSection extends Component<WithStyles<typeof styles> & Props, State> {
 	tabChange = (event: React.ChangeEvent<{}>, value: number) => this.setState({ tab: value })
 
 	render() {
-		const { classes, children: posts } = this.props
+		const { children: posts } = this.props
 		const post = posts[this.state.tab]
 
 		return (
 			<Fragment>
-				<Paper className={classes.paper} square>
+				<TabBackground square>
 					<Tabs
 						value={this.state.tab}
 						onChange={this.tabChange}
@@ -56,7 +52,7 @@ class YearSection extends Component<WithStyles<typeof styles> & Props, State> {
 							<Tab key={title} label={title} />
 						))}
 					</Tabs>
-				</Paper>
+				</TabBackground>
 
 				<Container>
 					<BlogPost
@@ -71,4 +67,4 @@ class YearSection extends Component<WithStyles<typeof styles> & Props, State> {
 	}
 }
 
-export default withStyles(styles)(YearSection)
+export default YearSection

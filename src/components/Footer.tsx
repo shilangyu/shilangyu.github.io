@@ -1,67 +1,55 @@
-import {
-	Avatar,
-	createStyles,
-	Grid,
-	Theme,
-	Tooltip,
-	Typography,
-	withStyles,
-	WithStyles,
-	Zoom
-} from '@material-ui/core'
+import { Avatar, Grid, Tooltip, Typography, Zoom } from '@material-ui/core'
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import urls from '../constants/urls'
 
-const styles = (theme: Theme) =>
-	createStyles({
-		root: {
-			marginTop: theme.spacing() * 3
-		},
-		main: {
-			backgroundColor: theme.palette.primary.main,
-			paddingTop: theme.spacing() * 3,
-			paddingBottom: theme.spacing() * 3
-		},
-		lower: {
-			backgroundColor: theme.palette.primary.dark,
-			paddingTop: theme.spacing(),
-			paddingBottom: theme.spacing()
-		},
-		avatar: {
-			margin: 10
-		},
-		row: {
-			display: 'flex',
-			justifyContent: 'center'
-		}
-	})
+const Root = styled.footer`
+	margin-top: ${p => p.theme.spacing() * 3};
+`
+
+const Main = styled(Grid)`
+	background-color: ${p => p.theme.palette.primary.main};
+	padding-top: ${p => p.theme.spacing() * 3};
+	padding-bottom: ${p => p.theme.spacing() * 3};
+`
+
+const Side = styled(Grid)`
+	background-color: ${p => p.theme.palette.primary.dark};
+	padding-top: ${p => p.theme.spacing()};
+	padding-bottom: ${p => p.theme.spacing()};
+`
+
+const LogoAvatar = styled(Avatar)`
+	margin: 10;
+`
+
+const Row = styled.div`
+	display: flex;
+	justify-content: center;
+`
 
 type FooterLinkProps = {
 	text: string
 	href: string
 	src: string
-	class: string
 }
 
 const FooterLink: React.SFC<FooterLinkProps> = props => (
 	<Tooltip TransitionComponent={Zoom} title={props.text}>
-		<Avatar
+		<LogoAvatar
 			style={{ cursor: 'pointer' }}
 			onClick={() => window.open(props.href)}
 			alt={props.text}
 			src={props.src}
-			className={props.class}
 		/>
 	</Tooltip>
 )
 
-class Footer extends Component<WithStyles<typeof styles>> {
+class Footer extends Component {
 	render() {
-		const { classes } = this.props
-
 		return (
-			<footer className={classes.root}>
-				<Grid className={classes.main} justify="space-around" direction="row" container>
+			<Root>
+				<Main justify="space-around" direction="row" container>
 					<Grid item>
 						<Typography variant="h6">info</Typography>
 						<Typography>
@@ -74,42 +62,33 @@ class Footer extends Component<WithStyles<typeof styles>> {
 
 					<Grid item>
 						<Typography variant="h6">links</Typography>
-						<div className={classes.row}>
+						<Row>
 							<FooterLink
 								href={urls.external.github}
 								text="GitHub"
 								src={'/assets/pics/github-logo.png'}
-								class={classes.avatar}
 							/>
-							<FooterLink
-								href={urls.external.p5}
-								text="p5.js"
-								src={'/assets/pics/p5js-logo.png'}
-								class={classes.avatar}
-							/>
+							<FooterLink href={urls.external.p5} text="p5.js" src={'/assets/pics/p5js-logo.png'} />
 							<FooterLink
 								href={urls.external.drawio}
 								text="draw.io"
 								src={'/assets/pics/drawio-logo.png'}
-								class={classes.avatar}
 							/>
 							<FooterLink
 								href={urls.external.materialui}
 								text="materialui"
 								src={'/assets/pics/materialui-logo.svg'}
-								class={classes.avatar}
 							/>
 							<FooterLink
 								href={urls.external.react}
 								text="react"
 								src={'/assets/pics/react-logo.png'}
-								class={classes.avatar}
 							/>
-						</div>
+						</Row>
 					</Grid>
-				</Grid>
+				</Main>
 
-				<Grid className={classes.lower} justify="space-around" direction="row" container>
+				<Side justify="space-around" direction="row" container>
 					<Grid item>
 						<Typography>&reg; 42069 you'r mom &trade;</Typography>
 					</Grid>
@@ -117,10 +96,10 @@ class Footer extends Component<WithStyles<typeof styles>> {
 					<Grid item>
 						<Typography>More links</Typography>
 					</Grid>
-				</Grid>
-			</footer>
+				</Side>
+			</Root>
 		)
 	}
 }
 
-export default withStyles(styles)(Footer)
+export default Footer

@@ -1,29 +1,20 @@
-import {
-	Button,
-	createStyles,
-	Divider,
-	Grid,
-	Theme,
-	Typography,
-	WithStyles,
-	withStyles
-} from '@material-ui/core'
+import { Button, Divider, Grid, Typography } from '@material-ui/core'
 import React, { Component, Fragment } from 'react'
+import styled from 'styled-components'
 import { uID } from '../../constants/generators'
 
-const styles = (theme: Theme) =>
-	createStyles({
-		divider: {
-			'background-color': '#e0e0e0',
-			margin: '30px 0'
-		},
-		subtitle: {
-			margin: '0 0 10px 0'
-		},
-		pagination: {
-			margin: '0 0 20px 0'
-		}
-	})
+const BlogDivider = styled(Divider)`
+	background-color: #e0e0e0;
+	margin: 30px 0;
+`
+
+const Subtitle = styled(Typography)`
+	margin: 0 0 10px 0;
+`
+
+const Pagination = styled(Grid)`
+	margin: 0 0 20px 0;
+`
 
 type Props = {
 	title: string
@@ -35,7 +26,7 @@ type State = {
 	pagiId: string[]
 }
 
-class BlogPost extends Component<Props & WithStyles<typeof styles>, State> {
+class BlogPost extends Component<Props, State> {
 	state = {
 		pagiId: new Array(this.props.pagination.length).fill(null).map(e => uID.next().value)
 	}
@@ -47,7 +38,7 @@ class BlogPost extends Component<Props & WithStyles<typeof styles>, State> {
 		})
 
 	render() {
-		const { classes, title, pagination, posts } = this.props
+		const { title, pagination, posts } = this.props
 		const { pagiId } = this.state
 
 		return (
@@ -56,35 +47,23 @@ class BlogPost extends Component<Props & WithStyles<typeof styles>, State> {
 					{title}
 				</Typography>
 
-				<Grid
-					className={classes.pagination}
-					justify="center"
-					direction="row"
-					alignItems="center"
-					spacing={10}
-					container
-				>
+				<Pagination justify="center" direction="row" alignItems="center" spacing={10} container>
 					{pagination.map((name, i) => (
 						<Grid item key={i}>
 							<Button onClick={this.paginationOnClick(pagiId[i])}>{name}</Button>
 						</Grid>
 					))}
-				</Grid>
+				</Pagination>
 
 				{posts.map((post, i) => (
 					<Fragment key={i}>
-						<Typography
-							color="textPrimary"
-							variant="h5"
-							id={pagiId[i]}
-							className={classes.subtitle}
-						>
+						<Subtitle color="textPrimary" variant="h5" id={pagiId[i]}>
 							{pagination[i]}
-						</Typography>
+						</Subtitle>
 
 						<Typography align="justify">{post}</Typography>
 
-						{posts.length - 1 !== i && <Divider className={classes.divider} />}
+						{posts.length - 1 !== i && <BlogDivider />}
 					</Fragment>
 				))}
 			</Fragment>
@@ -92,4 +71,4 @@ class BlogPost extends Component<Props & WithStyles<typeof styles>, State> {
 	}
 }
 
-export default withStyles(styles)(BlogPost)
+export default BlogPost

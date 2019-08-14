@@ -1,35 +1,25 @@
-import React, { Component } from 'react'
-
 import {
-	Theme,
-	createStyles,
-	WithStyles,
-	withStyles,
+	Button,
 	Card,
 	CardActionArea,
 	CardActions,
 	CardContent,
 	CardMedia,
-	Button,
 	Typography
 } from '@material-ui/core'
-
+import React, { Component } from 'react'
+import styled from 'styled-components'
 import urls from '../../constants/urls'
 import { clean as cleanStyles } from '../../styles/misc'
 
-const styles = (theme: Theme) =>
-	createStyles({
-		card: {
-			width: 500
-		},
-		media: {
-			objectFit: 'cover',
-			height: 300
-		},
-		upperCard: {
-			// maxHeight: 500
-		}
-	})
+const DisplayCard = styled(Card)`
+	width: 500;
+`
+
+const CardImg = styled(CardMedia)`
+	object-fit: cover;
+	height: 300;
+` as typeof CardMedia
 
 type Props = {
 	url: string
@@ -38,15 +28,15 @@ type Props = {
 	desc: string
 }
 
-class PreviewCard extends Component<Props & WithStyles<typeof styles>> {
+class PreviewCard extends Component<Props> {
 	render() {
-		const { classes, url, name, picSrc, desc } = this.props
+		const { url, name, picSrc, desc } = this.props
 
 		return (
-			<Card className={classes.card}>
+			<DisplayCard>
 				<a target="_blank" rel="noopener noreferrer" href={url} style={cleanStyles}>
-					<CardActionArea className={classes.upperCard}>
-						<CardMedia component="img" className={classes.media} image={picSrc} title={name} />
+					<CardActionArea>
+						<CardImg component="img" image={picSrc} title={name} />
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="h2">
 								{name}
@@ -64,9 +54,9 @@ class PreviewCard extends Component<Props & WithStyles<typeof styles>> {
 						Repository
 					</Button>
 				</CardActions>
-			</Card>
+			</DisplayCard>
 		)
 	}
 }
 
-export default withStyles(styles)(PreviewCard)
+export default PreviewCard

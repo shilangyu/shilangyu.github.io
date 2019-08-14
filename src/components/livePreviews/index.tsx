@@ -1,16 +1,16 @@
-import { createStyles, Grid, Theme, withStyles, WithStyles } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import urls from '../../constants/urls'
 import PreviewCard from './PreviewCard'
 
-const styles = (theme: Theme) =>
-	createStyles({
-		root: {
-			paddingTop: theme.spacing() * 3
-		}
-	})
+const Root = styled(Grid)`
+	${p => p.theme.spacing() * 3}
+	background-color: #e0e0e0;
+	margin: 30px 0;
+`
 
-class LivePreviews extends Component<WithStyles<typeof styles>> {
+class LivePreviews extends Component {
 	state = {
 		previews: [
 			{
@@ -28,19 +28,18 @@ class LivePreviews extends Component<WithStyles<typeof styles>> {
 		]
 	}
 	render() {
-		const { classes } = this.props
 		const { previews } = this.state
 
 		return (
-			<Grid container spacing={3} alignItems="flex-start" className={classes.root}>
+			<Root container spacing={3} alignItems="flex-start">
 				{previews.map(preview => (
 					<Grid key={preview.url} xs item>
 						<PreviewCard {...preview} />
 					</Grid>
 				))}
-			</Grid>
+			</Root>
 		)
 	}
 }
 
-export default withStyles(styles)(LivePreviews)
+export default LivePreviews
