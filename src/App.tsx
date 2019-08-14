@@ -3,11 +3,11 @@ import { StylesProvider } from '@material-ui/styles'
 import React from 'react'
 import { Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import hashHistory from '../history'
-import theme from '../styles/theme'
-import Footer from './Footer'
-import Header from './Header'
-import Main from './Main'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Main from './components/Main'
+import hashHistory from './history'
+import theme from './styles/theme'
 
 const App: React.FC = () => (
 	<StylesProvider injectFirst>
