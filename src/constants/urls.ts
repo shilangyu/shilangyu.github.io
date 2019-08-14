@@ -10,7 +10,7 @@ export default {
 		react: 'http://reactjs.org',
 		livePreviews: {
 			tictactoe: '/TicTacToe',
-			geneticjs: '/genetic.ts'
+			geneticts: '/genetic.ts'
 		}
 	}
 }

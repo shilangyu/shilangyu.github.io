@@ -1,26 +1,32 @@
 import { Avatar, Grid, Tooltip, Typography, Zoom } from '@material-ui/core'
 import React from 'react'
 import styled from 'styled-components'
+import DrawioIcon from '../assets/logos/drawio.png'
+import GithubIcon from '../assets/logos/github.png'
+import MaterialuiIcon from '../assets/logos/materialui.svg'
+import P5jsIcon from '../assets/logos/p5js.png'
+import ReactIcon from '../assets/logos/react.png'
 import urls from '../constants/urls'
 
 const Root = styled.footer`
-	margin-top: ${p => p.theme.spacing() * 3};
+	margin-top: ${p => p.theme.spacing() * 3}px;
 `
 
 const Main = styled(Grid)`
 	background-color: ${p => p.theme.palette.primary.main};
-	padding-top: ${p => p.theme.spacing() * 3};
-	padding-bottom: ${p => p.theme.spacing() * 3};
+	padding-top: ${p => p.theme.spacing() * 3}px;
+	padding-bottom: ${p => p.theme.spacing() * 3}px;
 `
 
 const Side = styled(Grid)`
 	background-color: ${p => p.theme.palette.primary.dark};
-	padding-top: ${p => p.theme.spacing()};
-	padding-bottom: ${p => p.theme.spacing()};
+	padding-top: ${p => p.theme.spacing()}px;
+	padding-bottom: ${p => p.theme.spacing()}px;
 `
 
 const LogoAvatar = styled(Avatar)`
-	margin: 10;
+	margin: 10px;
+	cursor: pointer;
 `
 
 const Row = styled.div`
@@ -36,12 +42,7 @@ type FooterLinkProps = {
 
 const FooterLink: React.FC<FooterLinkProps> = props => (
 	<Tooltip TransitionComponent={Zoom} title={props.text}>
-		<LogoAvatar
-			style={{ cursor: 'pointer' }}
-			onClick={() => window.open(props.href)}
-			alt={props.text}
-			src={props.src}
-		/>
+		<LogoAvatar onClick={() => window.open(props.href)} alt={props.text} src={props.src} />
 	</Tooltip>
 )
 
@@ -61,23 +62,11 @@ const Footer = () => (
 			<Grid item>
 				<Typography variant="h6">links</Typography>
 				<Row>
-					<FooterLink
-						href={urls.external.github}
-						text="GitHub"
-						src={'/assets/pics/github-logo.png'}
-					/>
-					<FooterLink href={urls.external.p5} text="p5.js" src={'/assets/pics/p5js-logo.png'} />
-					<FooterLink
-						href={urls.external.drawio}
-						text="draw.io"
-						src={'/assets/pics/drawio-logo.png'}
-					/>
-					<FooterLink
-						href={urls.external.materialui}
-						text="materialui"
-						src={'/assets/pics/materialui-logo.svg'}
-					/>
-					<FooterLink href={urls.external.react} text="react" src={'/assets/pics/react-logo.png'} />
+					<FooterLink href={urls.external.github} text="GitHub" src={GithubIcon} />
+					<FooterLink href={urls.external.p5} text="p5.js" src={P5jsIcon} />
+					<FooterLink href={urls.external.drawio} text="draw.io" src={DrawioIcon} />
+					<FooterLink href={urls.external.materialui} text="materialui" src={MaterialuiIcon} />
+					<FooterLink href={urls.external.react} text="react" src={ReactIcon} />
 				</Row>
 			</Grid>
 		</Main>

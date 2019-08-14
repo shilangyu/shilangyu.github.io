@@ -1,6 +1,8 @@
 import { Grid } from '@material-ui/core'
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Geneticts from '../../assets/live-previews/geneticts.svg'
+import Tictactoe from '../../assets/live-previews/tictactoe.png'
 import urls from '../../constants/urls'
 import PreviewCard from './PreviewCard'
 
@@ -23,14 +25,14 @@ class LivePreviews extends Component<{}, State> {
 			{
 				name: 'tictactoe',
 				desc: 'Playing against an AI that gets better the more it plays',
-				picSrc: '/assets/pics/live-previews/tictactoe.png',
+				picSrc: Tictactoe,
 				url: urls.external.livePreviews.tictactoe
 			},
 			{
 				name: 'genetic.ts',
 				desc: 'Showcases of my genetic.ts library for genetic algorithms',
-				picSrc: '/assets/pics/live-previews/geneticjs.svg',
-				url: urls.external.livePreviews.geneticjs
+				picSrc: Geneticts,
+				url: urls.external.livePreviews.geneticts
 			}
 		]
 	}

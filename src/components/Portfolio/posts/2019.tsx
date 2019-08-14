@@ -1,5 +1,13 @@
-import { CardMedia, Link } from '@material-ui/core';
-import React from 'react';
+import { CardMedia, Link } from '@material-ui/core'
+import React from 'react'
+import DRDataset from '../../../assets/portfolio/2019/DR-dataset.png'
+import DRInteraction from '../../../assets/portfolio/2019/DR-interaction.png'
+import DRMnist from '../../../assets/portfolio/2019/DR-mnist.png'
+import DRServer from '../../../assets/portfolio/2019/DR-server.png'
+import DRTrainer from '../../../assets/portfolio/2019/DR-trainer.png'
+import DRVisualisation from '../../../assets/portfolio/2019/DR-visualisation.png'
+import LessonsGA from '../../../assets/portfolio/2019/lessons-GA.png'
+import LessonsPerceptron from '../../../assets/portfolio/2019/lessons-perceptron.jpg'
 
 const I: React.FC<{ src: string }> = props => <CardMedia component="img" src={props.src} />
 
@@ -40,12 +48,12 @@ export default [
 				title: 'Data',
 				content: (
 					<>
-						<I src={'/assets/pics/portfolio/2019/DR-mnist.png'} /> Data, on which my fully connected
-						neural network was training was taken from the famous 'mnist' database. It contains tens
-						of thousands of hand-drawn digits. Firstly I had to get the data in a computer-readable
-						format: numbers. Each line in the .csv file contains the label (what digit was drawn)
-						followed by the brightness level of each pixel.
-						<I src={'/assets/pics/portfolio/2019/DR-dataset.png'} />
+						<I src={DRMnist} /> Data, on which my fully connected neural network was training was
+						taken from the famous 'mnist' database. It contains tens of thousands of hand-drawn
+						digits. Firstly I had to get the data in a computer-readable format: numbers. Each line
+						in the .csv file contains the label (what digit was drawn) followed by the brightness
+						level of each pixel.
+						<I src={DRDataset} />
 					</>
 				)
 			},
@@ -53,11 +61,15 @@ export default [
 				title: 'Server',
 				content: (
 					<>
-						<I src={'/assets/pics/portfolio/2019/DR-server.png'} />
-						Server was written in <Link href="https://golang.org/">Golang</Link>. Its function is to
-						initially load and process the before prepared digit data. Afterwards it will respond to
-						such requests as train or test data, taking guesses, or serving the interaction page. It
-						serves as a communicator between different parts of the project.
+						<I src={DRServer} />
+						Server was written in{' '}
+						<Link target="_blank" href="https://golang.org/">
+							Golang
+						</Link>
+						. Its function is to initially load and process the before prepared digit data.
+						Afterwards it will respond to such requests as train or test data, taking guesses, or
+						serving the interaction page. It serves as a communicator between different parts of the
+						project.
 					</>
 				)
 			},
@@ -65,12 +77,15 @@ export default [
 				title: 'Trainer',
 				content: (
 					<>
-						<I src={'/assets/pics/portfolio/2019/DR-trainer.png'} />
-						Trainer was written in <Link href="https://www.python.org/">Python</Link>. First it
-						loads the configuration of the neural network from a yaml file. Then, it trains the
-						neural network, tests it, and saves the weights in a json file. During the training
-						session it will save statistics such as current accuracy, loss, activation function, or
-						learning rate.
+						<I src={DRTrainer} />
+						Trainer was written in{' '}
+						<Link target="_blank" href="https://www.python.org/">
+							Python
+						</Link>
+						. First it loads the configuration of the neural network from a yaml file. Then, it
+						trains the neural network, tests it, and saves the weights in a json file. During the
+						training session it will save statistics such as current accuracy, loss, activation
+						function, or learning rate.
 					</>
 				)
 			},
@@ -82,7 +97,7 @@ export default [
 				title: 'Iteraction',
 				content: (
 					<>
-						<I src={'/assets/pics/portfolio/2019/DR-interaction.png'} />
+						<I src={DRInteraction} />
 						The interaction was written in JavaScript. It was the place to finally test our trained
 						neural network. In the black canvas you can draw a digit and send it to our server. The
 						server then will query the Guesser and return the guess to the javascript frontend. You
@@ -94,8 +109,11 @@ export default [
 				title: 'Visualisation',
 				content: (
 					<>
-						<I src={'/assets/pics/portfolio/2019/DR-visualisation.png'} />
-						Visualisation was written in <Link href="https://processing.org/">Processing</Link>
+						<I src={DRVisualisation} />
+						Visualisation was written in{' '}
+						<Link target="_blank" href="https://processing.org/">
+							Processing
+						</Link>
 						(Java). It shows the gathered data during training sessions as a nice chart.
 					</>
 				)
@@ -113,7 +131,7 @@ export default [
 				title: 'Understanding',
 				content: (
 					<>
-						<I src={'/assets/pics/portfolio/2019/lessons-GA.png'} />
+						<I src={LessonsGA} />
 						The main focus is deep understanding of the algorithms. I try to explain the mathematics
 						behind an algorithm before getting into the implementation. That way I'm sure my
 						students will be later able to write the code themselves.
@@ -128,7 +146,7 @@ export default [
 				title: 'Projects',
 				content: (
 					<>
-						<I src={'/assets/pics/portfolio/2019/lessons-perceptron.jpg'} />
+						<I src={LessonsPerceptron} />
 						Most of our time is spent focusing on the theory and understanding. However we have done
 						a few small projects using our gathered knowledge. With the use of the genetic algorithm
 						the students have written a parameters finder of a quadriatic function: given 2 roots it
