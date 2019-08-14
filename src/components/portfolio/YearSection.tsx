@@ -1,8 +1,8 @@
-import { Paper, Tab, Tabs } from '@material-ui/core';
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import BlogPost from '../dumb/BlogPost';
-import Container from '../dumb/Container';
+import { Paper, Tab, Tabs } from '@material-ui/core'
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import BlogPost from '../dumb/BlogPost'
+import Container from '../dumb/Container'
 
 const TabBackground = styled(Paper)`
 	flex-grow: 1;

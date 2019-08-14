@@ -1,4 +1,4 @@
-import CardMedia from '@material-ui/core/CardMedia'
+import { CardMedia } from '@material-ui/core'
 import React from 'react'
 
 const I: React.FC<{ src: string }> = props => <CardMedia component="img" src={props.src} />

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import urls from '../constants/urls'
-import Index from './index/index'
-import LivePreviews from './livePreviews'
-import Portfolio from './portfolio'
+import Index from './Index/index'
+import LivePreviews from './LivePreviews'
+import Portfolio from './Portfolio'
 
 const Main: React.FC = () => (
 	<main>
