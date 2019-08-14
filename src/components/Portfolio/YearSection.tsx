@@ -1,6 +1,7 @@
 import { Paper, Tab, Tabs } from '@material-ui/core'
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Blog } from '../../constants/types'
 import BlogPost from '../BlogPost'
 import Container from '../Container'
 
@@ -8,16 +9,6 @@ const TabBackground = styled(Paper)`
 	flex-grow: 1;
 	background-color: ${p => p.theme.palette.primary.main};
 `
-
-type Post = {
-	title: string
-	content: string | JSX.Element
-}
-
-export type Blog = {
-	title: string
-	posts: Post[]
-}
 
 interface Props {
 	children: Blog[]

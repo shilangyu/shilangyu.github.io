@@ -8,6 +8,7 @@ import SnekGame from '../../../assets/portfolio/2018/snek-game.png'
 import SnekLeaderboards from '../../../assets/portfolio/2018/snek-leaderboards.png'
 import SnekMenu from '../../../assets/portfolio/2018/snek-menu.png'
 import SnekMultiplayer from '../../../assets/portfolio/2018/snek-multiplayer.png'
+import { Blog } from '../../../constants/types'
 
 const I: React.FC<{ src: string }> = props => <CardMedia component="img" src={props.src} />
 
@@ -17,7 +18,13 @@ export default [
 		posts: [
 			{
 				title: 'Description',
-				content: `It was a project from the first semester of C# courses. The goal was to recreate the classic game 'Snake' in Windows Forms. The adanced level of this project was adding multiplayer features (using sockets).`
+				content: (
+					<>
+						It was a project from the first semester of C# courses. The goal was to recreate the
+						classic game 'Snake' in Windows Forms. The advanced level of this project was adding
+						multiplayer features (using sockets).
+					</>
+				)
 			},
 			{
 				title: 'Menu',
@@ -124,7 +131,12 @@ export default [
 			},
 			{
 				title: 'TicTacToe',
-				content: `A simple AI I made that learns by playing, if a move he makes is bad he remembers it and never does it again.`
+				content: (
+					<>
+						A simple AI I made that learns by playing, if a move he makes is bad he remembers it and
+						never does it again.
+					</>
+				)
 			}
 		]
 	},
@@ -145,8 +157,13 @@ export default [
 			},
 			{
 				title: 'Why bother?',
-				content: `The page is written in a clear and easy to read way, it helps in futher development. To some tiny extent the page was build following the MVC (model-view-controller) model.`
+				content: (
+					<>
+						The page is written in a clear and easy to read way, it helps in futher development. To
+						some tiny extent the page was build following the MVC (model-view-controller) model.
+					</>
+				)
 			}
 		]
 	}
-]
+] as Blog[]

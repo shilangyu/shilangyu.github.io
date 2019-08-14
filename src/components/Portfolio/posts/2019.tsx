@@ -8,6 +8,7 @@ import DRTrainer from '../../../assets/portfolio/2019/DR-trainer.png'
 import DRVisualisation from '../../../assets/portfolio/2019/DR-visualisation.png'
 import LessonsGA from '../../../assets/portfolio/2019/lessons-GA.png'
 import LessonsPerceptron from '../../../assets/portfolio/2019/lessons-perceptron.jpg'
+import { Blog } from '../../../constants/types'
 
 const I: React.FC<{ src: string }> = props => <CardMedia component="img" src={props.src} />
 
@@ -17,23 +18,59 @@ export default [
 		posts: [
 			{
 				title: 'Description',
-				content: `At the end of my Junior high school year I got an internship at IBM Warsaw. This internship was 3 months long, starting from July through September.`
+				content: (
+					<>
+						At the end of my Junior high school year I got an internship at IBM Warsaw. This
+						internship was 3 months long, starting from July through September.
+					</>
+				)
 			},
 			{
 				title: 'Webdev',
-				content: `After successfully passing the interview I was recruited as a Javascript web developer because I knew the tools and frameworks needed. My team's task was to created a PoC of micro-frontends.`
+				content: (
+					<>
+						After successfully passing the interview I was recruited as a Javascript web developer
+						because I knew the tools and frameworks needed. My team's task was to created a PoC of
+						micro-frontends.
+					</>
+				)
 			},
 			{
 				title: 'React+redux',
-				content: `The framework I mostly worked with was React with Redux as state management. That's where I fell in love in React and have rewritten many of my webapps to React, including this page (previously in EJS). I like React because of its ease to get something working quick and because of its huge community.`
+				content: (
+					<>
+						The framework I mostly worked with was React with Redux as state management. That's
+						where I fell in love in React and have rewritten many of my webapps to React, including
+						this page (previously in EJS). I like React because of its ease to get something working
+						quick and because of its huge community.
+					</>
+				)
 			},
 			{
 				title: 'Micro-frontends',
-				content: `After finishing the micro-frontends (small parts of a webpage written separately: navbar, footer, content, etc.) came the time to create this 'glue' that would combine them together in one finished webpage. I was given the task of investigating all possibilities of creating that 'glue'. The main goal was to follow the micro-services architecture and that's exactly what I did. Each micro-frontend was supposed to be fully independent. I spent all my time researching different methods because there was no uniform solution. After I finished collecting a few good methods I was asked to have a presentation about all of them with respect to their pros and cons. After the presentation we decided on a solution that we thought would fit our project the best.`
+				content: (
+					<>
+						After finishing the micro-frontends (small parts of a webpage written separately:
+						navbar, footer, content, etc.) came the time to create this 'glue' that would combine
+						them together in one finished webpage. I was given the task of investigating all
+						possibilities of creating that 'glue'. The main goal was to follow the micro-services
+						architecture and that's exactly what I did. Each micro-frontend was supposed to be fully
+						independent. I spent all my time researching different methods because there was no
+						uniform solution. After I finished collecting a few good methods I was asked to have a
+						presentation about all of them with respect to their pros and cons. After the
+						presentation we decided on a solution that we thought would fit our project the best.
+					</>
+				)
 			},
 			{
 				title: 'Corporate life',
-				content: `Thanks to the internship I have learned what it means to work for a big corporation: often meetings and a lot of teamwork. I also gained experience in the SCRUM and AGILE workflow which was a pleasure to work in.`
+				content: (
+					<>
+						Thanks to the internship I have learned what it means to work for a big corporation:
+						often meetings and a lot of teamwork. I also gained experience in the SCRUM and AGILE
+						workflow which was a pleasure to work in.
+					</>
+				)
 			}
 		]
 	},
@@ -42,7 +79,14 @@ export default [
 		posts: [
 			{
 				title: 'Description',
-				content: `It was my biggest personal project involving machine learning. The goal was to create the hello world of machine learning: mnist digits recognition. However to make it a little bit more interesting I decided to write each part in a different programming language.`
+				content: (
+					<>
+						It was my biggest personal project involving machine learning. The goal was to create
+						the hello world of machine learning: mnist digits recognition. However to make it a
+						little bit more interesting I decided to write each part in a different programming
+						language.
+					</>
+				)
 			},
 			{
 				title: 'Data',
@@ -91,7 +135,12 @@ export default [
 			},
 			{
 				title: 'Guesser',
-				content: `The guesser was written in c++. It utilizes the previously trained network to perfom guesses sent by the Interaction.`
+				content: (
+					<>
+						The guesser was written in c++. It utilizes the previously trained network to perfom
+						guesses sent by the Interaction.
+					</>
+				)
 			},
 			{
 				title: 'Iteraction',
@@ -125,7 +174,12 @@ export default [
 		posts: [
 			{
 				title: 'Description',
-				content: `On Mondays from 16:00 through 19:00 I conduct a ML club where I teach fellow students Machine Learning algorithms.`
+				content: (
+					<>
+						On Mondays from 16:00 through 19:00 I conduct a ML club where I teach fellow students
+						Machine Learning algorithms.
+					</>
+				)
 			},
 			{
 				title: 'Understanding',
@@ -140,7 +194,13 @@ export default [
 			},
 			{
 				title: 'Leveling',
-				content: `My students are at different stages of education. Which is why I do my best to use simple language and concepts when explaining the mathematical part. I'm very happy to see  the results where much younger students understand at the same level as older ones.`
+				content: (
+					<>
+						My students are at different stages of education. Which is why I do my best to use
+						simple language and concepts when explaining the mathematical part. I'm very happy to
+						see the results where much younger students understand at the same level as older ones.
+					</>
+				)
 			},
 			{
 				title: 'Projects',
@@ -158,4 +218,4 @@ export default [
 			}
 		]
 	}
-]
+] as Blog[]
