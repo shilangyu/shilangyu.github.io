@@ -16,13 +16,13 @@ const Pagination = styled(Grid)`
 	margin: 0 0 20px 0;
 `
 
-type Props = {
+interface Props {
 	title: string
 	pagination: string[]
 	posts: (string | JSX.Element)[]
 }
 
-type State = {
+interface State {
 	pagiId: string[]
 }
 

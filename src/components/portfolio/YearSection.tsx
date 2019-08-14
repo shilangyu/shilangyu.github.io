@@ -2,16 +2,12 @@ import { Paper, Tab, Tabs } from '@material-ui/core'
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import BlogPost from '../dumb/BlogPost'
-import { Container } from '../dumb/Container'
+import Container from '../dumb/Container'
 
 const TabBackground = styled(Paper)`
 	flex-grow: 1;
 	background-color: ${p => p.theme.palette.primary.main};
 `
-
-type State = {
-	tab: number
-}
 
 type Post = {
 	title: string
@@ -23,8 +19,12 @@ export type Blog = {
 	posts: Post[]
 }
 
-type Props = {
+interface Props {
 	children: Blog[]
+}
+
+interface State {
+	tab: number
 }
 
 class YearSection extends Component<Props, State> {
@@ -32,7 +32,7 @@ class YearSection extends Component<Props, State> {
 		tab: 0
 	}
 
-	tabChange = (event: React.ChangeEvent<{}>, value: number) => this.setState({ tab: value })
+	tabChange = (e: React.ChangeEvent<{}>, value: number) => this.setState({ tab: value })
 
 	render() {
 		const { children: posts } = this.props

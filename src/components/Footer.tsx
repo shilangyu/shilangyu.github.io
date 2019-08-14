@@ -1,5 +1,5 @@
 import { Avatar, Grid, Tooltip, Typography, Zoom } from '@material-ui/core'
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import urls from '../constants/urls'
 
@@ -34,7 +34,7 @@ type FooterLinkProps = {
 	src: string
 }
 
-const FooterLink: React.SFC<FooterLinkProps> = props => (
+const FooterLink: React.FC<FooterLinkProps> = props => (
 	<Tooltip TransitionComponent={Zoom} title={props.text}>
 		<LogoAvatar
 			style={{ cursor: 'pointer' }}
@@ -45,61 +45,53 @@ const FooterLink: React.SFC<FooterLinkProps> = props => (
 	</Tooltip>
 )
 
-class Footer extends Component {
-	render() {
-		return (
-			<Root>
-				<Main justify="space-around" direction="row" container>
-					<Grid item>
-						<Typography variant="h6">info</Typography>
-						<Typography>
-							designed using Materialui <br />
-							html5 canvas drawing by p5.js <br />
-							build with React <br />
-							all graphs made thanks to draw.io <br />
-						</Typography>
-					</Grid>
+const Footer = () => (
+	<Root>
+		<Main justify="space-around" direction="row" container>
+			<Grid item>
+				<Typography variant="h6">info</Typography>
+				<Typography>
+					designed using Materialui <br />
+					html5 canvas drawing by p5.js <br />
+					build with React <br />
+					all graphs made thanks to draw.io <br />
+				</Typography>
+			</Grid>
 
-					<Grid item>
-						<Typography variant="h6">links</Typography>
-						<Row>
-							<FooterLink
-								href={urls.external.github}
-								text="GitHub"
-								src={'/assets/pics/github-logo.png'}
-							/>
-							<FooterLink href={urls.external.p5} text="p5.js" src={'/assets/pics/p5js-logo.png'} />
-							<FooterLink
-								href={urls.external.drawio}
-								text="draw.io"
-								src={'/assets/pics/drawio-logo.png'}
-							/>
-							<FooterLink
-								href={urls.external.materialui}
-								text="materialui"
-								src={'/assets/pics/materialui-logo.svg'}
-							/>
-							<FooterLink
-								href={urls.external.react}
-								text="react"
-								src={'/assets/pics/react-logo.png'}
-							/>
-						</Row>
-					</Grid>
-				</Main>
+			<Grid item>
+				<Typography variant="h6">links</Typography>
+				<Row>
+					<FooterLink
+						href={urls.external.github}
+						text="GitHub"
+						src={'/assets/pics/github-logo.png'}
+					/>
+					<FooterLink href={urls.external.p5} text="p5.js" src={'/assets/pics/p5js-logo.png'} />
+					<FooterLink
+						href={urls.external.drawio}
+						text="draw.io"
+						src={'/assets/pics/drawio-logo.png'}
+					/>
+					<FooterLink
+						href={urls.external.materialui}
+						text="materialui"
+						src={'/assets/pics/materialui-logo.svg'}
+					/>
+					<FooterLink href={urls.external.react} text="react" src={'/assets/pics/react-logo.png'} />
+				</Row>
+			</Grid>
+		</Main>
 
-				<Side justify="space-around" direction="row" container>
-					<Grid item>
-						<Typography>&reg; 42069 you'r mom &trade;</Typography>
-					</Grid>
+		<Side justify="space-around" direction="row" container>
+			<Grid item>
+				<Typography>&reg; 42069 you'r mom &trade;</Typography>
+			</Grid>
 
-					<Grid item>
-						<Typography>More links</Typography>
-					</Grid>
-				</Side>
-			</Root>
-		)
-	}
-}
+			<Grid item>
+				<Typography>More links</Typography>
+			</Grid>
+		</Side>
+	</Root>
+)
 
 export default Footer

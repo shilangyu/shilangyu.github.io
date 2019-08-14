@@ -5,12 +5,21 @@ import urls from '../../constants/urls'
 import PreviewCard from './PreviewCard'
 
 const Root = styled(Grid)`
-	${p => p.theme.spacing() * 3}
+	padding-top: ${p => p.theme.spacing() * 3};
 	background-color: #e0e0e0;
 	margin: 30px 0;
 `
 
-class LivePreviews extends Component {
+interface State {
+	previews: {
+		name: string
+		desc: string
+		picSrc: string
+		url: string
+	}[]
+}
+
+class LivePreviews extends Component<{}, State> {
 	state = {
 		previews: [
 			{
@@ -27,6 +36,7 @@ class LivePreviews extends Component {
 			}
 		]
 	}
+
 	render() {
 		const { previews } = this.state
 
