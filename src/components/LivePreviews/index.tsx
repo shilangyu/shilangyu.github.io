@@ -5,9 +5,7 @@ import urls from '../../constants/urls'
 import PreviewCard from './PreviewCard'
 
 const Root = styled(Grid)`
-	padding-top: ${p => p.theme.spacing() * 3};
-	background-color: #e0e0e0;
-	margin: 30px 0;
+	padding-top: ${p => p.theme.spacing() * 3}px;
 `
 
 interface State {
