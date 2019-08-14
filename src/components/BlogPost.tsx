@@ -1,7 +1,7 @@
 import { Button, Divider, Grid, Typography } from '@material-ui/core'
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { uID } from '../constants/generators'
+import { weakUId } from '../utils'
 
 const BlogDivider = styled(Divider)`
 	background-color: #e0e0e0;
@@ -28,7 +28,7 @@ interface State {
 
 class BlogPost extends Component<Props, State> {
 	state = {
-		pagiId: new Array(this.props.pagination.length).fill(null).map(e => uID.next().value)
+		pagiId: new Array(this.props.pagination.length).fill(null).map(weakUId)
 	}
 
 	paginationOnClick = (id: string) => () =>

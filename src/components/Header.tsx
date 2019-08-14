@@ -18,8 +18,8 @@ import { ArrowDropDown, ExpandLess, ExpandMore, Menu as MenuIcon } from '@materi
 import React, { Component } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 import styled from 'styled-components'
-import { uID } from '../constants/generators'
 import urls from '../constants/urls'
+import { weakUId } from '../utils'
 
 const WALink: (to: string) => React.SFC<ButtonBaseProps> = to => props => (
 	<Link to={to} {...props as LinkProps} />
@@ -78,15 +78,15 @@ class Header extends Component<{}, State> {
 		openSubList: null,
 		drawerOpen: false,
 		links: [
-			{ text: 'about me', to: urls.index, uid: uID.next().value },
-			{ text: 'live previews', to: urls.livePreviews, uid: uID.next().value },
+			{ text: 'about me', to: urls.index, uid: weakUId() },
+			{ text: 'live previews', to: urls.livePreviews, uid: weakUId() },
 			{
 				text: 'portfolio',
 				subs: [
 					{ text: '2018', to: urls.portfolio.replace(/:year$/, '2018') },
 					{ text: '2019', to: urls.portfolio.replace(/:year$/, '2019') }
 				],
-				uid: uID.next().value
+				uid: weakUId()
 			}
 		]
 	}
