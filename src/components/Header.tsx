@@ -25,10 +25,6 @@ const WALink: (to: string) => React.SFC<ButtonBaseProps> = to => props => (
 	<Link to={to} {...props as LinkProps} />
 )
 
-const Nav = styled.nav`
-	flex-grow: 1;
-`
-
 const MenuButton = styled(IconButton)`
 	margin-left: -12;
 	margin-right: 20;
@@ -106,7 +102,7 @@ class Header extends Component<{}, State> {
 		const { openSelect, links, active, openSubList } = this.state
 
 		return (
-			<Nav>
+			<nav>
 				<AppBar position="sticky">
 					<Toolbar>
 						<Hidden smUp>
@@ -223,7 +219,7 @@ class Header extends Component<{}, State> {
 						</Hidden>
 					</Toolbar>
 				</AppBar>
-			</Nav>
+			</nav>
 		)
 	}
 }

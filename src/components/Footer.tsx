@@ -9,7 +9,7 @@ import ReactIcon from '../assets/logos/react.png'
 import urls from '../constants/urls'
 
 const Root = styled.footer`
-	margin-top: ${p => p.theme.spacing() * 3}px;
+	margin-top: auto;
 `
 
 const Main = styled(Grid)`
@@ -29,12 +29,7 @@ const LogoAvatar = styled(Avatar)`
 	cursor: pointer;
 `
 
-const Row = styled.div`
-	display: flex;
-	justify-content: center;
-`
-
-type FooterLinkProps = {
+interface FooterLinkProps {
 	text: string
 	href: string
 	src: string
@@ -61,13 +56,13 @@ const Footer = () => (
 
 			<Grid item>
 				<Typography variant="h6">links</Typography>
-				<Row>
+				<Grid direction="row" container>
 					<FooterLink href={urls.external.github} text="GitHub" src={GithubIcon} />
 					<FooterLink href={urls.external.p5} text="p5.js" src={P5jsIcon} />
 					<FooterLink href={urls.external.drawio} text="draw.io" src={DrawioIcon} />
 					<FooterLink href={urls.external.materialui} text="materialui" src={MaterialuiIcon} />
 					<FooterLink href={urls.external.react} text="react" src={ReactIcon} />
-				</Row>
+				</Grid>
 			</Grid>
 		</Main>
 
