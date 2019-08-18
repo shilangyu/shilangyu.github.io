@@ -15,7 +15,6 @@ import {
 	Typography,
 	useScrollTrigger
 } from '@material-ui/core'
-import { ButtonBaseProps } from '@material-ui/core/ButtonBase'
 import { ArrowDropDown, ExpandLess, ExpandMore, Menu as MenuIcon } from '@material-ui/icons'
 import React, { Component } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
@@ -24,9 +23,9 @@ import { Years } from '../constants/types'
 import urls from '../constants/urls'
 import { weakUId } from '../utils'
 
-const WALink: (to: string) => React.FC<ButtonBaseProps> = to => props => (
-	<Link to={to} {...props as LinkProps} />
-)
+const AdapterLink = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => (
+	<Link innerRef={ref as any} {...props} />
+))
 
 const MenuButton = styled(IconButton)`
 	margin-left: -12;
@@ -167,7 +166,8 @@ class Header extends Component<{}, State> {
 																	<Item
 																		button
 																		key={sub.text}
-																		component={WALink(sub.to)}
+																		component={AdapterLink}
+																		to={sub.to}
 																		onClick={() => {
 																			this.setActive(link.uid)
 																			this.toggleDrawer()
@@ -186,7 +186,8 @@ class Header extends Component<{}, State> {
 															this.toggleDrawer()
 														}}
 														key={link.text}
-														component={WALink(link.to)}
+														component={AdapterLink}
+														to={link.to}
 														button
 														selected={link.uid === active}
 													>
@@ -224,7 +225,8 @@ class Header extends Component<{}, State> {
 												{link.subs.map(sub => (
 													<MenuItem
 														key={sub.text}
-														component={WALink(sub.to)}
+														component={AdapterLink}
+														to={sub.to}
 														onClick={() => {
 															this.setActive(link.uid)
 															this.closeSelect()
@@ -238,7 +240,8 @@ class Header extends Component<{}, State> {
 									) : (
 										<Button
 											key={link.text}
-											component={WALink(link.to)}
+											component={AdapterLink}
+											to={link.to}
 											onClick={() => this.setActive(link.uid)}
 											color="inherit"
 											variant={active === link.uid ? 'outlined' : undefined}
