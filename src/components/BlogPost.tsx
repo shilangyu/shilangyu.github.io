@@ -10,11 +10,11 @@ const BlogDivider = styled(Divider)`
 `
 
 const Subtitle = styled(Typography)`
-	margin: 0 0 10px 0;
+	margin-bottom: ${p => p.theme.spacing()}px;
 `
 
 const Pagination = styled(Grid)`
-	margin: 0 0 20px 0;
+	margin-bottom: ${p => p.theme.spacing() * 2}px;
 `
 
 interface State {
