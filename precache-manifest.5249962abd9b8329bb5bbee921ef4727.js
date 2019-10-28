@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a18ec99568ce0d50dd57188ae345455b",
+    "revision": "f43773eb49838d4476f8fbbf9e719d03",
     "url": "/index.html"
   },
   {
-    "revision": "9e0db2764757a490bde4",
-    "url": "/static/js/2.77e83175.chunk.js"
+    "revision": "61c0fe4e41f5d168fe29",
+    "url": "/static/js/2.7888b0c9.chunk.js"
   },
   {
-    "revision": "71e348af72c4aad92963",
-    "url": "/static/js/main.dbabdeda.chunk.js"
+    "revision": "bf35663d127737113ba6",
+    "url": "/static/js/main.57157af6.chunk.js"
   },
   {
     "revision": "307862ca3b75eddf34b7",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/drawio.636f8a0d.png"
   },
   {
-    "revision": "52a8d2453da7990033b1197e9037662e",
-    "url": "/static/media/geneticts.52a8d245.svg"
+    "revision": "a0d2ce608d9ce9bd793aab43ba02da53",
+    "url": "/static/media/geneticts.a0d2ce60.svg"
   },
   {
     "revision": "d9321b7c851fc0f4956af370743413e4",
