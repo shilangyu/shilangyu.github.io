@@ -1,6 +1,6 @@
 # shilangyu.github.io
 
-[![Build Status](https://travis-ci.com/shilangyu/shilangyu.github.io.svg?branch=develop)](https://travis-ci.com/shilangyu/shilangyu.github.io)
+![](https://github.com/shilangyu/shilangyu.github.io/workflows/ci/badge.svg)
 
 Started as a personal React project, ended up being my personal webpage.
 
