@@ -1,56 +1,43 @@
 import { Paper, Tab, Tabs } from '@material-ui/core'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Blog } from '../../constants/types'
 import BlogPost from '../BlogPost'
 import Container from '../Container'
 
 const TabBackground = styled(Paper)`
-	flex-grow: 1;
-	background-color: ${p => p.theme.palette.primary.main};
+  flex-grow: 1;
+  background-color: ${p => p.theme.palette.primary.main};
 `
 
 interface Props {
-	children: Blog[]
+  children: Blog[]
 }
 
-interface State {
-	tab: number
-}
+const YearSection: React.FC<Props> = ({ children: blogs }) => {
+  const [tab, setTab] = useState(0)
 
-class YearSection extends Component<Props, State> {
-	state = {
-		tab: 0
-	}
+  return (
+    <>
+      <TabBackground square>
+        <Tabs
+          value={tab}
+          onChange={(_, value) => setTab(value)}
+          indicatorColor="secondary"
+          centered
+          variant="fullWidth"
+        >
+          {blogs.map(({ title }) => (
+            <Tab key={title} label={title} />
+          ))}
+        </Tabs>
+      </TabBackground>
 
-	tabChange = (e: React.ChangeEvent<{}>, value: number) => this.setState({ tab: value })
-
-	render() {
-		const { children: blogs } = this.props
-		const currentBlog = blogs[this.state.tab]
-
-		return (
-			<>
-				<TabBackground square>
-					<Tabs
-						value={this.state.tab}
-						onChange={this.tabChange}
-						indicatorColor="secondary"
-						centered
-						variant="fullWidth"
-					>
-						{blogs.map(({ title }) => (
-							<Tab key={title} label={title} />
-						))}
-					</Tabs>
-				</TabBackground>
-
-				<Container>
-					<BlogPost title={currentBlog.title} posts={currentBlog.posts} />
-				</Container>
-			</>
-		)
-	}
+      <Container>
+        <BlogPost title={blogs[tab].title} posts={blogs[tab].posts} />
+      </Container>
+    </>
+  )
 }
 
 export default YearSection
