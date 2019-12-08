@@ -10,4 +10,4 @@ Started as a personal React project, ended up being my personal webpage.
 - My portfolios
 - Project previews
 
-[see ya there](https://shilangyu.github.io)
+[see ya there](https://shilangyu.dev)
