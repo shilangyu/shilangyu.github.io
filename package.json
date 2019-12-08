@@ -1,41 +1,40 @@
 {
-	"name": "shilangyu.github.io",
-	"version": "0.1.0",
-	"private": true,
-	"homepage": "https://shilangyu.github.io/",
-	"dependencies": {
-		"@material-ui/core": "^4.3.2",
-		"@material-ui/icons": "^4.2.1",
-		"@material-ui/styles": "^4.3.0",
-		"react": "^16.9.0",
-		"react-dom": "^16.9.0",
-		"react-router-dom": "^5.0.1",
-		"react-scripts": "^3.1.0",
-		"styled-components": "^4.3.2",
-		"sw-precache": "^5.2.1",
-		"visible-height-css": "^1.0.0"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build && cd build && sw-precache --config ../sw-precache-config.js",
-		"test": "react-scripts test --env=jsdom",
-		"eject": "react-scripts eject",
-		"analyze": "npm run build && source-map-explorer 'build/static/js/*.js'"
-	},
-	"devDependencies": {
-		"@types/node": "^12.7.1",
-		"@types/react": "^16.9.1",
-		"@types/react-dom": "^16.8.5",
-		"@types/react-jss": "^10.0.0",
-		"@types/react-router-dom": "^5.1.0",
-		"@types/styled-components": "^4.1.18",
-		"source-map-explorer": "^2.0.1",
-		"typescript": "^3.5.3"
-	},
-	"browserslist": [
-		">0.2%",
-		"not dead",
-		"not ie <= 11",
-		"not op_mini all"
-	]
+  "name": "shilangyu.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://shilangyu.github.io/",
+  "dependencies": {
+    "@material-ui/core": "^4.3.2",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.3.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.1.0",
+    "styled-components": "^4.3.2",
+    "visible-height-css": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && cd build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "analyze": "npm run build && source-map-explorer 'build/static/js/*.js'"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.1",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-jss": "^10.0.0",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/styled-components": "^4.1.18",
+    "source-map-explorer": "^2.0.1",
+    "typescript": "^3.5.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
