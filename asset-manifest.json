@@ -1,32 +1,33 @@
 {
   "files": {
-    "main.js": "/static/js/main.4a593d4e.chunk.js",
-    "main.js.map": "/static/js/main.4a593d4e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4929ad58.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4929ad58.js.map",
-    "static/js/2.defd44b5.chunk.js": "/static/js/2.defd44b5.chunk.js",
-    "static/js/2.defd44b5.chunk.js.map": "/static/js/2.defd44b5.chunk.js.map",
+    "main.js": "/static/js/main.c7041d7d.chunk.js",
+    "main.js.map": "/static/js/main.c7041d7d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.69aca25e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.69aca25e.js.map",
+    "static/js/2.1e2d2e19.chunk.js": "/static/js/2.1e2d2e19.chunk.js",
+    "static/js/2.1e2d2e19.chunk.js.map": "/static/js/2.1e2d2e19.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f1b60c832c7f418aa63c4780396f3ffc.js": "/precache-manifest.f1b60c832c7f418aa63c4780396f3ffc.js",
+    "precache-manifest.9d0201cf66098c1db9fb5fb056e375cf.js": "/precache-manifest.9d0201cf66098c1db9fb5fb056e375cf.js",
     "service-worker.js": "/service-worker.js",
+    "static/js/2.1e2d2e19.chunk.js.LICENSE": "/static/js/2.1e2d2e19.chunk.js.LICENSE",
     "static/media/DR-dataset.png": "/static/media/DR-dataset.923304ad.png",
     "static/media/DR-mnist.png": "/static/media/DR-mnist.ffdd48af.png",
     "static/media/DR-visualisation.png": "/static/media/DR-visualisation.c46482c1.png",
     "static/media/GA-graph.png": "/static/media/GA-graph.f273e8b8.png",
     "static/media/NE-graph.png": "/static/media/NE-graph.861f778c.png",
     "static/media/NNcar-laser.png": "/static/media/NNcar-laser.7ab02160.png",
-    "static/media/drawio.png": "/static/media/drawio.636f8a0d.png",
+    "static/media/drawio.svg": "/static/media/drawio.938e6cd3.svg",
     "static/media/geneticts.svg": "/static/media/geneticts.a0d2ce60.svg",
+    "static/media/github.svg": "/static/media/github.617870e4.svg",
     "static/media/lessons-GA.png": "/static/media/lessons-GA.d9321b7c.png",
     "static/media/lessons-perceptron.jpg": "/static/media/lessons-perceptron.47155a76.jpg",
     "static/media/materialui.svg": "/static/media/materialui.cb2f65a2.svg",
-    "static/media/p5js.png": "/static/media/p5js.2aa97997.png",
     "static/media/page-graph.png": "/static/media/page-graph.c0b399df.png",
-    "static/media/react.png": "/static/media/react.90c32862.png"
+    "static/media/react.svg": "/static/media/react.b0076afb.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4929ad58.js",
-    "static/js/2.defd44b5.chunk.js",
-    "static/js/main.4a593d4e.chunk.js"
+    "static/js/runtime-main.69aca25e.js",
+    "static/js/2.1e2d2e19.chunk.js",
+    "static/js/main.c7041d7d.chunk.js"
   ]
 }
