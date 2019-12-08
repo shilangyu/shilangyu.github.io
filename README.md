@@ -1,6 +1,6 @@
 # shilangyu.github.io
 
-![](https://github.com/shilangyu/shilangyu.github.io/workflows/ci/badge.svg)
+[![](https://github.com/shilangyu/shilangyu.github.io/workflows/ci/badge.svg)](https://github.com/shilangyu/shilangyu.github.io/actions)
 
 Started as a personal React project, ended up being my personal webpage.
 
