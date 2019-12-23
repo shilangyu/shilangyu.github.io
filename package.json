@@ -29,7 +29,7 @@
     "@types/react-router-dom": "^5.1.0",
     "@types/styled-components": "^4.4.1",
     "source-map-explorer": "^2.0.1",
-    "typescript": "^3.5.3"
+    "typescript": "^3.7.4"
   },
   "browserslist": [
     ">0.2%",
