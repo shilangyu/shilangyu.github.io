@@ -22,7 +22,7 @@
     "analyze": "npm run build && source-map-explorer 'build/static/js/*.js'"
   },
   "devDependencies": {
-    "@types/node": "^13.1.1",
+    "@types/node": "^13.1.2",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.8.5",
     "@types/react-jss": "^10.0.0",
