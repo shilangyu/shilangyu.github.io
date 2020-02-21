@@ -4,12 +4,12 @@
     "main.js.map": "/static/js/main.73744293.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ae92b757.js",
     "runtime-main.js.map": "/static/js/runtime-main.ae92b757.js.map",
-    "static/js/2.b2e46f06.chunk.js": "/static/js/2.b2e46f06.chunk.js",
-    "static/js/2.b2e46f06.chunk.js.map": "/static/js/2.b2e46f06.chunk.js.map",
+    "static/js/2.e0731301.chunk.js": "/static/js/2.e0731301.chunk.js",
+    "static/js/2.e0731301.chunk.js.map": "/static/js/2.e0731301.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.20bea820d70d4acc85642a8a4c52ba32.js": "/precache-manifest.20bea820d70d4acc85642a8a4c52ba32.js",
+    "precache-manifest.9f90a9e90ba62e2ec7e8a86da8da1824.js": "/precache-manifest.9f90a9e90ba62e2ec7e8a86da8da1824.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.b2e46f06.chunk.js.LICENSE.txt": "/static/js/2.b2e46f06.chunk.js.LICENSE.txt",
+    "static/js/2.e0731301.chunk.js.LICENSE.txt": "/static/js/2.e0731301.chunk.js.LICENSE.txt",
     "static/media/DR-dataset.png": "/static/media/DR-dataset.923304ad.png",
     "static/media/DR-mnist.png": "/static/media/DR-mnist.ffdd48af.png",
     "static/media/DR-visualisation.png": "/static/media/DR-visualisation.c46482c1.png",
@@ -27,7 +27,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ae92b757.js",
-    "static/js/2.b2e46f06.chunk.js",
+    "static/js/2.e0731301.chunk.js",
     "static/js/main.73744293.chunk.js"
   ]
 }
