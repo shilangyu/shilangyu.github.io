@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.35bb3215.chunk.js",
-    "main.js.map": "/static/js/main.35bb3215.chunk.js.map",
+    "main.js": "/static/js/main.ac0f480d.chunk.js",
+    "main.js.map": "/static/js/main.ac0f480d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ae92b757.js",
     "runtime-main.js.map": "/static/js/runtime-main.ae92b757.js.map",
     "static/js/2.a697256a.chunk.js": "/static/js/2.a697256a.chunk.js",
     "static/js/2.a697256a.chunk.js.map": "/static/js/2.a697256a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.96d5ac36f2bc9689f85fcc6077914c99.js": "/precache-manifest.96d5ac36f2bc9689f85fcc6077914c99.js",
+    "precache-manifest.28969b67bb20a06e06498411818dce28.js": "/precache-manifest.28969b67bb20a06e06498411818dce28.js",
     "service-worker.js": "/service-worker.js",
     "static/js/2.a697256a.chunk.js.LICENSE.txt": "/static/js/2.a697256a.chunk.js.LICENSE.txt",
     "static/media/DR-dataset.png": "/static/media/DR-dataset.923304ad.png",
@@ -28,6 +28,6 @@
   "entrypoints": [
     "static/js/runtime-main.ae92b757.js",
     "static/js/2.a697256a.chunk.js",
-    "static/js/main.35bb3215.chunk.js"
+    "static/js/main.ac0f480d.chunk.js"
   ]
 }
