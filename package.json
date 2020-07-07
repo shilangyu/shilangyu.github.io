@@ -27,7 +27,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-jss": "^10.0.0",
     "@types/react-router-dom": "^5.1.5",
-    "@types/styled-components": "^5.1.0",
+    "@types/styled-components": "^5.1.1",
     "source-map-explorer": "^2.4.2",
     "typescript": "^3.9.6"
   },
