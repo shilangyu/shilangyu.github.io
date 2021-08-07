@@ -27,27 +27,27 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const App: React.FC = () => {
-	useEffect(() => {
-		setVisibleHeight('vih')
-	}, [])
+  useEffect(() => {
+    setVisibleHeight('vih')
+  }, [])
 
-	return (
-		<StylesProvider injectFirst>
-			<ThemeProvider theme={theme}>
-				<MuiThemeProvider theme={theme}>
-					<CssBaseline />
-					<HashRouter>
-						<>
-							<GlobalStyle />
-							<Header />
-							<Main />
-							<Footer />
-						</>
-					</HashRouter>
-				</MuiThemeProvider>
-			</ThemeProvider>
-		</StylesProvider>
-	)
+  return (
+    <StylesProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <MuiThemeProvider theme={theme}>
+          <CssBaseline />
+          <HashRouter>
+            <>
+              <GlobalStyle />
+              <Header />
+              <Main />
+              <Footer />
+            </>
+          </HashRouter>
+        </MuiThemeProvider>
+      </ThemeProvider>
+    </StylesProvider>
+  )
 }
 
 export default App

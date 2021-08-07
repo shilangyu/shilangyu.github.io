@@ -24,7 +24,7 @@ const BlogPost: React.FC<Blog> = ({ title, posts }) => {
     (id: string) => () =>
       document.querySelector(`#${id}`)!.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       }),
     []
   )

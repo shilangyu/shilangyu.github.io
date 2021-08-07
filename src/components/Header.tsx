@@ -13,13 +13,13 @@ import {
   SwipeableDrawer,
   Toolbar,
   Typography,
-  useScrollTrigger
+  useScrollTrigger,
 } from '@material-ui/core'
 import {
   ArrowDropDown,
   ExpandLess,
   ExpandMore,
-  Menu as MenuIcon
+  Menu as MenuIcon,
 } from '@material-ui/icons'
 import React, { Component } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
@@ -71,13 +71,13 @@ const links: HLink[] = [
     text: 'portfolio',
     subs: Object.values(Years).map(text => ({
       text,
-      to: urls.portfolio.replace(/:year$/, text)
-    }))
-  }
+      to: urls.portfolio.replace(/:year$/, text),
+    })),
+  },
 ].map(e => ({ ...e, uid: weakUId() }))
 
 const HideOnScroll: React.FC<{ children: React.ReactElement<any, any> }> = ({
-  children
+  children,
 }) => {
   const trigger = useScrollTrigger()
 
@@ -121,12 +121,12 @@ class Header extends Component<{}, State> {
     })(),
     openSelect: { anchor: null, uid: null },
     openSubList: null,
-    drawerOpen: false
+    drawerOpen: false,
   }
 
   toggleSubList = (id: string) =>
     this.setState(prevState => ({
-      openSubList: prevState.openSubList === id ? null : id
+      openSubList: prevState.openSubList === id ? null : id,
     }))
 
   openSelect = (
