@@ -6,7 +6,7 @@ import posts2019 from './posts/2019'
 import YearSection from './YearSection'
 
 const noSuchYear: Blog[] = [
-  { title: 'This year was not documented yet', posts: [] }
+  { title: 'This year was not documented yet', posts: [] },
 ]
 
 interface Props {
@@ -15,12 +15,12 @@ interface Props {
 
 const Porfolio: React.FC<RouteComponentProps<Props>> = ({
   match: {
-    params: { year }
-  }
+    params: { year },
+  },
 }) => {
   const sections: { [key in Years]: Blog[] } = {
     '2018': posts2018,
-    '2019': posts2019
+    '2019': posts2019,
   }
 
   const posts = ((year: any): year is keyof typeof sections =>
