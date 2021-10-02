@@ -4,10 +4,10 @@
     "main.js.map": "/static/js/main.4f3ca21c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.066fea01.js",
     "runtime-main.js.map": "/static/js/runtime-main.066fea01.js.map",
-    "static/js/2.bcd8b213.chunk.js": "/static/js/2.bcd8b213.chunk.js",
-    "static/js/2.bcd8b213.chunk.js.map": "/static/js/2.bcd8b213.chunk.js.map",
+    "static/js/2.02756564.chunk.js": "/static/js/2.02756564.chunk.js",
+    "static/js/2.02756564.chunk.js.map": "/static/js/2.02756564.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.bcd8b213.chunk.js.LICENSE.txt": "/static/js/2.bcd8b213.chunk.js.LICENSE.txt",
+    "static/js/2.02756564.chunk.js.LICENSE.txt": "/static/js/2.02756564.chunk.js.LICENSE.txt",
     "static/media/DR-dataset.fb5af549.png": "/static/media/DR-dataset.fb5af549.png",
     "static/media/DR-mnist.2d7e644e.png": "/static/media/DR-mnist.2d7e644e.png",
     "static/media/DR-visualisation.a20dcee4.png": "/static/media/DR-visualisation.a20dcee4.png",
@@ -25,7 +25,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.066fea01.js",
-    "static/js/2.bcd8b213.chunk.js",
+    "static/js/2.02756564.chunk.js",
     "static/js/main.4f3ca21c.chunk.js"
   ]
 }
