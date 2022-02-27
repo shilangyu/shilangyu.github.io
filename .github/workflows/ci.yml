@@ -29,10 +29,8 @@ jobs:
           CI: true
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
         if: github.event_name == 'push'
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BASE_BRANCH: develop
-          BRANCH: master
-          FOLDER: build
+          branch: master
+          folder: build
