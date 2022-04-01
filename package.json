@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.43",
-    "@types/react-dom": "^17.0.12",
+    "@types/react-dom": "^17.0.14",
     "@types/react-jss": "^10.0.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.24",
