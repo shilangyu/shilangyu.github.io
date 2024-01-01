@@ -28,7 +28,7 @@
     "@types/react-jss": "^10.0.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.29",
-    "prettier": "^3.1.0",
+    "prettier": "^3.1.1",
     "source-map-explorer": "^2.5.3",
     "typescript": "^5.1.6"
   },
