@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.ac7b7917.js",
+    "main.js": "/static/js/main.7680549b.js",
     "static/media/lessons-perceptron.jpg": "/static/media/lessons-perceptron.425a8ba25cc33b1dbe84.jpg",
     "static/media/lessons-GA.png": "/static/media/lessons-GA.9a3fed07db2987d710a4.png",
     "static/media/DR-dataset.png": "/static/media/DR-dataset.fb5af5497f699905df4c.png",
@@ -16,9 +16,9 @@
     "static/media/github.svg": "/static/media/github.16a9304e38fd8167989291ab92544e14.svg",
     "index.html": "/index.html",
     "static/media/materialui.svg": "/static/media/materialui.c0958f97929482097efdccc254e938aa.svg",
-    "main.ac7b7917.js.map": "/static/js/main.ac7b7917.js.map"
+    "main.7680549b.js.map": "/static/js/main.7680549b.js.map"
   },
   "entrypoints": [
-    "static/js/main.ac7b7917.js"
+    "static/js/main.7680549b.js"
   ]
 }
