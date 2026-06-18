@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 
 class Index extends Component {
   render() {
-    return <>Other than the portfolio, this site was not updated in a while.</>
+    return <>
+      This is my old website last updated in 2019. Feel free to explore!
+      <br/>
+      Afterwards, join me at my new website: <a href="https://shilangyu.dev">shilangyu.dev</a>
+    </>
   }
 }
 
